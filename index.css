@@ -570,6 +570,8 @@ Individual nav links
   .open_sidebar_button svg {
     width: 24px;
     height: 24px;
+            margin-left: -50px;
+
   }
 
   .close_sidebar_button {

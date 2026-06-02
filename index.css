@@ -171,8 +171,10 @@ body {
   display: none;
 }
 
-
-
+/* ACCOUNT <!-- Logged In User --> */
+.user-menu {
+  display: none;
+}
 
 
 

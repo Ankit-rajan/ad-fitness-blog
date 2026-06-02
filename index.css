@@ -60,31 +60,6 @@ body {
 .ul1 a:hover{
     color: #ff4d4d;
 }
-/* .ul1 {
-  list-style-type: none;
-  color: rgb(0, 0, 0);
-  display: flex;
-  gap: 35px;
-  position: relative;
- 
-  z-index: 999;
-  padding-bottom: 0px;
-  margin-left: 0;
-      justify-content: flex-end;
-
-}
-
-Individual nav links
-.ul1 a {
-  text-decoration: none;
-  color: rgb(200, 194, 194);
-  font-size: 16px;
-}
-
-.ul1 a:hover {
-  color: rgba(249, 89, 89, 0.816);
-} */
-
 
 
 
@@ -125,25 +100,6 @@ Individual nav links
     margin:0;
     letter-spacing:1px;
 }
-/* .nav_logo1 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  transition: all 2s ease;
-} */
-
-/* ROG main logo */
-/* .logo1{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%; */
-    /* .logo1{
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-} */
 
 
 /* FontAwesome icon styling */
@@ -369,96 +325,6 @@ Individual nav links
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* ... */
-/* 
-@media (max-width: 1024px) {
-
-  #nav_container{
-    padding: 0 15px;
-  }
-
-  .open_sidebar_button{
-    display:block;
-  }
-
-  .nav_links{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 280px;
-    height: 100vh;
-    background: white;
-    flex-direction: column;
-    transform: translateX(-100%);
-    transition: 0.3s ease;
-    z-index: 1000;
-    padding-top: 60px;
-  }
-
-  #firstcheck:checked ~ .nav_links{
-    transform: translateX(0);
-  }
-
-  .close_sidebar_button{
-    display:block;
-    position:absolute;
-    top:10px;
-    right:10px;
-  }
-
-  .ul1{
-    flex-direction: column;
-    gap: 25px;
-    padding-left: 20px;
-  }
-
-  .ul1 a{
-    color:black;
-  }
-
-  .sidebar_overly{
-    display:none;
-  }
-
-  #firstcheck:checked ~ .sidebar_overly{
-    display:block;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.3);
-    z-index:999;
-  }
-
-}
-
-
-
-@media (max-width: 480px){
-
-  .brand-text h2{
-    font-size:16px;
-  }
-
-  .brand-text p{
-    font-size:10px;
-  }
-
-  .logo1{
-    width:42px;
-    height:42px;
-  }
-
-} */
 
 
 

@@ -294,12 +294,10 @@ body {
   }
   /* u2 formation end  */
 
-  /* ul3 ul4 ul5 ul6 ul7  formation start */
+  /* ul3 ul4 ul5   formation start */
   .ul3,
   .ul4,
-  .ul5,
-  .ul6,
-  .ul7 {
+  .ul5 {
     display: inline-grid;
     gap: 17px;
     list-style-type: none;
@@ -313,35 +311,9 @@ body {
   .ul5 {
     width: 154px;
   }
-  .ul6 {
-    gap: 20px;
-    width: 170px;
-  }
-  .ul7 {
-    width: 155px;
-  }
-  /* ul3 ul4 ul5 ul6 ul7  formation end  */
+ 
+  /* ul3 ul4 ul5   formation end  */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -563,9 +535,7 @@ body {
 
   .ul3,
   .ul4,
-  .ul5,
-  .ul6,
-  .ul7 {
+  .ul5 {
     list-style: none;
     animation: slideIn 0.6s ease;
     width: 100%;
@@ -575,16 +545,12 @@ body {
 
   .ul3 a,
   .ul4 a,
-  .ul5 a,
-  .ul6 a,
-  .ul7 a {
+  .ul5 a {
     font-size: 21px;
   }
   .ul3 li,
   .ul4 li,
-  .ul5 li,
-  .ul6 li,
-  .ul7 li {
+  .ul5 li {
     margin-bottom: 35px; /* Adjust the value as needed */
   }
   .ul2 {
@@ -666,10 +632,6 @@ body {
     font-size: 10px;
   }
 
-
-  /* .nav_right {
-    margin-right: 0px;
-  } */
 }
 @media (max-width: 768px) {
   .logo1{
@@ -701,3 +663,7 @@ body {
     display:none;
   }
 }
+
+
+
+/* respnsive end  */

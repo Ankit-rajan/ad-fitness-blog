@@ -95,6 +95,7 @@ Individual nav links
     align-items:center;
       gap:18px;
     margin-left:20px;
+    margin-right: -23px;
 }
 
 .logo1{

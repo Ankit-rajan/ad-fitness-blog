@@ -1,0 +1,763 @@
+/* Reset default spacing and apply default font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto Condensed, roboto, Microsoft JhengHei, sans-serif;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+.logo3:hover,
+.logo4:hover,
+.search-icon:hover {
+  fill:  rgba(201, 70, 70, 0.816);             /* for SVG */
+  filter: brightness(0) saturate(100%) invert(17%) sepia(100%) saturate(7492%) hue-rotate(358deg) brightness(97%) contrast(117%);
+  cursor: pointer;
+
+}
+
+
+/* Navbar container setup */
+.nav_container {
+  display: flex;
+  background-color: #000000; /* black background */
+  align-items: center;
+  height: 52px;
+  justify-content: space-around;
+  width: 100vw;
+  position: fixed;
+}
+
+/* Wrapper for nav links */
+.nav_links {
+  display: flex;
+  text-decoration: none;
+}
+
+/* Main navigation list */
+.ul1 {
+  list-style-type: none;
+  color: white;
+  display: flex;
+  gap: 65px;
+  position: relative;
+  margin-left: -11px;
+  z-index: 999;
+  padding-bottom: 0px;
+}
+
+/* Individual nav links */
+.ul1 a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.ul1 a:hover {
+  color: rgba(249, 89, 89, 0.816);
+}
+
+/* Left logo wrapper */
+.nav_logo1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* transition: all 2s ease; */
+}
+
+/* ROG main logo */
+.logo1 {
+  width: 194px;
+  height: 115px;
+  transition: all ease-in-out 0.1s;
+  margin-left: -57px;
+}
+
+/* Right section     container: ASUS, icons, etc. */
+.nav_right {
+  display: flex;
+  align-items: center;
+  margin-right: -26px;
+  gap: 10px;
+}
+
+/* Vertical separator line */
+.vertical-line {
+  border: none;
+  border-left: 1px solid gray;
+  height: 21px;
+  margin-left: 9px;
+  width: 0px;
+}
+
+/* Optional horizontal rule styling */
+.hr {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 35px;
+  background-color: rgb(89, 86, 86);
+  border: none;
+}
+
+/* ASUS gray logo */
+.logo2 {
+  width: 72px;
+  height: 28px;
+  margin-top: 2px;
+}
+
+/* Shopping cart icon */
+.logo3 {
+  width: 26px;
+  height: 25px;
+  color: rgb(142, 142, 142);
+  filter: brightness(0) invert(1);
+  margin-top: 3px;
+  margin-left: 5px;
+}
+
+/* User avatar icon */
+.logo4 {
+  width: 27x;
+  height: 27px;
+}
+
+/* FontAwesome icon styling */
+.icon {
+  color: white;
+  font-size: 24px;
+}
+
+/* Sidebar checkbox (hidden) */
+#firstcheck {
+  display: none;
+}
+
+/* Hamburger (open sidebar) button */
+.open_sidebar_button {
+  padding: 0 20px;
+  display: none;
+}
+
+/* Close sidebar button */
+.close_sidebar_button {
+  display: none;
+}
+.close_sidebar_button svg {
+  fill: black;
+}
+.mobile-view {
+  display: none;
+}
+.mobile-view-vertical-line {
+  display: none;
+}
+.mobile-view-asuslogo {
+  display: none;
+}
+
+/* sidebaroverly */
+.sidebar_overly {
+  display: none;
+}
+/* sidebaroverly end  */
+
+.search-icon {
+  height: 35px;
+  width: 26px;
+  margin-left: 12px;
+  margin-top: 6px;
+  margin-right: 5px;
+}
+.menu-label:hover {
+  color: rgba(201, 61, 61, 0.816);
+}
+.submenu-toggle {
+  display: none;
+}
+.menu-label {
+  display: flex;
+}
+.submenu {
+  display: none;
+  background-color: rgb(255, 254, 254);
+  position: relative;
+  padding: 10px;
+}
+
+/* .search-bar-div .searchbox {
+  display: none;
+  position: absolute;
+  top: 60%; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  padding: 10px;
+  border-radius: 6px;
+  width: 300px;
+  height: 300px;
+}
+
+#searchbarr:checked ~ .search-bar-div .searchbox {
+  display: block;
+  animation: slidedown 0.8s ease;
+} */
+
+/* Hide by default */
+.search-bar-div .searchbox {
+  display: none;
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-100%);
+  background: #222;
+  /* border-radius: 6px; */
+
+  width: 100vw;
+  height: 40vh;
+  padding: 0 20px;
+
+  justify-content: center;
+  align-items: center;
+  animation: none;
+}
+
+/* Input style */
+.search {
+  width: 53%;
+  height: 50px;
+  padding: 0 15px;
+  font-size: 18px;
+  border: 1px solid white;
+  outline: none;
+  margin-left: -60px;
+  margin-top: -135px;
+  background: #222;
+  color: white;
+  caret-color: white;
+}
+
+/* Show on checkbox check */
+#searchbarr:checked ~ .search-bar-div .searchbox {
+  display: flex; /* Use flex not block here! */
+  animation: slidedown 0.2s ease forwards;
+  top: 50px;
+}
+
+/* Slide animation */
+@keyframes slidedown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* #smallPlace {
+  background-color: red;
+  width: 100%;
+  height: 300px;
+  margin-top: 52px;
+  position: absolute;
+  top: -45%;
+  display: none;
+  transform: translateX(-50%);
+}
+
+#searchbarr:checked ~ #smallPlace {
+  display: block;
+  top: 0%;
+  animation: slidedown 0.8s ease;
+} */
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+/* ARROW  */
+.arrow {
+  display: none;
+}
+
+/* hover on big screen? */
+@media (min-width: 1024px) {
+  .ul1 li {
+    position: relative;
+    /* padding: 10px 0px; */
+  }
+  .nav_container {
+    z-index: 1;
+  }
+  .ul1 a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+  }
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 97%;
+    left: 0;
+    background: white;
+    z-index: 999;
+    padding: 10px 0px;
+    border: none;
+    margin-top: 10px;
+  }
+  .ul1 li:hover > .submenu {
+    display: block;
+    margin-top: 1px;
+    color: #000000;
+    margin-left: -30px;
+    padding-top: 0px;
+    padding: 48px 50px 45px 50px;
+  }
+  .ul1 > li {
+    padding: 17px 0px;
+  }
+  /* Hide checkbox/radio in desktop */
+  .submenu-toggle {
+    display: none;
+  }
+  .submenu-header .arrow1 {
+    display: none; /* optional: hide > arrow on desktop */
+  }
+  .submenu-header {
+    display: none;
+  }
+  .arrow {
+    display: none;
+  }
+
+  /* ul2 formation */
+  .ul2 a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+  }
+  .ul2 {
+    list-style-type: none;
+    width: 605px;
+  }
+  .ul2 a:hover {
+    color: rgba(249, 89, 89, 0.816);
+  }
+  .ul2 {
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
+    flex-wrap: nowrap;
+  }
+  .ul2 .col .col1 .col2 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .col1 {
+    padding-left: 25px;
+  }
+  .col2 {
+    padding-left: 35px;
+  }
+  .ul2 li {
+    margin-bottom: 10px;
+  }
+  .bottom-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 30px 0 15px 0;
+    border: none;
+  }
+  .asus-tuf-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    /* padding-left: 20px; */
+    margin: 0 auto;
+  }
+  .asus-tuf {
+    display: inline-block;
+    font-weight: bold;
+    color: black;
+  }
+  .asus-tuf a {
+    color: #000;
+  }
+  /* u2 formation end  */
+
+  /* ul3 ul4 ul5 ul6 ul7  formation start */
+  .ul3,
+  .ul4,
+  .ul5,
+  .ul6,
+  .ul7 {
+    display: inline-grid;
+    gap: 17px;
+    list-style-type: none;
+  }
+  .ul3 {
+    width: 185px;
+  }
+  .ul4 {
+    width: 165px;
+  }
+  .ul5 {
+    width: 154px;
+  }
+  .ul6 {
+    gap: 20px;
+    width: 170px;
+  }
+  .ul7 {
+    width: 155px;
+  }
+  /* ul3 ul4 ul5 ul6 ul7  formation end  */
+}
+
+@media (max-width: 1400px), (max-width: 1350px) {
+  .logo1 {
+    margin-left: 0px;
+  }
+}
+.nav_container {
+  z-index: 1;
+}
+
+@media (max-width: 1310px) {
+  .ul1 {
+    gap: 40px;
+  }
+  .nav_container {
+    justify-content: space-between;
+    padding-right: 57px;
+    z-index: 1;
+  }
+  .logo1 {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 1095px) {
+  .ul1 {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .nav_links {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    background-color: white;
+    transform: translate(-100%);
+    transition: all 0.4s ease-in-out;
+    margin-right: 0px;
+  }
+
+  .logo1 {
+    width: 193px;
+    height: 122px;
+    transition: all 3s ease-in-out;
+  }
+
+  .ul1 {
+    flex-direction: column;
+    margin-top: 44px;
+    padding-left: 20px;
+    gap: 26px;
+  }
+
+  .ul1 a {
+    color: black;
+    font-size: 13px;
+  }
+
+  .menu-label {
+    color: black;
+    font-size: 25px;
+  }
+  /* size of open_sidebar_button svg */
+  .open_sidebar_button svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .close_sidebar_button {
+    display: block;
+    right: 0;
+    top: 0;
+    position: absolute;
+    z-index: 3;
+    padding: 10px;
+  }
+
+  .open_sidebar_button {
+    display: block;
+  }
+
+  #firstcheck:checked ~ .nav_links {
+    transform: translate(0%);
+    z-index: 3;
+  }
+
+  .mobile-view {
+    display: block;
+    width: 33px;
+    margin-top: 10px;
+    margin-left: 11px;
+  }
+
+  .mobile-view-vertical-line {
+    display: block;
+    width: 100%;
+    margin: 29px 0 18px 0;
+    padding: 0; /* Reset paddings */
+  }
+
+  .mobile-view-asuslogo {
+    display: block;
+    width: 81px;
+    margin-top: 10px;
+    margin-left: 11px;
+  }
+
+  .logo2 {
+    display: none;
+  }
+  .vertical-line {
+    display: none;
+  }
+  .logo4 {
+    display: none;
+  }
+  .nav_container {
+    justify-content: space-between;
+    padding-right: 15px;
+  }
+
+  /* sidebar_overly@media quary+ .submenu-toggle */
+  #firstcheck:checked ~ .sidebar_overly {
+    display: block;
+    position: fixed;
+    inset: 0; /* inset: 0; means top, right, bottom, and left are all set to 0, so the element covers the entire area of its positioned parent */
+    background-color: #00000000;
+    z-index: 2;
+  }
+
+  .logo3 {
+    width: 23px;
+    height: 23px;
+  }
+
+  .search-icon {
+    height: 28px;
+    width: 25px;
+  }
+
+  /* Submenu */
+  .ul2 {
+    display: block;
+    z-index: 1000;
+  }
+  .ul2 a {
+    color: #000000;
+    font-size: 21px;
+  }
+
+  .submenu-toggle:checked ~ .submenu {
+    display: block;
+    position: absolute;
+    background-color: #ffffff; /* or any theme */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .submenu-toggle:checked + .menu-label + .submenu {
+    display: block;
+    animation: slideIn 0.5s ease;
+    width: 100%;
+    margin-top: -40px;
+    margin-left: 0px;
+    padding-left: 62px;
+    padding-bottom: 100px;
+  }
+
+  .asus-tuf-wrapper a {
+    font-size: 20px;
+  }
+  .asus-tuf {
+    display: inline-block;
+    /* font-weight: bold; */
+    color: black;
+    padding-top: 10px;
+  }
+  .bottom-divider {
+    display: none;
+  }
+
+  .ul3,
+  .ul4,
+  .ul5,
+  .ul6,
+  .ul7 {
+    list-style: none;
+    animation: slideIn 0.6s ease;
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 14px;
+  }
+
+  .ul3 a,
+  .ul4 a,
+  .ul5 a,
+  .ul6 a,
+  .ul7 a {
+    font-size: 21px;
+  }
+  .ul3 li,
+  .ul4 li,
+  .ul5 li,
+  .ul6 li,
+  .ul7 li {
+    margin-bottom: 35px; /* Adjust the value as needed */
+  }
+  .ul2 {
+    list-style: none;
+    padding-left: 0;
+    animation: slideIn 0.6s ease;
+  }
+
+  .submenu-header {
+    font-weight: bold;
+    padding: 10px 0;
+    display: block;
+    cursor: pointer;
+    color: black;
+    font-size: 25px;
+    animation: slideIn 0.6s ease;
+    display: flex;
+    align-items: center;
+    margin-left: -36px;
+    gap: 10px;
+  }
+
+  /* sidebar adjustment */
+  .menu-label {
+    display: flex;
+    justify-content: space-between;
+  }
+  .arrow {
+    display: block;
+    justify-self: end;
+    padding-right: 20px;
+    line-height: 1;
+    font-weight: 100;
+    font-size: 47px;
+  }
+
+  /* end  */
+
+  .arrow1 {
+    font-size: 47px; /* Increase arrow size */
+    margin-right: 8px; /* Space between arrow and text */
+    display: inline-block;
+    line-height: 1;
+    color: red;
+    font-weight: 150;
+  }
+
+  .ul2 li {
+    margin: 35px 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1150px),
+  (max-width: 950px),
+  (max-width: 360px),
+  (max-width: 325px),
+  (max-width: 290px),
+  (max-width: 260px),
+  (max-width: 210px) {
+  .nav_container {
+    justify-content: space-between;
+    padding-right: 15px;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 1150px) {
+  .logo1 {
+    width: 190px;
+    height: 113px;
+    transition: all ease-in-out 0.1s;
+    margin-left: -8px;
+  }
+
+  .nav_right {
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 325px) {
+  .logo1 {
+    width: 158px;
+    height: 107px;
+    transition: all ease-in-out 0.1s;
+  }
+}
+
+@media (max-width: 290px) {
+  .logo1 {
+    width: 126px;
+    height: 91px;
+    transition: all ease-in-out 0.1s;
+  }
+}
+
+@media (max-width: 260px) {
+  .logo1 {
+    width: 113px;
+    height: 82px;
+    transition: all ease-in-out 0.1s;
+  }
+
+  .search-icon {
+    height: 26px;
+    width: 21px;
+  }
+
+  .logo3 {
+    display: none;
+  }
+}
+
+@media (max-width: 210px) {
+  .search-icon {
+    display: none;
+  }
+}

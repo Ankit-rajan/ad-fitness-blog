@@ -325,7 +325,7 @@ body {
 } */
  .motivation-image img {
     width: 100%;
-    max-width: 550px;
+    max-width: 600px;
     height: 600px;
     object-fit: cover;
     border-radius: 20px;

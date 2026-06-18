@@ -281,11 +281,14 @@ body {
   justify-content: center;
 }
 
-#hero-image1{
-  display: block;
-   flex: 1;
-  display: flex;
-  justify-content: center;
+#hero-image1,
+#hero-image2{
+    width: 100%;
+    display: none;
+    max-width: 350px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 
@@ -879,18 +882,18 @@ body {
     max-height: 200px;
     /* margin-right: 285px; */
   }
-  #hero-image1 img {
-    display: flex;
+  #hero-image1  {
+    display: block;
     max-width: 200px;
     max-height: 200px;
-    margin-right: 285px;
+    /* margin-right: 285px; */
     border-radius: 25px;
   }
-  #hero-image2 img {
-    display: flex;
+  #hero-image2 {
+    display: block;
     max-width: 200px;
     max-height: 200px;
-    margin-right: 285px;
+    /* margin-right: 285px; */
     border-radius: 25px;
   }
   

@@ -395,6 +395,8 @@ body {
     border-radius: 15px;
     color: #ffedcf;
     background: #111;
+    transition: 0.3s;
+
 }
 
 .stat-card h2{
@@ -404,13 +406,72 @@ body {
 
 .stat-card p{
     font-size: 1rem;
+    
+}
+
+.stat-card:hover{
+    transform: translateY(-8px);
 }
 /* State section end here */
+
+/* Programs Section */
+#programs-section{
+    padding: 80px 5%;
+}
+
+.section-header{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #c08319;
+    font-weight: bold;
+}
+
+.section-header p{
+    font-size: 1rem;
+    color: #706767;
+}
+
+#programs-grid{
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.program-card{
+    flex: 1;
+    min-width: 250px;
+    background: #111;
+    color: #ffedcf;
+    padding: 30px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.program-card:hover{
+    transform: translateY(-8px);
+}
+
+.program-card h3{
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.program-card p{
+    line-height: 1.6;
+}
+
+/* end  */
+
 
 
 /* Mobile */
 
-@media (max-width: 600px){
+@media (max-width: 480px){
     .stat-card{
         min-width: calc(50% - 10px);
         padding: 15px;
@@ -425,9 +486,42 @@ body {
     }
 }
 
+/* ........................  */
 
+/* Tablet */
+@media (max-width: 950px){
+    .section-header h2{
+        font-size: 2rem;
+    }
 
+    .program-card{
+        min-width: 300px;
+    }
+}
 
+/* Mobile */
+@media (max-width: 600px){
+    #programs-section{
+        padding: 60px 20px;
+    }
+
+    .section-header h2{
+        font-size: 1.8rem;
+    }
+
+    .section-header p{
+        font-size: 0.9rem;
+    }
+
+    .program-card{
+        min-width: 100%;
+        padding: 20px;
+    }
+
+    .program-card h3{
+        font-size: 1.3rem;
+    }
+}
 
 
 

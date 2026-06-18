@@ -281,6 +281,15 @@ body {
   justify-content: center;
 }
 
+#hero-image1{
+  display: block;
+   flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+
+
 /* #hero-image img {
   width: 100%;
   max-width: 500px;
@@ -839,6 +848,7 @@ body {
 
    #hero-section {
     padding: 100px 20px 50px;
+    margin-top: -150px;
   }
 
   #hero-section .container {
@@ -860,8 +870,28 @@ body {
     justify-content: center;
   }
   
+
+  #hero-image {
+    gap: 20px;
+  }
   #hero-image img {
-    max-width: 400px;
+    max-width: 200px;
+    max-height: 200px;
+    /* margin-right: 285px; */
+  }
+  #hero-image1 img {
+    display: flex;
+    max-width: 200px;
+    max-height: 200px;
+    margin-right: 285px;
+    border-radius: 25px;
+  }
+  #hero-image2 img {
+    display: flex;
+    max-width: 200px;
+    max-height: 200px;
+    margin-right: 285px;
+    border-radius: 25px;
   }
   
 

@@ -387,11 +387,7 @@ body {
 
 
 /* Mobile */
-/* @media (max-width: 600px){
-    .stat-card{
-        min-width: 100%;
-    }
-} */
+
 @media (max-width: 600px){
     .stat-card{
         min-width: calc(50% - 10px);
@@ -897,7 +893,7 @@ body {
 
    #hero-section {
     padding: 100px 20px 50px;
-    margin-top: -150px;
+    margin-top: -50px;
   }
 
   #hero-section .container {

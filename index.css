@@ -424,14 +424,14 @@ body {
     margin-bottom: 50px;
 }
 
-.section-header h2{
+.program-header h2{
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #c08319;
+    color: #bb7f18;
     font-weight: bold;
 }
 
-.section-header p{
+.program-header p{
     font-size: 1rem;
     color: #706767;
 }
@@ -652,18 +652,18 @@ body {
     margin: 30px 0 15px 0;
     border: none;
   }
-  .asus-tuf-wrapper {
+  .adfitness-wrapper {
     width: 100%;
     max-width: 1200px;
     /* padding-left: 20px; */
     margin: 0 auto;
   }
-  .asus-tuf {
+  .adfitness {
     display: inline-block;
     font-weight: bold;
     color: black;
   }
-  .asus-tuf a {
+  .adfitness a {
     color: #000;
   }
   /* u2 formation end  */

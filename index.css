@@ -315,11 +315,7 @@ body {
 
 
 
-/* #hero-image img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-} */
+
 #hero-image img{
     width: 100%;
     max-width: 600px;
@@ -350,13 +346,7 @@ body {
     flex: 1;
 }
 
-/* .motivation-image img{
-    width: 100%;
-    max-width: 550px;
-    height: 700px;
-    object-fit: cover;
-    border-radius: 20px;
-} */
+
  .motivation-image img {
     width: 100%;
     max-width: 600px;
@@ -374,7 +364,7 @@ body {
   max-width: 1200px;
   margin: auto;
 }
-
+/* motivation section end  */
 
 /* State section start here */
 #stats-section{
@@ -466,7 +456,7 @@ body {
     line-height: 1.6;
 }
 
-/* end  */
+/* program section end  */
 
 
 
@@ -584,7 +574,6 @@ body {
     padding-top: 0px;
     background-color: #ffedcf;
     border-radius: 15px;
-    /* padding: 48px 50px 45px 50px; */
     padding: 25px 50px 45px 50px;
     
   }

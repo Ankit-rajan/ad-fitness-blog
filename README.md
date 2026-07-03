@@ -12,3 +12,5 @@ A responsive fitness blog website built using HTML and CSS.
 ## Technologies Used
 - HTML5
 - CSS3
+
+[link](https://lnk.ink/ADFITNESS)

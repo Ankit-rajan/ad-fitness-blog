@@ -1029,6 +1029,10 @@ background:  var(--bg);
 
 /* responsive section  */
 
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.01ms !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+}
+
 @media (max-width: 1400px), (max-width: 1350px) {
   .logo1 {
     margin-left: 0px;

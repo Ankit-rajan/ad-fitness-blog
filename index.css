@@ -192,6 +192,10 @@ body{
   padding: 10px;
 }
 
+#home{
+  display: none;
+}
+
 /* ARROW  */
 .arrow {
   display: none;

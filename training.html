@@ -1,57 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Under Construction</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .construction {
-      width: 550px;
-      max-width: 90%;
-      margin-bottom: 20px;
-    }
+<title>AD Fitness | Training</title>
 
-    a.home-link {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      background-color: #ff5722;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      transition: all 0.3s;
-    }
+<style>
 
-    a.home-link:hover {
-      background-color: #e64a19;
-    }
-  </style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#111;
+color:#fff;
+line-height:1.6;
+}
+
+/* Hero */
+
+.hero{
+
+height:70vh;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=80");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.hero h1{
+
+font-size:55px;
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:18px;
+color:#ddd;
+margin-bottom:30px;
+
+}
+
+.hero button{
+
+padding:15px 35px;
+background:#ff4d00;
+border:none;
+color:white;
+font-size:18px;
+cursor:pointer;
+border-radius:5px;
+transition:.3s;
+
+}
+
+.hero button:hover{
+
+background:#ff7a00;
+
+}
+
+/* Search */
+
+.search{
+
+padding:40px 10%;
+background:#181818;
+
+}
+
+.search input{
+
+width:100%;
+padding:16px;
+border:none;
+border-radius:8px;
+font-size:18px;
+
+}
+
+/* Section */
+
+section{
+
+padding:70px 10%;
+
+}
+
+.section-title{
+
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+
+}
+
+/* Grid */
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+
+}
+
+.card{
+
+background:#1d1d1d;
+padding:30px;
+border-radius:10px;
+transition:.3s;
+cursor:pointer;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+background:#262626;
+
+}
+
+.card h3{
+
+margin-bottom:15px;
+color:#ff6b00;
+
+}
+
+.card p{
+
+color:#bbb;
+
+}
+
+/* Program Cards */
+
+.program{
+
+overflow:hidden;
+border-radius:10px;
+background:#1c1c1c;
+transition:.3s;
+
+}
+
+.program img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+.program-content{
+
+padding:20px;
+
+}
+
+.program:hover{
+
+transform:scale(1.04);
+
+}
+
+/* Weekly */
+
+table{
+
+width:100%;
+border-collapse:collapse;
+
+}
+
+table th{
+
+background:#ff5a00;
+
+padding:15px;
+
+}
+
+table td{
+
+padding:15px;
+background:#222;
+border:1px solid #333;
+text-align:center;
+
+}
+
+/* Tips */
+
+.tips{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+
+}
+
+.tip{
+
+background:#202020;
+padding:25px;
+border-left:5px solid orange;
+border-radius:8px;
+
+}
+
+/* CTA */
+
+.cta{
+
+background:linear-gradient(135deg,#ff5500,#ff8800);
+
+text-align:center;
+padding:80px 20px;
+
+}
+
+.cta h2{
+
+font-size:42px;
+margin-bottom:20px;
+
+}
+
+.cta button{
+
+padding:15px 35px;
+font-size:18px;
+border:none;
+cursor:pointer;
+border-radius:6px;
+margin-top:20px;
+
+}
+
+/* Footer */
+
+footer{
+
+padding:30px;
+text-align:center;
+background:#0b0b0b;
+color:#888;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.section-title{
+
+font-size:30px;
+
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGRkZ2FkM2l4b21oaHo0aXNlbzNxZTAzOTJ4eWg4dmg2YzJ3aDBwYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HzPtbOKyBoBFsK4hyc/giphy.gif" alt="Under Construction" class="construction" />
-  
-  <!-- 🔁 Change this line for each page -->
-  <h1>Training Page Under Construction</h1>
-  
-  <p>We're working on it. Please check back soon!</p>
 
-  <a href="../index.html" class="home-link">Go to Home Page</a>
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="hero-content">
+
+<h1>Build Strength. Build Confidence.</h1>
+
+<p>
+Discover professional workout plans designed for beginners,
+home training, gym lovers, fat loss and muscle building.
+</p>
+
+<button>Start Training</button>
+
+</div>
+
+</header>
+
+<!-- SEARCH -->
+
+<section class="search">
+
+<input type="text" placeholder="Search workouts...">
+
+</section>
+
+<!-- Categories -->
+
+<section>
+
+<h2 class="section-title">Training Categories</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🏋 Beginner Workouts</h3>
+<p>Easy full-body exercises to build a strong foundation.</p>
+</div>
+
+<div class="card">
+<h3>🏠 Home Workouts</h3>
+<p>No equipment workouts you can do anywhere.</p>
+</div>
+
+<div class="card">
+<h3>💪 Gym Workouts</h3>
+<p>Professional gym routines for maximum gains.</p>
+</div>
+
+<div class="card">
+<h3>🔥 Weight Loss</h3>
+<p>Burn calories with cardio and HIIT workouts.</p>
+</div>
+
+<div class="card">
+<h3>💥 Muscle Gain</h3>
+<p>Hypertrophy-focused training programs.</p>
+</div>
+
+<div class="card">
+<h3>⚡ Strength Training</h3>
+<p>Increase overall power using compound lifts.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Muscle Groups -->
+
+<section>
+
+<h2 class="section-title">Train by Muscle Group</h2>
+
+<div class="grid">
+
+<div class="program">
+
+<img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80">
+
+<div class="program-content">
+
+<h3>Chest Workout</h3>
+
+<p>Bench Press, Push Ups, Incline Press, Cable Fly.</p>
+
+</div>
+
+</div>
+
+<div class="program">
+
+<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80">
+
+<div class="program-content">
+
+<h3>Back Workout</h3>
+
+<p>Deadlift, Pull-ups, Rows, Lat Pulldown.</p>
+
+</div>
+
+</div>
+
+<div class="program">
+
+<img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=800&q=80">
+
+<div class="program-content">
+
+<h3>Shoulders</h3>
+
+<p>Military Press, Lateral Raises, Face Pulls.</p>
+
+</div>
+
+</div>
+
+<div class="program">
+
+<img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80">
+
+<div class="program-content">
+
+<h3>Arms</h3>
+
+<p>Biceps Curls, Hammer Curl, Triceps Pushdown.</p>
+
+</div>
+
+</div>
+
+<div class="program">
+
+<img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80">
+
+<div class="program-content">
+
+<h3>Legs</h3>
+
+<p>Squat, Leg Press, Lunges, Romanian Deadlift.</p>
+
+</div>
+
+</div>
+
+<div class="program">
+
+<img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80">
+
+<div class="program-content">
+
+<h3>Abs</h3>
+
+<p>Crunches, Leg Raises, Planks, Russian Twist.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Weekly Plan -->
+
+<section>
+
+<h2 class="section-title">Weekly Workout Plan</h2>
+
+<table>
+
+<tr>
+
+<th>Day</th>
+
+<th>Workout</th>
+
+</tr>
+
+<tr>
+
+<td>Monday</td>
+
+<td>Chest + Triceps</td>
+
+</tr>
+
+<tr>
+
+<td>Tuesday</td>
+
+<td>Back + Biceps</td>
+
+</tr>
+
+<tr>
+
+<td>Wednesday</td>
+
+<td>Cardio + Abs</td>
+
+</tr>
+
+<tr>
+
+<td>Thursday</td>
+
+<td>Shoulders</td>
+
+</tr>
+
+<tr>
+
+<td>Friday</td>
+
+<td>Legs</td>
+
+</tr>
+
+<tr>
+
+<td>Saturday</td>
+
+<td>HIIT + Core</td>
+
+</tr>
+
+<tr>
+
+<td>Sunday</td>
+
+<td>Recovery & Stretching</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<!-- Tips -->
+
+<section>
+
+<h2 class="section-title">Training Tips</h2>
+
+<div class="tips">
+
+<div class="tip">
+
+<h3>Stay Hydrated</h3>
+
+Drink enough water before and after workouts.
+
+</div>
+
+<div class="tip">
+
+<h3>Proper Form</h3>
+
+Never sacrifice technique for heavier weights.
+
+</div>
+
+<div class="tip">
+
+<h3>Warm-Up</h3>
+
+Always warm up for at least 10 minutes.
+
+</div>
+
+<div class="tip">
+
+<h3>Recovery</h3>
+
+Sleep 7–9 hours for muscle growth.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Ready To Transform Your Body?</h2>
+
+<p>
+
+Join AD Fitness and start your fitness journey today.
+
+</p>
+
+<button>Explore Programs</button>
+
+</section>
+
+<footer>
+
+© 2026 AD Fitness • All Rights Reserved
+
+</footer>
+
+
+
+<script src="training.js"></script>
 </body>
-
 </html>

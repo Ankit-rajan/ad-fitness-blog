@@ -984,3 +984,389 @@ ul{
 
 }
 
+/* ==========================================
+   AD FITNESS - ABOUT PAGE
+   about.css (Part 4)
+   Testimonial • CTA • Footer
+   Animations • Media Queries
+==========================================*/
+
+
+/* =====================================
+            TESTIMONIAL
+=====================================*/
+
+.testimonial{
+    background:#0d0d0d;
+    text-align:center;
+}
+
+.testimonial h2{
+    font-size:2.8rem;
+    margin-bottom:60px;
+}
+
+.review{
+    max-width:850px;
+    margin:auto;
+    background:var(--dark3);
+    padding:50px 40px;
+    border-radius:var(--radius);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:var(--shadow);
+    position:relative;
+}
+
+.review::before{
+    content:"❝";
+    position:absolute;
+    top:15px;
+    left:30px;
+    font-size:80px;
+    color:rgba(255,77,0,.18);
+    font-family:serif;
+}
+
+.review p{
+    font-size:18px;
+    color:var(--light);
+    line-height:1.9;
+    margin-bottom:30px;
+}
+
+.review h4{
+    color:var(--primary);
+    font-size:1.3rem;
+}
+
+
+/* =====================================
+                CTA
+=====================================*/
+
+.cta{
+    text-align:center;
+    background:linear-gradient(
+        135deg,
+        #ff4d00,
+        #ff7b00
+    );
+    color:#fff;
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:0 auto 35px;
+    color:#fff;
+    opacity:.95;
+}
+
+.cta .btn{
+    background:#fff;
+    color:var(--primary);
+    box-shadow:none;
+}
+
+.cta .btn:hover{
+    transform:translateY(-6px);
+    background:#111;
+    color:#fff;
+}
+
+
+/* =====================================
+                FOOTER
+=====================================*/
+
+footer{
+    background:#080808;
+    padding:70px 9% 30px;
+    text-align:center;
+}
+
+.footer-content h2{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+.footer-content p{
+    color:#bdbdbd;
+}
+
+.social{
+    margin:35px 0;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+}
+
+.social a{
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--dark3);
+    color:#fff;
+    font-size:20px;
+    transition:var(--transition);
+}
+
+.social a:hover{
+    background:var(--primary);
+    transform:translateY(-6px);
+}
+
+.copy{
+    margin-top:25px;
+    font-size:15px;
+    color:#888;
+}
+
+
+/* =====================================
+            ANIMATIONS
+=====================================*/
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+        transform:translate(-50%,0);
+    }
+
+    50%{
+        transform:translate(-50%,12px);
+    }
+
+    100%{
+        transform:translate(-50%,0);
+    }
+
+}
+
+@keyframes zoomIn{
+
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+@keyframes slideLeft{
+
+    from{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes slideRight{
+
+    from{
+        opacity:0;
+        transform:translateX(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+
+/* =====================================
+        OPTIONAL ANIMATION CLASSES
+=====================================*/
+
+.fade-up{
+    animation:fadeUp .9s ease both;
+}
+
+.zoom-in{
+    animation:zoomIn .9s ease both;
+}
+
+.slide-left{
+    animation:slideLeft .9s ease both;
+}
+
+.slide-right{
+    animation:slideRight .9s ease both;
+}
+
+
+/* =====================================
+            LARGE DEVICES
+=====================================*/
+
+@media (max-width:1200px){
+
+section{
+    padding:80px 6%;
+}
+
+.hero-content h1{
+    font-size:3.5rem;
+}
+
+}
+
+
+/* =====================================
+            TABLETS
+=====================================*/
+
+@media (max-width:768px){
+
+section{
+    padding:70px 5%;
+}
+
+.hero-content h1{
+    font-size:2.8rem;
+}
+
+.hero-content p{
+    font-size:16px;
+}
+
+.review{
+    padding:35px 25px;
+}
+
+.review::before{
+    font-size:60px;
+    left:18px;
+}
+
+.cta h2{
+    font-size:2.3rem;
+}
+
+.footer-content h2{
+    font-size:1.8rem;
+}
+
+.social{
+    flex-wrap:wrap;
+}
+
+}
+
+
+/* =====================================
+            MOBILE
+=====================================*/
+
+@media (max-width:576px){
+
+.hero-content h4{
+    font-size:13px;
+    letter-spacing:2px;
+}
+
+.hero-content h1{
+    font-size:2.2rem;
+}
+
+.hero-content p{
+    font-size:15px;
+}
+
+.testimonial h2,
+.cta h2{
+    font-size:2rem;
+}
+
+.review{
+    padding:30px 20px;
+}
+
+.review p{
+    font-size:16px;
+}
+
+.cta .btn,
+.btn{
+    width:100%;
+    max-width:280px;
+}
+
+.social a{
+    width:45px;
+    height:45px;
+    font-size:18px;
+}
+
+.copy{
+    font-size:14px;
+}
+
+}
+
+
+/* =====================================
+        EXTRA SMALL DEVICES
+=====================================*/
+
+@media (max-width:360px){
+
+.hero-content h1{
+    font-size:1.8rem;
+}
+
+.hero-content p{
+    font-size:14px;
+}
+
+.review h4{
+    font-size:1.1rem;
+}
+
+.footer-content h2{
+    font-size:1.5rem;
+}
+
+.social{
+    gap:12px;
+}
+
+.social a{
+    width:40px;
+    height:40px;
+}
+
+}

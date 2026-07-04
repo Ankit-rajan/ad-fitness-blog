@@ -1879,6 +1879,291 @@ flex-direction:column;
 
 }
 
+
+/*==========================================================
+PROTEIN GUIDE CSS
+PART 2
+Protein Foods + Calculator + Timing + Meal Plan
+==========================================================*/
+
+/*=========================
+PROTEIN FOODS
+=========================*/
+
+.protein-foods{
+background:#151515;
+}
+
+.food-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.food-card{
+background:#202020;
+border-radius:18px;
+overflow:hidden;
+transition:.35s ease;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 12px 25px rgba(0,0,0,.2);
+}
+
+.food-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+.food-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.food-card h3{
+padding:22px 22px 10px;
+font-size:1.35rem;
+}
+
+.food-card p{
+padding:0 22px;
+color:#d2d2d2;
+line-height:1.7;
+}
+
+.food-card span{
+display:inline-block;
+margin:20px 22px 25px;
+padding:8px 18px;
+background:rgba(255,77,48,.12);
+color:var(--protein-primary);
+border-radius:30px;
+font-size:.9rem;
+font-weight:600;
+}
+
+/*=========================
+PROTEIN CALCULATOR
+=========================*/
+
+.protein-calculator{
+background:#111;
+}
+
+.calculator-box{
+max-width:650px;
+margin:auto;
+background:#1d1d1d;
+padding:45px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.input-group{
+margin-bottom:28px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:10px;
+font-weight:600;
+font-size:1rem;
+}
+
+.input-group input,
+.input-group select{
+width:100%;
+padding:15px 18px;
+border:none;
+outline:none;
+border-radius:12px;
+background:#2b2b2b;
+color:#fff;
+font-size:1rem;
+transition:.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+border:1px solid var(--protein-primary);
+}
+
+#proteinBtn{
+width:100%;
+padding:16px;
+border:none;
+cursor:pointer;
+font-size:1rem;
+font-weight:700;
+border-radius:50px;
+background:var(--protein-primary);
+color:#fff;
+transition:.35s;
+}
+
+#proteinBtn:hover{
+background:var(--protein-secondary);
+}
+
+.result{
+margin-top:30px;
+padding:20px;
+border-radius:12px;
+background:#2a2a2a;
+text-align:center;
+font-size:1.1rem;
+font-weight:600;
+color:#fff;
+}
+
+/*=========================
+PROTEIN TIMING
+=========================*/
+
+.protein-timing{
+background:#171717;
+}
+
+.timing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:28px;
+}
+
+.timing-card{
+background:#212121;
+padding:35px 25px;
+text-align:center;
+border-radius:18px;
+transition:.35s;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.timing-card:hover{
+transform:translateY(-8px);
+}
+
+.timing-card h3{
+font-size:1.35rem;
+margin-bottom:18px;
+}
+
+.timing-card p{
+line-height:1.8;
+color:#d5d5d5;
+}
+
+/*=========================
+MEAL PLAN
+=========================*/
+
+.meal-plan{
+background:#111;
+}
+
+.meal-table{
+overflow-x:auto;
+border-radius:18px;
+}
+
+.meal-table table{
+width:100%;
+border-collapse:collapse;
+min-width:700px;
+}
+
+.meal-table thead{
+background:var(--protein-primary);
+}
+
+.meal-table th{
+padding:20px;
+font-size:1rem;
+text-align:left;
+color:#fff;
+}
+
+.meal-table td{
+padding:18px 20px;
+background:#1f1f1f;
+border-bottom:1px solid rgba(255,255,255,.08);
+color:#ddd;
+}
+
+.meal-table tbody tr{
+transition:.3s;
+}
+
+.meal-table tbody tr:hover td{
+background:#292929;
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+.calculator-box{
+padding:35px;
+}
+
+.food-card img{
+height:200px;
+}
+
+}
+
+@media(max-width:768px){
+
+.calculator-box{
+padding:28px;
+}
+
+.food-grid,
+.timing-grid{
+grid-template-columns:1fr;
+}
+
+.meal-table table{
+min-width:600px;
+}
+
+}
+
+@media(max-width:480px){
+
+.calculator-box{
+padding:22px;
+}
+
+.input-group input,
+.input-group select{
+padding:14px;
+}
+
+#proteinBtn{
+padding:15px;
+}
+
+.result{
+font-size:1rem;
+}
+
+.food-card img{
+height:190px;
+}
+
+}
+
+
+
+
+
+
+
+
 /* =========================================
    MACRONUTRIENTS
 ========================================= */

@@ -1613,6 +1613,29 @@ align-items:center;
 
 }
 
+/* icon 
+ */
+
+ .intro-image{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.intro-image i{
+font-size:10rem;
+color:var(--protein-primary);
+background:#1f1f1f;
+width:260px;
+height:260px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:var(--shadow-lg);
+}
+
+
 .intro-image img{
 
 border-radius:var(--radius);
@@ -1656,6 +1679,24 @@ content:"✔";
 color:var(--protein-primary);
 margin-right:10px;
 
+}
+
+
+/* type numbr  */
+
+.type-number{
+width:60px;
+height:60px;
+border-radius:50%;
+background:var(--protein-primary);
+color:#fff;
+font-size:1.4rem;
+font-weight:700;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:20px;
+box-shadow:0 10px 20px rgba(255,77,48,.3);
 }
 
 /*========================

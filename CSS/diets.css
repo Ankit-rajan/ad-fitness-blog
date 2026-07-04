@@ -555,6 +555,1330 @@ section{
 
 }
 
+
+
+
+
+
+
+
+
+/* ==========================================
+   NUTRITION BASICS
+========================================== */
+
+.nutrition-basics{
+
+    background:var(--bg2);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.nutrition-basics::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:radial-gradient(
+        rgba(255,107,0,.12),
+        transparent 70%
+    );
+
+    top:-180px;
+    right:-180px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+}
+
+.nutrition-basics::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+    height:400px;
+
+    background:radial-gradient(
+        rgba(255,255,255,.03),
+        transparent 70%
+    );
+
+    left:-150px;
+    bottom:-150px;
+
+    border-radius:50%;
+
+}
+
+/* ===========================
+   BASIC GRID
+=========================== */
+
+.basics-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    margin-top:60px;
+
+}
+
+.basic-card{
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.03),
+        rgba(255,255,255,.01)
+    );
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:40px 35px;
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.25);
+
+}
+
+.basic-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transition:.8s;
+
+}
+
+.basic-card:hover::before{
+
+    left:100%;
+
+}
+
+.basic-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:var(--primary);
+
+}
+
+.basic-card i{
+
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,107,0,.15);
+
+    color:var(--primary);
+
+    font-size:34px;
+
+    margin-bottom:25px;
+
+}
+
+.basic-card h3{
+
+    font-size:28px;
+
+    margin-bottom:18px;
+
+}
+
+.basic-card p{
+
+    color:var(--text2);
+
+    line-height:1.9;
+
+}
+
+.basic-card ul{
+
+    margin-top:20px;
+
+}
+
+.basic-card ul li{
+
+    color:var(--text2);
+
+    margin-bottom:14px;
+
+    padding-left:8px;
+
+    transition:.3s;
+
+}
+
+.basic-card ul li:hover{
+
+    color:#fff;
+
+    transform:translateX(8px);
+
+}
+
+/* ===========================
+   ENERGY SECTION
+=========================== */
+
+.energy-section{
+
+    margin-top:100px;
+
+}
+
+.energy-section h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+.energy-section>p{
+
+    text-align:center;
+
+    color:var(--text2);
+
+    max-width:750px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+.energy-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    margin-top:60px;
+
+}
+
+.energy-card{
+
+    padding:40px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.energy-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.energy-card i{
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
+}
+
+.energy-card h3{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.energy-card p{
+
+    color:#ddd;
+
+    margin-bottom:20px;
+
+}
+
+.energy-card h4{
+
+    color:#fff;
+
+    margin-bottom:10px;
+
+}
+
+.energy-card span{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+}
+
+/* Deficit */
+
+.deficit{
+
+    background:linear-gradient(
+        135deg,
+        rgba(239,68,68,.12),
+        rgba(239,68,68,.05)
+    );
+
+}
+
+.deficit i{
+
+    color:#ef4444;
+
+}
+
+.deficit span{
+
+    background:#ef4444;
+
+    color:#fff;
+
+}
+
+/* Maintenance */
+
+.maintain{
+
+    background:linear-gradient(
+        135deg,
+        rgba(34,197,94,.12),
+        rgba(34,197,94,.05)
+    );
+
+}
+
+.maintain i{
+
+    color:#22c55e;
+
+}
+
+.maintain span{
+
+    background:#22c55e;
+
+    color:#fff;
+
+}
+
+/* Surplus */
+
+.surplus{
+
+    background:linear-gradient(
+        135deg,
+        rgba(249,115,22,.12),
+        rgba(249,115,22,.05)
+    );
+
+}
+
+.surplus i{
+
+    color:#ff8c42;
+
+}
+
+.surplus span{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* ===========================
+   GOLDEN RULES
+=========================== */
+
+.golden-rules{
+
+    margin-top:110px;
+
+}
+
+.golden-rules h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:55px;
+
+}
+
+.rules-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:25px;
+
+}
+
+.rule-card{
+
+    background:var(--card);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.rule-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+.rule-card span{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.rule-card h4{
+
+    font-size:20px;
+
+    margin-bottom:15px;
+
+    line-height:1.4;
+
+}
+
+.rule-card p{
+
+    color:var(--text2);
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================
+   NUTRITION BASICS
+   RESPONSIVE & PREMIUM EFFECTS
+========================================== */
+
+/* ---------- Floating Animation ---------- */
+
+@keyframes floatCard{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+.basic-card:nth-child(2){
+
+    animation:floatCard 6s ease-in-out infinite;
+
+}
+
+.energy-card:nth-child(2){
+
+    animation:floatCard 7s ease-in-out infinite;
+
+}
+
+/* ---------- Glow Effect ---------- */
+
+.basic-card:hover{
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45),
+        0 0 20px rgba(255,107,0,.15);
+
+}
+
+.energy-card:hover{
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.45);
+
+}
+
+.rule-card:hover{
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.40);
+
+}
+
+/* ---------- Decorative Border ---------- */
+
+.basic-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.4s;
+
+}
+
+.basic-card:hover::after{
+
+    transform:scaleX(1);
+
+}
+
+.energy-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+}
+
+/* ---------- Tablet ---------- */
+
+@media(max-width:1200px){
+
+    .basics-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .energy-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .rules-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+}
+
+/* ---------- Tablet Portrait ---------- */
+
+@media(max-width:992px){
+
+    .nutrition-basics{
+
+        padding:80px 6%;
+
+    }
+
+    .energy-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .energy-section h2,
+    .golden-rules h2{
+
+        font-size:36px;
+
+    }
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media(max-width:768px){
+
+    .nutrition-basics{
+
+        padding:70px 5%;
+
+    }
+
+    .basics-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .rules-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .basic-card,
+    .energy-card,
+    .rule-card{
+
+        padding:28px;
+
+    }
+
+    .basic-card h3{
+
+        font-size:24px;
+
+    }
+
+    .energy-card h3{
+
+        font-size:24px;
+
+    }
+
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media(max-width:576px){
+
+    .nutrition-basics{
+
+        padding:60px 4%;
+
+    }
+
+    .energy-section h2,
+    .golden-rules h2{
+
+        font-size:28px;
+
+    }
+
+    .basic-card i{
+
+        width:65px;
+        height:65px;
+
+        font-size:28px;
+
+    }
+
+    .rule-card span{
+
+        width:45px;
+        height:45px;
+
+        font-size:14px;
+
+    }
+
+    .rules-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .basic-card,
+    .energy-card,
+    .rule-card{
+
+        padding:22px;
+
+    }
+
+}
+
+/* ---------- Very Small Devices ---------- */
+
+@media(max-width:380px){
+
+    .energy-section h2,
+    .golden-rules h2{
+
+        font-size:24px;
+
+    }
+
+    .basic-card h3{
+
+        font-size:22px;
+
+    }
+
+    .energy-card h3{
+
+        font-size:22px;
+
+    }
+
+    .rule-card h4{
+
+        font-size:18px;
+
+    }
+
+    .basic-card p,
+    .energy-card p,
+    .rule-card p{
+
+        font-size:14px;
+
+    }
+
+}
+
+/* ---------- Accessibility ---------- */
+
+.basic-card:focus-within,
+.energy-card:focus-within,
+.rule-card:focus-within{
+
+    outline:2px solid var(--primary);
+    outline-offset:4px;
+
+}
+
+/* ---------- Smooth Rendering ---------- */
+
+.basic-card,
+.energy-card,
+.rule-card{
+
+    will-change:transform;
+
+}
+
+
+
+
+
+
+/* ==========================================================
+   PROTEIN GUIDE PAGE
+   PART 1
+   Hero + Global + Intro + Benefits + Types
+==========================================================*/
+
+/*========================
+ROOT
+========================*/
+
+:root{
+
+--protein-primary:#ff4d30;
+--protein-secondary:#ff7b54;
+--protein-dark:#111111;
+--protein-dark2:#1b1b1b;
+--protein-light:#f8f8f8;
+--protein-text:#d7d7d7;
+--protein-border:rgba(255,255,255,.08);
+
+--shadow-lg:0 20px 50px rgba(0,0,0,.25);
+--shadow-md:0 12px 30px rgba(0,0,0,.18);
+
+--radius:18px;
+
+--transition:.35s ease;
+
+}
+
+/*========================
+PAGE
+========================*/
+
+.protein-page{
+
+background:#0d0d0d;
+color:#fff;
+overflow:hidden;
+
+}
+
+.protein-page section{
+
+padding:90px 0;
+
+}
+
+.protein-page img{
+
+max-width:100%;
+display:block;
+
+}
+
+.container{
+
+width:min(1180px,92%);
+margin:auto;
+
+}
+
+/*========================
+SECTION TITLE
+========================*/
+
+.section-title{
+
+text-align:center;
+margin-bottom:60px;
+
+}
+
+.section-title span{
+
+display:inline-block;
+padding:8px 18px;
+border-radius:30px;
+background:rgba(255,77,48,.12);
+color:var(--protein-primary);
+font-size:.9rem;
+font-weight:700;
+letter-spacing:1px;
+text-transform:uppercase;
+
+}
+
+.section-title h2{
+
+margin:18px 0;
+font-size:clamp(2rem,4vw,3rem);
+font-weight:800;
+line-height:1.2;
+
+}
+
+.section-title p{
+
+max-width:720px;
+margin:auto;
+font-size:1.05rem;
+line-height:1.8;
+color:var(--protein-text);
+
+}
+
+/*========================
+BUTTONS
+========================*/
+
+.btn{
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:15px 32px;
+border-radius:50px;
+background:var(--protein-primary);
+color:#fff;
+font-weight:700;
+text-decoration:none;
+transition:var(--transition);
+cursor:pointer;
+
+}
+
+.btn:hover{
+
+background:var(--protein-secondary);
+transform:translateY(-3px);
+
+}
+
+.btn-outline{
+
+background:transparent;
+border:2px solid var(--protein-primary);
+
+}
+
+.btn-outline:hover{
+
+background:var(--protein-primary);
+
+}
+
+/*========================
+HERO
+========================*/
+
+.protein-hero{
+
+padding:120px 0;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+url("../images/protein/protein-banner.jpg")
+center/cover no-repeat;
+
+}
+
+.hero-wrapper{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:60px;
+align-items:center;
+
+}
+
+.hero-content h1{
+
+font-size:clamp(2.8rem,5vw,4.7rem);
+font-weight:900;
+line-height:1.1;
+margin-bottom:25px;
+
+}
+
+.hero-content h1 span{
+
+color:var(--protein-primary);
+
+}
+
+.hero-content p{
+
+font-size:1.1rem;
+line-height:1.9;
+color:#e4e4e4;
+margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+
+}
+
+.hero-image{
+
+display:flex;
+justify-content:center;
+
+}
+
+.hero-image img{
+
+width:500px;
+filter:drop-shadow(0 30px 60px rgba(0,0,0,.45));
+
+}
+
+/*========================
+INTRO
+========================*/
+
+.protein-intro{
+
+background:#111;
+
+}
+
+.intro-grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+
+}
+
+.intro-image img{
+
+border-radius:var(--radius);
+box-shadow:var(--shadow-lg);
+
+}
+
+.intro-content h2{
+
+font-size:2.4rem;
+margin-bottom:25px;
+
+}
+
+.intro-content p{
+
+color:var(--protein-text);
+line-height:1.9;
+margin-bottom:20px;
+
+}
+
+.intro-list{
+
+margin-top:25px;
+
+}
+
+.intro-list li{
+
+list-style:none;
+padding:12px 0;
+font-size:1rem;
+color:#f2f2f2;
+
+}
+
+.intro-list li::before{
+
+content:"✔";
+color:var(--protein-primary);
+margin-right:10px;
+
+}
+
+/*========================
+BENEFITS
+========================*/
+
+.protein-benefits{
+
+background:#171717;
+
+}
+
+.benefits-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+.benefit-card{
+
+background:#202020;
+padding:35px;
+border-radius:var(--radius);
+text-align:center;
+transition:var(--transition);
+border:1px solid var(--protein-border);
+
+}
+
+.benefit-card:hover{
+
+transform:translateY(-10px);
+box-shadow:var(--shadow-md);
+
+}
+
+.benefit-card .icon{
+
+font-size:3rem;
+margin-bottom:20px;
+
+}
+
+.benefit-card h3{
+
+margin-bottom:15px;
+font-size:1.3rem;
+
+}
+
+.benefit-card p{
+
+color:var(--protein-text);
+line-height:1.7;
+
+}
+
+/*========================
+PROTEIN TYPES
+========================*/
+
+.protein-types{
+
+background:#111;
+
+}
+
+.types-grid{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:35px;
+
+}
+
+.type-card{
+
+background:#1f1f1f;
+padding:35px;
+border-radius:var(--radius);
+border-left:5px solid var(--protein-primary);
+transition:var(--transition);
+
+}
+
+.type-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.type-card h3{
+
+font-size:1.5rem;
+margin-bottom:15px;
+
+}
+
+.type-card p{
+
+color:var(--protein-text);
+line-height:1.8;
+
+}
+
+.type-card ul{
+
+margin-top:20px;
+padding-left:18px;
+
+}
+
+.type-card li{
+
+margin-bottom:10px;
+color:#ddd;
+
+}
+
+/*========================
+RESPONSIVE
+========================*/
+
+@media(max-width:992px){
+
+.hero-wrapper,
+.intro-grid,
+.types-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-image{
+
+order:-1;
+
+}
+
+.hero-image img{
+
+width:360px;
+
+}
+
+.benefits-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.protein-page section{
+
+padding:70px 0;
+
+}
+
+.hero-content{
+
+text-align:center;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-image img{
+
+width:300px;
+
+}
+
+.benefits-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.section-title{
+
+margin-bottom:45px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero-content h1{
+
+font-size:2.3rem;
+
+}
+
+.intro-content h2{
+
+font-size:2rem;
+
+}
+
+.btn{
+
+width:100%;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+}
+
 /* =========================================
    MACRONUTRIENTS
 ========================================= */

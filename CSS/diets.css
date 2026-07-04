@@ -1699,6 +1699,97 @@ margin-bottom:20px;
 box-shadow:0 10px 20px rgba(255,77,48,.3);
 }
 
+
+.protein-facts{
+    background:#111;
+    padding:90px 0;
+}
+.protein-facts{
+    height:auto;
+    min-height:auto;
+    padding:90px 0;
+}
+
+.facts-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.fact-box{
+    background:#1e1e1e;
+    border-radius:18px;
+    padding:35px 25px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.35s ease;
+}
+
+.fact-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 35px rgba(0,0,0,.3);
+}
+
+.fact-box h3{
+    font-size:2.5rem;
+    color:var(--protein-primary);
+    margin-bottom:15px;
+    font-weight:800;
+}
+
+.fact-box p{
+    color:#d5d5d5;
+    line-height:1.7;
+    font-size:1rem;
+}
+
+@media(max-width:768px){
+
+.facts-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:480px){
+
+.facts-grid{
+    grid-template-columns:1fr;
+}
+
+}
+.protein-facts .section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.fact-box{
+    min-height:240px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.fact-box:hover{
+
+transform:translateY(-10px);
+
+border-color:var(--protein-primary);
+
+}
+
+.fact-box h3{
+
+font-size:3.2rem;
+
+font-weight:800;
+
+letter-spacing:1px;
+
+text-shadow:0 0 15px rgba(255,77,48,.35);
+
+}
 /*========================
 BENEFITS
 ========================*/

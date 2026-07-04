@@ -578,3 +578,200 @@ header{
 
     line-height:1.8;
 }
+
+/* ===========================
+   NEWSLETTER
+=========================== */
+
+.newsletter{
+    text-align:center;
+    background:linear-gradient(135deg,#ff4d4d,#d62828);
+    color:#fff;
+}
+
+.newsletter h2{
+    font-size:2.8rem;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.newsletter p{
+    max-width:700px;
+    margin:0 auto 35px;
+    font-size:17px;
+    color:#f5f5f5;
+}
+
+.newsletter form{
+    max-width:700px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+}
+
+.newsletter input{
+    flex:1;
+    padding:18px 22px;
+    border:none;
+    border-radius:50px;
+    background:#fff;
+    color:#111;
+    font-size:16px;
+}
+
+.newsletter input::placeholder{
+    color:#777;
+}
+
+.newsletter button{
+    padding:18px 35px;
+    border:none;
+    border-radius:50px;
+    background:#111;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.newsletter button:hover{
+    background:#222;
+    transform:translateY(-4px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    background:#0b0b0b;
+    color:#ddd;
+    padding:80px 8% 25px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:50px;
+    margin-bottom:45px;
+}
+
+.footer-container h3{
+    color:#fff;
+    font-size:24px;
+    margin-bottom:20px;
+    position:relative;
+}
+
+.footer-container h3::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:60px;
+    height:3px;
+    background:#ff4d4d;
+}
+
+.footer-container p{
+    color:#aaa;
+    line-height:1.8;
+    margin-top:20px;
+}
+
+.footer-container a{
+    display:block;
+    color:#bbb;
+    margin:12px 0;
+    transition:.3s;
+}
+
+.footer-container a:hover{
+    color:#ff4d4d;
+    transform:translateX(8px);
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:20px;
+    text-align:center;
+    color:#888;
+    font-size:15px;
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+.fade-up{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+.contact-info{
+    animation:float 6s ease-in-out infinite;
+}
+
+/* ===========================
+   HOVER EFFECTS
+=========================== */
+
+.contact-form,
+.contact-info,
+.faq-item,
+.footer-container div{
+    transition:.35s;
+}
+
+.contact-form:hover,
+.contact-info:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+/* ===========================
+   TEXT SELECTION
+=========================== */
+
+::selection{
+    background:#ff4d4d;
+    color:#fff;
+}
+
+/* ===========================
+   SMOOTH TRANSITIONS
+=========================== */
+
+*{
+    transition:
+        background-color .3s,
+        color .3s,
+        border-color .3s;
+}

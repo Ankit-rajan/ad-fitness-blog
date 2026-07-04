@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:450px;
+}
+
+.signup-box{
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:20px;
+    padding:40px;
+    color:#fff;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+.signup-box h2{
+    text-align:center;
+    margin-bottom:10px;
+    font-size:32px;
+}
+
+.signup-box p{
+    text-align:center;
+    margin-bottom:30px;
+    color:#ddd;
+}
+
+.input-box{
+    margin-bottom:18px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:500;
+}
+
+.input-box input{
+    width:100%;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:rgba(255,255,255,.15);
+    color:#fff;
+    font-size:15px;
+    transition:.3s;
+}
+
+.input-box input::placeholder{
+    color:#ddd;
+}
+
+.input-box input:focus{
+    background:rgba(255,255,255,.22);
+    border:1px solid #60a5fa;
+}
+
+.terms{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin:18px 0 25px;
+    font-size:14px;
+}
+
+.terms a{
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+.terms a:hover{
+    text-decoration:underline;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#22c55e;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#16a34a;
+    transform:translateY(-2px);
+}
+
+.login-link{
+    text-align:center;
+    margin-top:20px;
+    color:#ddd;
+}
+
+.login-link a{
+    color:#60a5fa;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.login-link a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:480px){
+
+.signup-box{
+    padding:30px 25px;
+}
+
+.signup-box h2{
+    font-size:28px;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="signup-box">
+
+<h2>Create Account 🚀</h2>
+<p>Join us and start your journey today.</p>
+
+<form action="/signup" method="POST">
+
+<div class="input-box">
+<label for="name">Full Name</label>
+<input
+type="text"
+id="name"
+name="name"
+placeholder="Enter your full name"
+required>
+</div>
+
+<div class="input-box">
+<label for="email">Email Address</label>
+<input
+type="email"
+id="email"
+name="email"
+placeholder="Enter your email"
+required>
+</div>
+
+<div class="input-box">
+<label for="password">Password</label>
+<input
+type="password"
+id="password"
+name="password"
+placeholder="Create a password"
+required>
+</div>
+
+<div class="input-box">
+<label for="confirmPassword">Confirm Password</label>
+<input
+type="password"
+id="confirmPassword"
+name="confirmPassword"
+placeholder="Confirm your password"
+required>
+</div>
+
+<div class="terms">
+<input type="checkbox" required>
+
+<label>
+I agree to the
+<a href="#">Terms & Conditions</a>
+and
+<a href="#">Privacy Policy</a>.
+</label>
+
+</div>
+
+<button type="submit">Create Account</button>
+
+<div class="login-link">
+Already have an account?
+<a href="login.html">Login</a>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

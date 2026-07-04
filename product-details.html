@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AD Fitness | Product Details</title>
+
+  <link rel="stylesheet" href="CSS/product-details.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ===========================
+        HEADER
+=========================== -->
+
+<header class="header">
+
+  <div class="logo">
+    <a href="index.html">
+      <span>AD</span> Fitness
+    </a>
+  </div>
+
+  <nav>
+
+    <ul class="nav-links">
+
+      <li><a href="index.html">Home</a></li>
+
+      <li><a href="training.html">Training</a></li>
+
+      <li><a href="diet.html">Diet</a></li>
+
+      <li><a href="products.html" class="active">Products</a></li>
+
+      <li><a href="blog.html">Blog</a></li>
+
+      <li><a href="contact.html">Contact</a></li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+<!-- ===========================
+        BREADCRUMB
+=========================== -->
+
+<section class="breadcrumb">
+
+  <div class="container">
+
+    <a href="index.html">Home</a>
+
+    <i class="fa-solid fa-angle-right"></i>
+
+    <a href="products.html">Products</a>
+
+    <i class="fa-solid fa-angle-right"></i>
+
+    <span id="productCategory">Category</span>
+
+  </div>
+
+</section>
+
+<!-- ===========================
+      PRODUCT DETAILS
+=========================== -->
+
+<section class="product-details">
+
+<div class="container">
+
+<div class="product-wrapper">
+
+<!-- LEFT -->
+
+<div class="product-gallery">
+
+<div class="main-image">
+
+<img
+id="mainImage"
+src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800"
+alt="Product">
+
+</div>
+
+<div class="thumbnail-gallery">
+
+<img
+class="thumb active"
+src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800"
+alt="">
+
+<img
+class="thumb"
+src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800"
+alt="">
+
+<img
+class="thumb"
+src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800"
+alt="">
+
+<img
+class="thumb"
+src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=800"
+alt="">
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="product-info">
+
+<span class="product-badge">
+
+Best Seller
+
+</span>
+
+<h1 id="productName">
+
+Premium Whey Protein
+
+</h1>
+
+<div class="rating">
+
+<div class="stars">
+
+<i class="fa-solid fa-star"></i>
+
+<i class="fa-solid fa-star"></i>
+
+<i class="fa-solid fa-star"></i>
+
+<i class="fa-solid fa-star"></i>
+
+<i class="fa-solid fa-star-half-stroke"></i>
+
+</div>
+
+<span>(248 Reviews)</span>
+
+</div>
+
+<div class="price-box">
+
+<h2 id="productPrice">
+
+₹2,499
+
+</h2>
+
+<span class="old-price">
+
+₹2,999
+
+</span>
+
+<span class="discount">
+
+17% OFF
+
+</span>
+
+</div>
+
+<p class="short-description">
+
+High-quality whey protein specially formulated to support
+muscle recovery, strength, lean muscle growth, and overall
+fitness performance.
+
+</p>
+
+<!-- STOCK -->
+
+<div class="stock-box">
+
+<span class="stock available">
+
+<i class="fa-solid fa-circle-check"></i>
+
+In Stock
+
+</span>
+
+</div>
+
+<!-- FEATURES -->
+
+<div class="product-highlights">
+
+<h3>
+
+Highlights
+
+</h3>
+
+<ul>
+
+<li>
+
+<i class="fa-solid fa-check"></i>
+
+25g Protein Per Serving
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-check"></i>
+
+Fast Muscle Recovery
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-check"></i>
+
+Low Sugar Formula
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-check"></i>
+
+Gluten Free
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-check"></i>
+
+Trusted Quality
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- FLAVOUR -->
+
+<div class="option-group">
+
+<label>
+
+Select Flavour
+
+</label>
+
+<div class="options">
+
+<button class="option active">
+
+Chocolate
+
+</button>
+
+<button class="option">
+
+Vanilla
+
+</button>
+
+<button class="option">
+
+Strawberry
+
+</button>
+
+<button class="option">
+
+Cookies
+
+</button>
+
+</div>
+
+</div>
+
+<!-- SIZE -->
+
+<div class="option-group">
+
+<label>
+
+Select Size
+
+</label>
+
+<div class="options">
+
+<button class="option">
+
+1 KG
+
+</button>
+
+<button class="option active">
+
+2 KG
+
+</button>
+
+<button class="option">
+
+4 KG
+
+</button>
+
+</div>
+
+</div>
+
+<!-- QUANTITY -->
+
+<div class="quantity-wrapper">
+
+<label>
+
+Quantity
+
+</label>
+
+<div class="quantity-box">
+
+<button id="minusBtn">
+
+<i class="fa-solid fa-minus"></i>
+
+</button>
+
+<input
+type="text"
+id="quantity"
+value="1"
+readonly>
+
+<button id="plusBtn">
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- BUTTONS -->
+
+<div class="action-buttons">
+
+<button class="cart-btn">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Add To Cart
+
+</button>
+
+<button class="buy-btn">
+
+Buy Now
+
+</button>
+
+</div>
+
+<!-- DELIVERY -->
+
+<div class="delivery-box">
+
+<div class="delivery-item">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<div>
+
+<h4>
+
+Free Delivery
+
+</h4>
+
+<p>
+
+On Orders Above ₹999
+
+</p>
+
+</div>
+
+</div>
+
+<div class="delivery-item">
+
+<i class="fa-solid fa-rotate-left"></i>
+
+<div>
+
+<h4>
+
+Easy Returns
+
+</h4>
+
+<p>
+
+7 Days Return Policy
+
+</p>
+
+</div>
+
+</div>
+
+<div class="delivery-item">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<div>
+
+<h4>
+
+100% Authentic
+
+</h4>
+
+<p>
+
+Original Guaranteed Products
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Continue in Part 2 -->
+
+
+
+<!-- ===========================
+        PRODUCT TABS
+=========================== -->
+
+<section class="product-tabs">
+
+  <div class="container">
+
+    <div class="tab-buttons">
+
+      <button class="tab-btn active" data-tab="description">
+        Description
+      </button>
+
+      <button class="tab-btn" data-tab="ingredients">
+        Ingredients
+      </button>
+
+      <button class="tab-btn" data-tab="nutrition">
+        Nutrition
+      </button>
+
+      <button class="tab-btn" data-tab="reviews">
+        Reviews
+      </button>
+
+    </div>
+
+    <!-- Description -->
+
+    <div class="tab-content active" id="description">
+
+      <h2>Product Description</h2>
+
+      <p>
+        AD Fitness Premium Whey Protein is designed for athletes,
+        gym lovers, and anyone looking to increase daily protein
+        intake. It provides high-quality protein that helps
+        improve muscle recovery, build lean muscle mass,
+        and support strength after every workout.
+      </p>
+
+      <p>
+        Every scoop delivers premium protein with essential
+        amino acids and BCAAs. It mixes easily in water or milk,
+        tastes delicious, and contains minimal sugar and fat.
+      </p>
+
+      <ul class="description-list">
+
+        <li>✔ Premium Whey Protein</li>
+
+        <li>✔ 25g Protein Per Scoop</li>
+
+        <li>✔ Rich in BCAAs & EAAs</li>
+
+        <li>✔ Fast Digestion</li>
+
+        <li>✔ Supports Muscle Recovery</li>
+
+        <li>✔ Great Taste</li>
+
+      </ul>
+
+    </div>
+
+    <!-- Ingredients -->
+
+    <div class="tab-content" id="ingredients">
+
+      <h2>Ingredients</h2>
+
+      <ul class="ingredients-list">
+
+        <li>Whey Protein Concentrate</li>
+
+        <li>Whey Protein Isolate</li>
+
+        <li>Cocoa Powder</li>
+
+        <li>Natural & Artificial Flavours</li>
+
+        <li>Digestive Enzymes</li>
+
+        <li>Sweetener</li>
+
+        <li>Vitamin Blend</li>
+
+      </ul>
+
+    </div>
+
+    <!-- Nutrition -->
+
+    <div class="tab-content" id="nutrition">
+
+      <h2>Nutrition Facts</h2>
+
+      <table class="nutrition-table">
+
+        <tr>
+          <th>Serving Size</th>
+          <td>35g</td>
+        </tr>
+
+        <tr>
+          <th>Calories</th>
+          <td>130 kcal</td>
+        </tr>
+
+        <tr>
+          <th>Protein</th>
+          <td>25g</td>
+        </tr>
+
+        <tr>
+          <th>Carbohydrates</th>
+          <td>4g</td>
+        </tr>
+
+        <tr>
+          <th>Sugar</th>
+          <td>1g</td>
+        </tr>
+
+        <tr>
+          <th>Fat</th>
+          <td>2g</td>
+        </tr>
+
+        <tr>
+          <th>BCAA</th>
+          <td>5.5g</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <!-- Reviews -->
+
+    <div class="tab-content" id="reviews">
+
+      <h2>Customer Reviews</h2>
+
+      <div class="review-card">
+
+        <div class="review-top">
+
+          <h4>Rahul Sharma</h4>
+
+          <div class="stars">
+
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+
+          </div>
+
+        </div>
+
+        <p>
+          Excellent quality protein. Mixes well and tastes
+          amazing. Recovery has improved significantly.
+        </p>
+
+      </div>
+
+      <div class="review-card">
+
+        <div class="review-top">
+
+          <h4>Aman Verma</h4>
+
+          <div class="stars">
+
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+
+          </div>
+
+        </div>
+
+        <p>
+          Good product with authentic taste and fast delivery.
+          Worth the price.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===========================
+      RELATED PRODUCTS
+=========================== -->
+
+<section class="related-products">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Related Products
+    </h2>
+
+    <div class="related-grid">
+
+      <!-- Card 1 -->
+
+      <div class="related-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600"
+          alt="Product">
+
+        <h3>Creatine Monohydrate</h3>
+
+        <p>₹899</p>
+
+        <a href="product-details.html" class="view-btn">
+          View Details
+        </a>
+
+      </div>
+
+      <!-- Card 2 -->
+
+      <div class="related-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600"
+          alt="Product">
+
+        <h3>Pre Workout</h3>
+
+        <p>₹1,299</p>
+
+        <a href="product-details.html" class="view-btn">
+          View Details
+        </a>
+
+      </div>
+
+      <!-- Card 3 -->
+
+      <div class="related-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=600"
+          alt="Product">
+
+        <h3>Mass Gainer</h3>
+
+        <p>₹2,199</p>
+
+        <a href="product-details.html" class="view-btn">
+          View Details
+        </a>
+
+      </div>
+
+      <!-- Card 4 -->
+
+      <div class="related-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=600"
+          alt="Product">
+
+        <h3>Shaker Bottle</h3>
+
+        <p>₹399</p>
+
+        <a href="product-details.html" class="view-btn">
+          View Details
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===========================
+          FOOTER
+=========================== -->
+
+<footer class="footer">
+
+  <div class="container">
+
+    <p>
+      © 2026 AD Fitness. All Rights Reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+<!-- ===========================
+          JS
+=========================== -->
+
+<script src="JS/product-details.js"></script>
+
+</body>
+</html>

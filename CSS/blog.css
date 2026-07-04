@@ -1,0 +1,702 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+    position:sticky;
+    top:0;
+    left:0;
+    width:100%;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+    z-index:1000;
+}
+
+.logo a{
+    font-size:30px;
+    font-weight:700;
+    color:#111;
+}
+
+.logo span{
+    color:#0077ff;
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+nav ul li a{
+    font-size:16px;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#0077ff;
+}
+
+nav ul li i{
+    font-size:22px;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.blog-hero{
+    width:100%;
+    min-height:45vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(135deg,#0077ff,#00b7ff);
+    color:#fff;
+}
+
+.blog-hero h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.blog-hero p{
+    max-width:700px;
+    font-size:18px;
+    opacity:.95;
+}
+
+/* ==========================
+   BLOG SECTION
+========================== */
+
+.blog-container{
+    width:90%;
+    max-width:1300px;
+    margin:70px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:35px;
+}
+
+.blog-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.blog-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+.blog-card img{
+    height:240px;
+    object-fit:cover;
+}
+
+.blog-content{
+    padding:25px;
+}
+
+.blog-content h2{
+    font-size:24px;
+    margin-bottom:15px;
+    color:#111;
+}
+
+.blog-content p{
+    color:#666;
+    font-size:15px;
+    margin-bottom:22px;
+}
+
+.blog-content a{
+    display:inline-block;
+    padding:12px 22px;
+    background:#0077ff;
+    color:#fff;
+    border-radius:8px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.blog-content a:hover{
+    background:#005fd4;
+}
+
+/* ==========================
+   NEWSLETTER SECTION
+========================== */
+
+.newsletter{
+    width:90%;
+    max-width:900px;
+    margin:80px auto;
+    padding:60px 40px;
+    background:#fff;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.newsletter h2{
+    font-size:36px;
+    color:#111;
+    margin-bottom:15px;
+}
+
+.newsletter p{
+    color:#666;
+    font-size:16px;
+    margin-bottom:35px;
+    line-height:1.7;
+}
+
+.newsletter form{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.newsletter input{
+    flex:1;
+    min-width:280px;
+    max-width:500px;
+    padding:16px 20px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+.newsletter input:focus{
+    border-color:#0077ff;
+    box-shadow:0 0 0 4px rgba(0,119,255,.12);
+}
+
+.newsletter button{
+    padding:16px 32px;
+    background:#0077ff;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.newsletter button:hover{
+    background:#005fd4;
+    transform:translateY(-2px);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    background:#111;
+    color:#fff;
+    margin-top:80px;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px 30px;
+    text-align:center;
+}
+
+.footer-content h2{
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+.footer-content p{
+    max-width:650px;
+    margin:0 auto 25px;
+    color:#bbb;
+    line-height:1.8;
+}
+
+.social{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    margin-top:15px;
+}
+
+.social a{
+    width:48px;
+    height:48px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:#222;
+    color:#fff;
+    font-size:18px;
+    transition:.3s;
+}
+
+.social a:hover{
+    background:#0077ff;
+    transform:translateY(-5px);
+}
+
+.copyright{
+    text-align:center;
+    padding:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#999;
+    font-size:15px;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+.blog-card{
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.newsletter{
+    animation:zoomIn .8s ease;
+}
+
+@keyframes zoomIn{
+
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/* ==========================
+   CUSTOM SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#ececec;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#0077ff;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#005fd4;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+/* ---------- Large Devices ---------- */
+
+@media (max-width:1200px){
+
+header{
+    padding:18px 5%;
+}
+
+.blog-container{
+    width:95%;
+    gap:30px;
+}
+
+.blog-hero h1{
+    font-size:46px;
+}
+
+}
+
+/* ---------- Laptop ---------- */
+
+@media (max-width:992px){
+
+header{
+    flex-direction:column;
+    gap:18px;
+    padding:20px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+}
+
+.blog-hero{
+    min-height:40vh;
+    padding:60px 25px;
+}
+
+.blog-hero h1{
+    font-size:40px;
+}
+
+.blog-hero p{
+    font-size:17px;
+}
+
+.blog-container{
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+
+.newsletter{
+    width:94%;
+    padding:50px 30px;
+}
+
+.newsletter h2{
+    font-size:32px;
+}
+
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:768px){
+
+.logo a{
+    font-size:28px;
+}
+
+nav ul{
+    gap:14px;
+}
+
+nav ul li a{
+    font-size:15px;
+}
+
+.blog-hero h1{
+    font-size:34px;
+}
+
+.blog-hero p{
+    font-size:16px;
+}
+
+.blog-container{
+    width:92%;
+    margin:50px auto;
+    grid-template-columns:1fr;
+}
+
+.blog-card img{
+    height:220px;
+}
+
+.blog-content{
+    padding:22px;
+}
+
+.blog-content h2{
+    font-size:22px;
+}
+
+.newsletter{
+    padding:40px 25px;
+}
+
+.newsletter h2{
+    font-size:28px;
+}
+
+.newsletter form{
+    flex-direction:column;
+}
+
+.newsletter input{
+    width:100%;
+    max-width:100%;
+}
+
+.newsletter button{
+    width:100%;
+}
+
+.footer-content{
+    padding:50px 20px 30px;
+}
+
+.footer-content h2{
+    font-size:30px;
+}
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:576px){
+
+header{
+    padding:16px;
+}
+
+.logo a{
+    font-size:25px;
+}
+
+nav ul{
+    gap:12px;
+}
+
+nav ul li a{
+    font-size:14px;
+}
+
+nav ul li i{
+    font-size:18px;
+}
+
+.blog-hero{
+    padding:50px 18px;
+}
+
+.blog-hero h1{
+    font-size:30px;
+}
+
+.blog-hero p{
+    font-size:15px;
+}
+
+.blog-card{
+    border-radius:14px;
+}
+
+.blog-card img{
+    height:200px;
+}
+
+.blog-content{
+    padding:18px;
+}
+
+.blog-content h2{
+    font-size:20px;
+}
+
+.blog-content p{
+    font-size:14px;
+}
+
+.blog-content a{
+    width:100%;
+    text-align:center;
+    padding:12px;
+}
+
+.newsletter{
+    margin:60px auto;
+    padding:35px 18px;
+}
+
+.newsletter h2{
+    font-size:24px;
+}
+
+.newsletter p{
+    font-size:14px;
+}
+
+.newsletter input,
+.newsletter button{
+    font-size:15px;
+    padding:14px;
+}
+
+.social{
+    gap:14px;
+}
+
+.social a{
+    width:42px;
+    height:42px;
+    font-size:16px;
+}
+
+.copyright{
+    font-size:14px;
+}
+
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:400px){
+
+.blog-hero h1{
+    font-size:26px;
+}
+
+.blog-hero p{
+    font-size:14px;
+}
+
+.blog-card img{
+    height:180px;
+}
+
+.blog-content h2{
+    font-size:18px;
+}
+
+.footer-content h2{
+    font-size:26px;
+}
+
+.footer-content p{
+    font-size:14px;
+}
+
+.social a{
+    width:38px;
+    height:38px;
+    font-size:15px;
+}
+
+}
+
+/* ---------- Extra Small ---------- */
+
+@media (max-width:320px){
+
+.logo a{
+    font-size:22px;
+}
+
+nav ul{
+    gap:8px;
+}
+
+nav ul li a{
+    font-size:13px;
+}
+
+.blog-hero h1{
+    font-size:22px;
+}
+
+.blog-content{
+    padding:15px;
+}
+
+.blog-content h2{
+    font-size:17px;
+}
+
+.blog-content p{
+    font-size:13px;
+}
+
+.newsletter h2{
+    font-size:20px;
+}
+
+.newsletter p{
+    font-size:13px;
+}
+
+.newsletter input,
+.newsletter button{
+    padding:12px;
+    font-size:14px;
+}
+
+.footer-content{
+    padding:40px 15px 25px;
+}
+
+.copyright{
+    font-size:12px;
+}
+
+}
+

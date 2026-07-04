@@ -2,56 +2,1467 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Under Construction</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .construction {
-      width: 750px;
-      max-width: 90%;
-      margin-bottom: 20px;
-    }
+    <title>AD Fitness | Diet & Nutrition</title>
 
-    a.home-link {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      background-color: #ff5722;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      transition: all 0.3s;
-    }
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/diets.css">
 
-    a.home-link:hover {
-      background-color: #e64a19;
-    }
-  </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-  <img src="https://giffiles.alphacoders.com/158/158667.gif" alt="Under Construction" class="construction" />
-  
-  <!-- 🔁 Change this line for each page -->
-  <h1>Diet Page Under Construction</h1>
-  
-  <p>We're working on it. Please check back soon!</p>
 
-  <a href="../index.html" class="home-link">Go to Home Page</a>
+    <!-- ========================= -->
+    <!-- Scroll Progress -->
+    <!-- ========================= -->
+
+    <div id="progress-bar"></div>
+
+    <!-- ========================= -->
+    <!-- Back To Top -->
+    <!-- ========================= -->
+
+    <button id="topBtn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ========================= -->
+    <!-- Hero -->
+    <!-- ========================= -->
+
+    <header class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="hero-content" data-aos="fade-right">
+
+            <span class="tag">
+                <i class="fa-solid fa-leaf"></i>
+                Nutrition • Healthy Lifestyle
+            </span>
+
+            <h1>
+                Eat Better.<br>
+                Feel Better.<br>
+                Live Stronger.
+            </h1>
+
+            <p>
+
+                A balanced diet is the foundation of a healthy body.
+                Fuel yourself with the right nutrients, improve performance,
+                build muscle, lose fat and become the best version of yourself.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#goals" class="btn primary">
+                    Explore Plans
+                </a>
+
+                <a href="#calculator" class="btn secondary">
+                    Calculate Calories
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- Quick Stats -->
+    <!-- ========================= -->
+
+    <section class="stats">
+
+        <div class="stat-card" data-aos="zoom-in">
+
+            <i class="fa-solid fa-fire"></i>
+
+            <h2>2500+</h2>
+
+            <p>Healthy Recipes</p>
+
+        </div>
+
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <h2>100%</h2>
+
+            <p>Balanced Nutrition</p>
+
+        </div>
+
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+
+            <i class="fa-solid fa-glass-water"></i>
+
+            <h2>3-4 L</h2>
+
+            <p>Recommended Water</p>
+
+        </div>
+
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+
+            <i class="fa-solid fa-dumbbell"></i>
+
+            <h2>All Goals</h2>
+
+            <p>Weight Loss • Gain • Maintain</p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Goals -->
+    <!-- ========================= -->
+
+    <section id="goals" class="goals">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Choose Your Goal</span>
+
+            <h2>Nutrition Plans For Everyone</h2>
+
+            <p>
+
+                Whether your goal is fat loss, muscle gain,
+                or maintaining a healthy lifestyle,
+                choose the plan that fits you.
+
+            </p>
+
+        </div>
+
+        <div class="goal-grid">
+
+            <!-- Fat Loss -->
+
+            <div class="goal-card" data-aos="fade-up">
+
+                <i class="fa-solid fa-fire-flame-curved"></i>
+
+                <h3>Weight Loss</h3>
+
+                <p>
+
+                    Burn body fat safely by maintaining
+                    a calorie deficit while preserving lean muscle.
+
+                </p>
+
+                <ul>
+
+                    <li><i class="fa-solid fa-check"></i> High Protein</li>
+
+                    <li><i class="fa-solid fa-check"></i> Low Added Sugar</li>
+
+                    <li><i class="fa-solid fa-check"></i> Fiber Rich Foods</li>
+
+                    <li><i class="fa-solid fa-check"></i> Healthy Fats</li>
+
+                    <li><i class="fa-solid fa-check"></i> Plenty of Water</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Muscle Gain -->
+
+            <div class="goal-card active" data-aos="fade-up" data-aos-delay="150">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                <h3>Muscle Gain</h3>
+
+                <p>
+
+                    Build lean muscle by combining strength training
+                    with a calorie surplus and protein-rich meals.
+
+                </p>
+
+                <ul>
+
+                    <li><i class="fa-solid fa-check"></i> Protein Rich Meals</li>
+
+                    <li><i class="fa-solid fa-check"></i> Complex Carbohydrates</li>
+
+                    <li><i class="fa-solid fa-check"></i> Healthy Fats</li>
+
+                    <li><i class="fa-solid fa-check"></i> Progressive Training</li>
+
+                    <li><i class="fa-solid fa-check"></i> Proper Recovery</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Maintain -->
+
+            <div class="goal-card" data-aos="fade-up" data-aos-delay="300">
+
+                <i class="fa-solid fa-scale-balanced"></i>
+
+                <h3>Maintenance</h3>
+
+                <p>
+
+                    Maintain your current weight while improving
+                    overall health, energy and performance.
+
+                </p>
+
+                <ul>
+
+                    <li><i class="fa-solid fa-check"></i> Balanced Calories</li>
+
+                    <li><i class="fa-solid fa-check"></i> Daily Activity</li>
+
+                    <li><i class="fa-solid fa-check"></i> Fruits & Vegetables</li>
+
+                    <li><i class="fa-solid fa-check"></i> Good Sleep</li>
+
+                    <li><i class="fa-solid fa-check"></i> Consistency</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Macronutrients -->
+    <!-- ========================= -->
+
+    <section class="macros">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Macronutrients</span>
+
+            <h2>Your Body Needs The Right Fuel</h2>
+
+            <p>
+
+                Protein, carbohydrates, healthy fats and fiber
+                are the pillars of a balanced diet.
+
+            </p>
+
+        </div>
+
+        <div class="macro-grid">
+
+            <!-- Protein -->
+
+            <div class="macro-card" data-aos="zoom-in">
+
+                <i class="fa-solid fa-drumstick-bite"></i>
+
+                <h3>Protein</h3>
+
+                <h4>Muscle Building & Recovery</h4>
+
+                <ul>
+
+                    <li>Chicken Breast</li>
+
+                    <li>Eggs</li>
+
+                    <li>Fish</li>
+
+                    <li>Paneer</li>
+
+                    <li>Tofu</li>
+
+                    <li>Milk</li>
+
+                    <li>Greek Yogurt</li>
+
+                    <li>Dal</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Carbs -->
+
+            <div class="macro-card" data-aos="zoom-in" data-aos-delay="100">
+
+                <i class="fa-solid fa-wheat-awn"></i>
+
+                <h3>Carbohydrates</h3>
+
+                <h4>Main Energy Source</h4>
+
+                <ul>
+
+                    <li>Brown Rice</li>
+
+                    <li>Whole Wheat</li>
+
+                    <li>Oats</li>
+
+                    <li>Sweet Potato</li>
+
+                    <li>Banana</li>
+
+                    <li>Quinoa</li>
+
+                    <li>Corn</li>
+
+                    <li>Millets</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Healthy Fats -->
+
+            <div class="macro-card" data-aos="zoom-in" data-aos-delay="200">
+
+                <i class="fa-solid fa-seedling"></i>
+
+                <h3>Healthy Fats</h3>
+
+                <h4>Hormone & Brain Health</h4>
+
+                <ul>
+
+                    <li>Almonds</li>
+
+                    <li>Walnuts</li>
+
+                    <li>Peanuts</li>
+
+                    <li>Olive Oil</li>
+
+                    <li>Flax Seeds</li>
+
+                    <li>Chia Seeds</li>
+
+                    <li>Avocado</li>
+
+                    <li>Peanut Butter</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Fiber -->
+
+            <div class="macro-card" data-aos="zoom-in" data-aos-delay="300">
+
+                <i class="fa-solid fa-carrot"></i>
+
+                <h3>Fiber</h3>
+
+                <h4>Better Digestion</h4>
+
+                <ul>
+
+                    <li>Broccoli</li>
+
+                    <li>Spinach</li>
+
+                    <li>Apple</li>
+
+                    <li>Orange</li>
+
+                    <li>Beans</li>
+
+                    <li>Carrot</li>
+
+                    <li>Cucumber</li>
+
+                    <li>Salads</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section> 
+
+        <!-- ========================= -->
+    <!-- BMI & Calorie Calculator -->
+    <!-- ========================= -->
+
+    <section id="calculator" class="calculator">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Health Calculator</span>
+
+            <h2>BMI & Daily Calorie Calculator</h2>
+
+            <p>
+
+                Calculate your Body Mass Index (BMI) and estimate your
+                daily calorie needs based on your goals.
+
+            </p>
+
+        </div>
+
+        <div class="calculator-grid">
+
+            <!-- BMI -->
+
+            <div class="calculator-card" data-aos="fade-right">
+
+                <h3>
+                    <i class="fa-solid fa-weight-scale"></i>
+                    BMI Calculator
+                </h3>
+
+                <div class="input-group">
+                    <label>Height (cm)</label>
+                    <input type="number" id="height" placeholder="e.g. 175">
+                </div>
+
+                <div class="input-group">
+                    <label>Weight (kg)</label>
+                    <input type="number" id="weight" placeholder="e.g. 70">
+                </div>
+
+                <button id="bmiBtn" class="btn primary">
+                    Calculate BMI
+                </button>
+
+                <div class="result-box">
+
+                    <h4 id="bmiResult">Your BMI : --</h4>
+
+                    <p id="bmiStatus">
+                        Enter your height and weight.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Calories -->
+
+            <div class="calculator-card" data-aos="fade-left">
+
+                <h3>
+
+                    <i class="fa-solid fa-fire"></i>
+
+                    Daily Calories
+
+                </h3>
+
+                <div class="input-group">
+                    <label>Age</label>
+                    <input type="number" id="age" placeholder="Age">
+                </div>
+
+                <div class="input-group">
+
+                    <label>Gender</label>
+
+                    <select id="gender">
+
+                        <option value="male">Male</option>
+
+                        <option value="female">Female</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Goal</label>
+
+                    <select id="goal">
+
+                        <option value="loss">Weight Loss</option>
+
+                        <option value="maintain">Maintain</option>
+
+                        <option value="gain">Weight Gain</option>
+
+                    </select>
+
+                </div>
+
+                <button id="calorieBtn" class="btn primary">
+
+                    Estimate Calories
+
+                </button>
+
+                <div class="result-box">
+
+                    <h4 id="calorieResult">
+
+                        Calories : --
+
+                    </h4>
+
+                    <p>
+
+                        Approximate daily calorie requirement.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Meal Timing -->
+    <!-- ========================= -->
+
+    <section class="meal-timing">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Meal Timing</span>
+
+            <h2>Eat At The Right Time</h2>
+
+            <p>
+
+                Consistent meal timing helps improve energy,
+                digestion and workout performance.
+
+            </p>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item" data-aos="fade-right">
+
+                <span>7:00 AM</span>
+
+                <h3>Breakfast</h3>
+
+                <p>
+
+                    Oats, Eggs / Paneer,
+                    Milk and Fruits.
+
+                </p>
+
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+
+                <span>10:30 AM</span>
+
+                <h3>Healthy Snack</h3>
+
+                <p>
+
+                    Apple, Banana,
+                    Nuts or Roasted Chana.
+
+                </p>
+
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+
+                <span>1:00 PM</span>
+
+                <h3>Lunch</h3>
+
+                <p>
+
+                    Rice / Roti,
+                    Protein,
+                    Vegetables,
+                    Salad.
+
+                </p>
+
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+
+                <span>5:00 PM</span>
+
+                <h3>Evening Snack</h3>
+
+                <p>
+
+                    Peanut Butter Toast,
+                    Fruit,
+                    Coffee.
+
+                </p>
+
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+
+                <span>8:00 PM</span>
+
+                <h3>Dinner</h3>
+
+                <p>
+
+                    Lean Protein,
+                    Vegetables,
+                    Healthy Fats.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Workout Nutrition -->
+    <!-- ========================= -->
+
+    <section class="nutrition">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Workout Nutrition</span>
+
+            <h2>Fuel Before & Recover After</h2>
+
+        </div>
+
+        <div class="nutrition-grid">
+
+            <!-- Pre -->
+
+            <div class="nutrition-card" data-aos="fade-right">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>Pre Workout</h3>
+
+                <p>
+
+                    Eat 60–90 minutes before training.
+
+                </p>
+
+                <ul>
+
+                    <li>Banana</li>
+
+                    <li>Oats</li>
+
+                    <li>Whole Wheat Bread</li>
+
+                    <li>Peanut Butter</li>
+
+                    <li>Coffee</li>
+
+                    <li>Greek Yogurt</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Post -->
+
+            <div class="nutrition-card" data-aos="fade-left">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                <h3>Post Workout</h3>
+
+                <p>
+
+                    Eat within 30–60 minutes after exercise.
+
+                </p>
+
+                <ul>
+
+                    <li>Protein Shake</li>
+
+                    <li>Eggs</li>
+
+                    <li>Chicken Breast</li>
+
+                    <li>Paneer</li>
+
+                    <li>Rice</li>
+
+                    <li>Banana</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Water Intake -->
+    <!-- ========================= -->
+
+    <section class="water">
+
+        <div class="water-box" data-aos="zoom-in">
+
+            <i class="fa-solid fa-glass-water"></i>
+
+            <h2>
+
+                Stay Hydrated
+
+            </h2>
+
+            <h3>
+
+                Drink 2.5–4 Litres Every Day
+
+            </h3>
+
+            <p>
+
+                Water supports muscle recovery,
+                digestion,
+                brain function
+                and athletic performance.
+
+            </p>
+
+            <div class="water-tips">
+
+                <div>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Before Workout
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    During Workout
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    After Workout
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Carry Water Bottle
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Foods -->
+    <!-- ========================= -->
+
+    <section class="foods">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Healthy Choices</span>
+
+            <h2>Foods To Eat & Avoid</h2>
+
+        </div>
+
+        <div class="foods-grid">
+
+            <!-- Eat -->
+
+            <div class="food-card eat" data-aos="fade-right">
+
+                <h3>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Foods To Eat
+
+                </h3>
+
+                <ul>
+
+                    <li>Chicken Breast</li>
+
+                    <li>Fish</li>
+
+                    <li>Eggs</li>
+
+                    <li>Paneer</li>
+
+                    <li>Tofu</li>
+
+                    <li>Dal</li>
+
+                    <li>Brown Rice</li>
+
+                    <li>Whole Wheat</li>
+
+                    <li>Oats</li>
+
+                    <li>Sweet Potato</li>
+
+                    <li>Banana</li>
+
+                    <li>Apple</li>
+
+                    <li>Orange</li>
+
+                    <li>Broccoli</li>
+
+                    <li>Spinach</li>
+
+                    <li>Cucumber</li>
+
+                    <li>Tomato</li>
+
+                    <li>Milk</li>
+
+                    <li>Curd</li>
+
+                    <li>Dry Fruits</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Avoid -->
+
+            <div class="food-card avoid" data-aos="fade-left">
+
+                <h3>
+
+                    <i class="fa-solid fa-circle-xmark"></i>
+
+                    Foods To Avoid
+
+                </h3>
+
+                <ul>
+
+                    <li>Soft Drinks</li>
+
+                    <li>Deep Fried Foods</li>
+
+                    <li>Fast Food</li>
+
+                    <li>Refined Sugar</li>
+
+                    <li>Candy</li>
+
+                    <li>Bakery Items</li>
+
+                    <li>Processed Meat</li>
+
+                    <li>Alcohol</li>
+
+                    <li>Energy Drinks</li>
+
+                    <li>Excess Salt</li>
+
+                    <li>Packaged Chips</li>
+
+                    <li>Instant Noodles</li>
+
+                    <li>Sugary Cereals</li>
+
+                    <li>Processed Snacks</li>
+
+                    <li>Artificial Sweet Drinks</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- ========================= -->
+    <!-- Weight Loss Meal Plan -->
+    <!-- ========================= -->
+
+    <section class="meal-plan">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Meal Plans</span>
+
+            <h2>Weight Loss Diet Plan</h2>
+
+            <p>
+                A balanced meal plan focused on calorie deficit,
+                high protein and fiber-rich foods.
+            </p>
+
+        </div>
+
+        <div class="table-wrapper" data-aos="fade-up">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Meal</th>
+                        <th>Foods</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Breakfast</td>
+                        <td>Oats + Milk + Apple</td>
+                    </tr>
+
+                    <tr>
+                        <td>Morning Snack</td>
+                        <td>Roasted Chana + Green Tea</td>
+                    </tr>
+
+                    <tr>
+                        <td>Lunch</td>
+                        <td>2 Roti + Dal + Salad + Vegetables</td>
+                    </tr>
+
+                    <tr>
+                        <td>Evening Snack</td>
+                        <td>Fruit + Handful of Almonds</td>
+                    </tr>
+
+                    <tr>
+                        <td>Dinner</td>
+                        <td>Paneer / Chicken + Vegetables</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Weight Gain -->
+    <!-- ========================= -->
+
+    <section class="meal-plan gain">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Meal Plans</span>
+
+            <h2>Weight Gain Diet Plan</h2>
+
+        </div>
+
+        <div class="table-wrapper" data-aos="fade-up">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Meal</th>
+
+                        <th>Foods</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Breakfast</td>
+
+                        <td>Oats + Banana + Peanut Butter + Milk</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Morning Snack</td>
+
+                        <td>Dry Fruits + Fruit Juice</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Lunch</td>
+
+                        <td>Rice + Chicken / Paneer + Vegetables</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Evening Snack</td>
+
+                        <td>Protein Shake + Banana</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Dinner</td>
+
+                        <td>Rice + Paneer / Fish + Salad</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Before Bed</td>
+
+                        <td>Warm Milk</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Vegetarian -->
+    <!-- ========================= -->
+
+    <section class="diet-types">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Healthy Diet</span>
+
+            <h2>Vegetarian & Non-Vegetarian</h2>
+
+        </div>
+
+        <div class="diet-grid">
+
+            <div class="diet-card" data-aos="fade-right">
+
+                <i class="fa-solid fa-seedling"></i>
+
+                <h3>Vegetarian</h3>
+
+                <ul>
+
+                    <li>Paneer</li>
+                    <li>Tofu</li>
+                    <li>Soy Chunks</li>
+                    <li>Milk</li>
+                    <li>Curd</li>
+                    <li>Rajma</li>
+                    <li>Chickpeas</li>
+                    <li>Dal</li>
+                    <li>Oats</li>
+                    <li>Quinoa</li>
+
+                </ul>
+
+            </div>
+
+            <div class="diet-card" data-aos="fade-left">
+
+                <i class="fa-solid fa-drumstick-bite"></i>
+
+                <h3>Non Vegetarian</h3>
+
+                <ul>
+
+                    <li>Chicken Breast</li>
+                    <li>Eggs</li>
+                    <li>Fish</li>
+                    <li>Turkey</li>
+                    <li>Prawns</li>
+                    <li>Lean Meat</li>
+                    <li>Greek Yogurt</li>
+                    <li>Milk</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Supplements -->
+    <!-- ========================= -->
+
+    <section class="supplements">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Optional Support</span>
+
+            <h2>Popular Fitness Supplements</h2>
+
+            <p>
+
+                Supplements are optional.
+                Prioritize whole foods first.
+
+            </p>
+
+        </div>
+
+        <div class="supplement-grid">
+
+            <div class="supplement-card" data-aos="zoom-in">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                <h3>Whey Protein</h3>
+
+                <p>
+
+                    Helps complete your daily protein intake.
+
+                </p>
+
+            </div>
+
+            <div class="supplement-card" data-aos="zoom-in" data-aos-delay="100">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>Creatine</h3>
+
+                <p>
+
+                    Improves strength,
+                    power and workout performance.
+
+                </p>
+
+            </div>
+
+            <div class="supplement-card" data-aos="zoom-in" data-aos-delay="200">
+
+                <i class="fa-solid fa-capsules"></i>
+
+                <h3>Multivitamin</h3>
+
+                <p>
+
+                    Supports overall health
+                    when your diet lacks nutrients.
+
+                </p>
+
+            </div>
+
+            <div class="supplement-card" data-aos="zoom-in" data-aos-delay="300">
+
+                <i class="fa-solid fa-fish"></i>
+
+                <h3>Omega-3</h3>
+
+                <p>
+
+                    Supports heart,
+                    brain and joint health.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Diet Myths -->
+    <!-- ========================= -->
+
+    <section class="myths">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Truth vs Myth</span>
+
+            <h2>Common Diet Myths</h2>
+
+        </div>
+
+        <div class="faq-container">
+
+            <div class="faq">
+
+                <button class="faq-question">
+
+                    Do carbohydrates make you fat?
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        No. Excess calories cause fat gain,
+                        not carbohydrates themselves.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq">
+
+                <button class="faq-question">
+
+                    Should I skip meals to lose weight?
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        No.
+                        Eat balanced meals and maintain
+                        a healthy calorie deficit.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq">
+
+                <button class="faq-question">
+
+                    Is fat unhealthy?
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Healthy fats are essential for hormones,
+                        brain function and overall health.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq">
+
+                <button class="faq-question">
+
+                    Are supplements necessary?
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        No.
+                        They are optional and should not replace
+                        a balanced diet.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- FAQ -->
+    <!-- ========================= -->
+
+    <section class="general-faq">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <span>Frequently Asked Questions</span>
+
+            <h2>Fitness Nutrition FAQs</h2>
+
+        </div>
+
+        <div class="faq-grid">
+
+            <div class="faq-card">
+                <h3>How much protein do I need?</h3>
+                <p>Generally 1.2–2.2 g per kg of body weight depending on your activity and goals.</p>
+            </div>
+
+            <div class="faq-card">
+                <h3>Can I lose weight without exercise?</h3>
+                <p>Yes, a calorie deficit is the primary driver of weight loss, though exercise supports health and muscle retention.</p>
+            </div>
+
+            <div class="faq-card">
+                <h3>How much water should I drink?</h3>
+                <p>Most adults benefit from about 2.5–4 litres daily, adjusting for climate and activity level.</p>
+            </div>
+
+            <div class="faq-card">
+                <h3>Is rice unhealthy?</h3>
+                <p>No. Rice can be part of a balanced diet when eaten in appropriate portions.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- CTA -->
+    <!-- ========================= -->
+
+    <section class="cta">
+
+        <div class="cta-content" data-aos="zoom-in">
+
+            <h2>
+
+                Your Body Deserves Better Nutrition
+
+            </h2>
+
+            <p>
+
+                Healthy eating isn't about perfection.
+                It's about consistency.
+                Start today and become stronger,
+                healthier and happier.
+
+            </p>
+
+            <div class="cta-buttons">
+
+                <a href="training.html" class="btn primary">
+
+                    Start Training
+
+                </a>
+
+                <a href="products.html" class="btn secondary">
+
+                    Shop Nutrition
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Footer -->
+    <!-- ========================= -->
+
+    <footer class="diet-footer">
+
+        <p>
+
+            © 2026 AD Fitness.
+            Eat Healthy • Train Smart • Stay Strong
+
+        </p>
+
+    </footer>
+
+    <!-- ========================= -->
+    <!-- Scripts -->
+    <!-- ========================= -->
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({
+
+            duration: 900,
+            once: true
+
+        });
+
+    </script>
+
+    <script src="JS/diet.js"></script>
+
 </body>
 
 </html>

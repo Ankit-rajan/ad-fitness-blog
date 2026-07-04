@@ -1,0 +1,2176 @@
+/* ===================================
+   AD Fitness - Diet Page
+   diet.css (Part 1)
+=================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================
+   CSS Variables
+========================== */
+
+:root{
+
+    --primary:#ff6b00;
+    --secondary:#ff8c42;
+
+    --green:#22c55e;
+    --red:#ef4444;
+    --yellow:#facc15;
+
+    --bg:#0b0b0b;
+    --bg2:#141414;
+    --card:#1c1c1c;
+
+    --text:#ffffff;
+    --text2:#c7c7c7;
+
+    --border:rgba(255,255,255,.08);
+
+    --shadow:0 10px 35px rgba(0,0,0,.35);
+
+    --radius:18px;
+
+}
+
+/* ==========================
+   Reset
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    line-height:1.7;
+
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+section{
+
+    padding:90px 8%;
+
+}
+
+/* ==========================
+   Scrollbar
+========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--secondary);
+
+}
+
+/* ==========================
+   Progress Bar
+========================== */
+
+#progress-bar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0;
+
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    z-index:99999;
+
+}
+
+/* ==========================
+   Back To Top
+========================== */
+
+#topBtn{
+
+    position:fixed;
+
+    right:30px;
+    bottom:30px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:var(--primary);
+    color:#fff;
+
+    font-size:20px;
+
+    display:none;
+
+    transition:.35s;
+
+    z-index:9999;
+
+    box-shadow:var(--shadow);
+
+}
+
+#topBtn:hover{
+
+    transform:translateY(-6px);
+
+    background:var(--secondary);
+
+}
+
+/* ==========================
+   Common Section Title
+========================== */
+
+.section-title{
+
+    text-align:center;
+
+    max-width:760px;
+
+    margin:auto auto 60px;
+
+}
+
+.section-title span{
+
+    color:var(--primary);
+
+    font-size:15px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+.section-title h2{
+
+    margin:18px 0;
+
+    font-size:46px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+}
+
+.section-title p{
+
+    color:var(--text2);
+
+    font-size:17px;
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+    font-weight:600;
+
+    border:2px solid transparent;
+
+}
+
+.primary{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.primary:hover{
+
+    transform:translateY(-5px);
+
+    background:var(--secondary);
+
+}
+
+.secondary{
+
+    border:2px solid var(--primary);
+
+    color:#fff;
+
+}
+
+.secondary:hover{
+
+    background:var(--primary);
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:0 8%;
+
+    background:
+    linear-gradient(rgba(0,0,0,.70),
+    rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(255,107,0,.18),
+    transparent 45%);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    max-width:720px;
+
+}
+
+.tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    padding:12px 20px;
+
+    border-radius:40px;
+
+    margin-bottom:25px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+}
+
+.tag i{
+
+    color:var(--green);
+
+}
+
+.hero h1{
+
+    font-size:72px;
+
+    line-height:1.1;
+
+    font-weight:800;
+
+}
+
+.hero p{
+
+    color:#ddd;
+
+    font-size:18px;
+
+    margin:30px 0;
+
+    max-width:650px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ==========================
+   Stats Section
+========================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    margin-top:-70px;
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.stat-card{
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid var(--border);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+.stat-card i{
+
+    font-size:45px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.stat-card h2{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+    color:var(--text2);
+
+}
+
+/* ==========================
+   Goals Section
+========================== */
+
+.goals{
+
+    background:var(--bg2);
+
+}
+
+.goal-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.goal-card{
+
+    background:var(--card);
+
+    padding:40px;
+
+    border-radius:var(--radius);
+
+    border:1px solid var(--border);
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.goal-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+.goal-card.active{
+
+    border:2px solid var(--primary);
+
+}
+
+.goal-card i{
+
+    font-size:55px;
+
+    color:var(--primary);
+
+    margin-bottom:25px;
+
+}
+
+.goal-card h3{
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+.goal-card p{
+
+    color:var(--text2);
+
+    margin-bottom:25px;
+
+}
+
+.goal-card ul li{
+
+    margin:14px 0;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.goal-card ul i{
+
+    font-size:16px;
+
+    color:var(--green);
+
+    margin:0;
+
+}
+
+/* =========================================
+   MACRONUTRIENTS
+========================================= */
+
+.macros{
+    background:var(--bg);
+}
+
+.macro-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+
+}
+
+.macro-card{
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:var(--radius);
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.macro-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+.macro-card i{
+
+    font-size:50px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.macro-card h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.macro-card h4{
+
+    color:var(--secondary);
+
+    font-weight:500;
+
+    margin-bottom:20px;
+
+}
+
+.macro-card ul{
+
+    text-align:left;
+
+}
+
+.macro-card ul li{
+
+    padding:10px 0;
+
+    color:var(--text2);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.macro-card ul li:last-child{
+
+    border-bottom:none;
+
+}
+
+/* =========================================
+   BMI & CALORIE CALCULATOR
+========================================= */
+
+.calculator{
+
+    background:var(--bg2);
+
+}
+
+.calculator-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+.calculator-card{
+
+    background:var(--card);
+
+    padding:40px;
+
+    border-radius:var(--radius);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.calculator-card h3{
+
+    font-size:30px;
+
+    margin-bottom:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.calculator-card h3 i{
+
+    color:var(--primary);
+
+}
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+    color:#ddd;
+
+}
+
+.input-group input,
+.input-group select{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    background:#101010;
+
+    color:#fff;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.input-group input:focus,
+.input-group select:focus{
+
+    border-color:var(--primary);
+
+}
+
+.calculator-card button{
+
+    width:100%;
+
+    margin-top:10px;
+
+}
+
+.result-box{
+
+    margin-top:30px;
+
+    padding:20px;
+
+    background:#111;
+
+    border-radius:14px;
+
+    border-left:5px solid var(--primary);
+
+}
+
+.result-box h4{
+
+    font-size:24px;
+
+    margin-bottom:8px;
+
+}
+
+.result-box p{
+
+    color:var(--text2);
+
+}
+
+/* =========================================
+   MEAL TIMING
+========================================= */
+
+.meal-timing{
+
+    background:var(--bg);
+
+}
+
+.timeline{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:translateX(-50%);
+
+    width:4px;
+
+    height:100%;
+
+    background:var(--primary);
+
+}
+
+.timeline-item{
+
+    width:45%;
+
+    background:var(--card);
+
+    padding:25px;
+
+    border-radius:18px;
+
+    margin-bottom:45px;
+
+    position:relative;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.timeline-item:nth-child(odd){
+
+    margin-right:auto;
+
+}
+
+.timeline-item:nth-child(even){
+
+    margin-left:auto;
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    position:absolute;
+
+    top:30px;
+
+}
+
+.timeline-item:nth-child(odd)::before{
+
+    right:-52px;
+
+}
+
+.timeline-item:nth-child(even)::before{
+
+    left:-52px;
+
+}
+
+.timeline-item span{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.timeline-item h3{
+
+    margin:10px 0;
+
+    font-size:24px;
+
+}
+
+.timeline-item p{
+
+    color:var(--text2);
+
+}
+
+/* =========================================
+   PRE & POST WORKOUT
+========================================= */
+
+.nutrition{
+
+    background:var(--bg2);
+
+}
+
+.nutrition-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+.nutrition-card{
+
+    background:var(--card);
+
+    padding:40px;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.nutrition-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+.nutrition-card i{
+
+    font-size:55px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.nutrition-card h3{
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+}
+
+.nutrition-card p{
+
+    color:var(--text2);
+
+    margin-bottom:25px;
+
+}
+
+.nutrition-card ul li{
+
+    padding:12px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.nutrition-card ul li:last-child{
+
+    border:none;
+
+}
+
+/* =========================================
+   WATER SECTION
+========================================= */
+
+.water{
+
+    background:var(--bg);
+
+}
+
+.water-box{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    text-align:center;
+
+    background:linear-gradient(135deg,#0d5ea8,#0d87d8);
+
+    padding:60px;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.water-box i{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+
+}
+
+.water-box h2{
+
+    font-size:45px;
+
+    margin-bottom:10px;
+
+}
+
+.water-box h3{
+
+    font-size:26px;
+
+    margin-bottom:20px;
+
+}
+
+.water-box p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+.water-tips{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    margin-top:40px;
+
+}
+
+.water-tips div{
+
+    background:rgba(255,255,255,.12);
+
+    padding:18px;
+
+    border-radius:14px;
+
+    font-weight:500;
+
+}
+
+.water-tips i{
+
+    font-size:18px;
+
+    margin-right:8px;
+
+}
+
+/* =========================================
+   FOODS SECTION
+========================================= */
+
+.foods{
+
+    background:var(--bg2);
+
+}
+
+.foods-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+.food-card{
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.food-card h3{
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.food-card.eat h3{
+
+    color:#22c55e;
+
+}
+
+.food-card.avoid h3{
+
+    color:#ef4444;
+
+}
+
+.food-card ul{
+
+    columns:2;
+
+    column-gap:35px;
+
+}
+
+.food-card ul li{
+
+    padding:10px 0;
+
+    color:var(--text2);
+
+    break-inside:avoid;
+
+}
+
+/* =========================================
+   WEIGHT LOSS & WEIGHT GAIN MEAL PLANS
+========================================= */
+
+.meal-plan{
+    background:var(--bg);
+}
+
+.meal-plan.gain{
+    background:var(--bg2);
+}
+
+.table-wrapper{
+
+    overflow-x:auto;
+    margin-top:40px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+    min-width:700px;
+
+    background:var(--card);
+
+}
+
+thead{
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+}
+
+thead th{
+
+    padding:22px;
+
+    color:#fff;
+
+    font-size:18px;
+
+    text-align:left;
+
+}
+
+tbody td{
+
+    padding:20px;
+
+    color:var(--text2);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:#222;
+
+}
+
+tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+/* =========================================
+   VEGETARIAN / NON-VEGETARIAN
+========================================= */
+
+.diet-types{
+
+    background:var(--bg);
+
+}
+
+.diet-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+.diet-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.diet-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+.diet-card i{
+
+    font-size:60px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.diet-card h3{
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+}
+
+.diet-card ul li{
+
+    padding:12px 0;
+
+    color:var(--text2);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.diet-card ul li:last-child{
+
+    border-bottom:none;
+
+}
+
+/* =========================================
+   SUPPLEMENTS
+========================================= */
+
+.supplements{
+
+    background:var(--bg2);
+
+}
+
+.supplement-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.supplement-card{
+
+    background:var(--card);
+
+    text-align:center;
+
+    padding:35px 25px;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.supplement-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+.supplement-card i{
+
+    font-size:55px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.supplement-card h3{
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.supplement-card p{
+
+    color:var(--text2);
+
+    line-height:1.7;
+
+}
+
+/* =========================================
+   DIET MYTHS ACCORDION
+========================================= */
+
+.myths{
+
+    background:var(--bg);
+
+}
+
+.faq-container{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.faq{
+
+    margin-bottom:20px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+}
+
+.faq-question{
+
+    width:100%;
+
+    border:none;
+
+    background:transparent;
+
+    color:#fff;
+
+    padding:22px 25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.faq-question:hover{
+
+    background:#222;
+
+}
+
+.faq-question i{
+
+    transition:.35s;
+
+}
+
+.faq.active .faq-question i{
+
+    transform:rotate(45deg);
+
+}
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+
+}
+
+.faq-answer p{
+
+    color:var(--text2);
+
+    padding:0 25px 25px;
+
+    line-height:1.8;
+
+}
+
+/* =========================================
+   GENERAL FAQ
+========================================= */
+
+.general-faq{
+
+    background:var(--bg2);
+
+}
+
+.faq-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.faq-card{
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.faq-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+.faq-card h3{
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.faq-card p{
+
+    color:var(--text2);
+
+    line-height:1.8;
+
+}
+
+/* =========================================
+   CALL TO ACTION
+========================================= */
+
+.cta{
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,107,0,.95),
+        rgba(255,140,66,.95)
+    );
+
+    text-align:center;
+
+}
+
+.cta-content{
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+.cta h2{
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
+}
+
+.cta p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    margin-bottom:40px;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.cta .primary{
+
+    background:#fff;
+
+    color:#111;
+
+}
+
+.cta .primary:hover{
+
+    background:#f5f5f5;
+
+}
+
+.cta .secondary{
+
+    border:2px solid #fff;
+
+    color:#fff;
+
+}
+
+.cta .secondary:hover{
+
+    background:#fff;
+
+    color:#111;
+
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.diet-footer{
+
+    background:#080808;
+
+    text-align:center;
+
+    padding:30px 8%;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.diet-footer p{
+
+    color:#aaa;
+
+    letter-spacing:.5px;
+
+}
+
+/* =========================================
+   SMALL ANIMATIONS
+========================================= */
+
+.goal-card,
+.stat-card,
+.macro-card,
+.calculator-card,
+.nutrition-card,
+.food-card,
+.diet-card,
+.supplement-card,
+.faq-card{
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.goal-card:hover,
+.stat-card:hover,
+.macro-card:hover,
+.calculator-card:hover,
+.nutrition-card:hover,
+.food-card:hover,
+.diet-card:hover,
+.supplement-card:hover,
+.faq-card:hover{
+
+    box-shadow:0 18px 45px rgba(0,0,0,.45);
+
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* ---------- Large Laptop ---------- */
+
+@media (max-width:1400px){
+
+    .hero h1{
+        font-size:60px;
+    }
+
+    .section-title h2{
+        font-size:42px;
+    }
+
+    .supplement-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* ---------- Laptop ---------- */
+
+@media (max-width:1200px){
+
+    section{
+        padding:80px 6%;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .goal-grid,
+    .macro-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .foods-grid,
+    .diet-grid,
+    .nutrition-grid,
+    .calculator-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:992px){
+
+    .hero{
+
+        min-height:90vh;
+        text-align:center;
+        justify-content:center;
+
+    }
+
+    .hero-content{
+
+        max-width:100%;
+
+    }
+
+    .hero h1{
+
+        font-size:52px;
+
+    }
+
+    .hero p{
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .timeline::before{
+
+        left:20px;
+
+    }
+
+    .timeline-item{
+
+        width:100%;
+        margin-left:45px !important;
+        margin-right:0 !important;
+
+    }
+
+    .timeline-item::before{
+
+        left:-35px !important;
+        right:auto;
+
+    }
+
+    .faq-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* ---------- Large Mobile ---------- */
+
+@media (max-width:768px){
+
+    section{
+
+        padding:70px 5%;
+
+    }
+
+    .hero{
+
+        padding:0 5%;
+
+    }
+
+    .hero h1{
+
+        font-size:42px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .section-title h2{
+
+        font-size:34px;
+
+    }
+
+    .section-title p{
+
+        font-size:15px;
+
+    }
+
+    .stats,
+    .goal-grid,
+    .macro-grid,
+    .supplement-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .goal-card,
+    .macro-card,
+    .nutrition-card,
+    .food-card,
+    .calculator-card,
+    .diet-card,
+    .supplement-card{
+
+        padding:30px;
+
+    }
+
+    .food-card ul{
+
+        columns:1;
+
+    }
+
+    .water-box{
+
+        padding:40px 25px;
+
+    }
+
+    .water-box h2{
+
+        font-size:34px;
+
+    }
+
+    .water-box h3{
+
+        font-size:22px;
+
+    }
+
+    .water-tips{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .cta h2{
+
+        font-size:40px;
+
+    }
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:576px){
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .tag{
+
+        font-size:13px;
+        padding:10px 16px;
+
+    }
+
+    .btn{
+
+        width:100%;
+        justify-content:center;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .section-title h2{
+
+        font-size:28px;
+
+    }
+
+    .section-title p{
+
+        font-size:14px;
+
+    }
+
+    .stat-card h2{
+
+        font-size:30px;
+
+    }
+
+    .goal-card h3,
+    .macro-card h3,
+    .nutrition-card h3{
+
+        font-size:24px;
+
+    }
+
+    .calculator-card h3{
+
+        font-size:24px;
+
+    }
+
+    .result-box h4{
+
+        font-size:20px;
+
+    }
+
+    .timeline-item{
+
+        padding:20px;
+
+    }
+
+    .timeline-item h3{
+
+        font-size:20px;
+
+    }
+
+    .faq-question{
+
+        font-size:16px;
+
+        padding:18px;
+
+    }
+
+    .faq-answer p{
+
+        padding:0 18px 18px;
+
+    }
+
+    .cta h2{
+
+        font-size:30px;
+
+    }
+
+    .cta p{
+
+        font-size:15px;
+
+    }
+
+    .diet-footer{
+
+        padding:20px 5%;
+
+    }
+
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:420px){
+
+    section{
+
+        padding:60px 4%;
+
+    }
+
+    .hero{
+
+        min-height:85vh;
+
+    }
+
+    .hero h1{
+
+        font-size:28px;
+        line-height:1.2;
+
+    }
+
+    .hero p{
+
+        font-size:14px;
+
+    }
+
+    .section-title span{
+
+        font-size:12px;
+
+    }
+
+    .section-title h2{
+
+        font-size:24px;
+
+    }
+
+    .goal-card,
+    .macro-card,
+    .nutrition-card,
+    .food-card,
+    .calculator-card,
+    .diet-card,
+    .supplement-card,
+    .faq-card{
+
+        padding:22px;
+
+    }
+
+    .goal-card i,
+    .macro-card i,
+    .nutrition-card i,
+    .supplement-card i{
+
+        font-size:40px;
+
+    }
+
+    .water-box{
+
+        padding:30px 20px;
+
+    }
+
+    .water-box h2{
+
+        font-size:28px;
+
+    }
+
+    .water-box h3{
+
+        font-size:18px;
+
+    }
+
+    .cta{
+
+        padding:60px 4%;
+
+    }
+
+    .cta h2{
+
+        font-size:26px;
+
+    }
+
+    .cta-buttons{
+
+        flex-direction:column;
+
+    }
+
+}
+
+/* ---------- Extra Small ---------- */
+
+@media (max-width:320px){
+
+    .hero h1{
+
+        font-size:24px;
+
+    }
+
+    .section-title h2{
+
+        font-size:20px;
+
+    }
+
+    .btn{
+
+        padding:12px 18px;
+        font-size:14px;
+
+    }
+
+    .timeline-item{
+
+        margin-left:35px !important;
+
+    }
+
+    .timeline-item::before{
+
+        left:-28px !important;
+
+    }
+
+    .faq-question{
+
+        font-size:15px;
+
+    }
+
+}
+
+/* =========================================
+   END OF FILE
+========================================= */

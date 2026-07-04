@@ -1,0 +1,362 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f0f0f;
+    color:#fff;
+    line-height:1.6;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+button,
+input,
+textarea{
+    font-family:inherit;
+    outline:none;
+}
+
+section{
+    padding:90px 8%;
+}
+
+/* ===========================
+   CUSTOM SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff4d4d;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ff2d2d;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(12px);
+    transition:.3s;
+}
+
+.navbar{
+    max-width:1400px;
+    margin:auto;
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:700;
+    color:#fff;
+}
+
+.logo span{
+    color:#ff4d4d;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+    color:#fff;
+    font-size:16px;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-6px;
+
+    width:0;
+    height:2px;
+
+    background:#ff4d4d;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after,
+.nav-links .active::after{
+    width:100%;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    color:#ff4d4d;
+}
+
+/* Mobile Button */
+
+.menu-btn{
+
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    color:#fff;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.contact-hero{
+
+    height:65vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+
+    background:
+    linear-gradient(rgba(0,0,0,.65),
+    rgba(0,0,0,.75)),
+    url("../images/contact-bg.jpg");
+
+    background-position:center;
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+}
+
+.contact-hero .overlay{
+
+    max-width:900px;
+
+    padding:20px;
+
+}
+
+.contact-hero h1{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+}
+
+.contact-hero p{
+
+    font-size:18px;
+
+    color:#ddd;
+
+    max-width:750px;
+
+    margin:auto;
+
+}
+
+/* ===========================
+   CONTACT SECTION
+=========================== */
+
+.contact-section{
+
+    background:#161616;
+
+}
+
+.container{
+
+    display:grid;
+
+    grid-template-columns:1.3fr .9fr;
+
+    gap:60px;
+
+    align-items:start;
+
+}
+
+/* Contact Form */
+
+.contact-form{
+
+    background:#1d1d1d;
+
+    padding:45px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.contact-form h2{
+
+    font-size:2rem;
+
+    margin-bottom:30px;
+
+    color:#ff4d4d;
+
+}
+
+.contact-form form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2a2a2a;
+
+    color:#fff;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.contact-form textarea{
+
+    resize:vertical;
+
+    min-height:180px;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    background:#333;
+
+    box-shadow:0 0 0 2px #ff4d4d;
+
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+
+    color:#aaa;
+
+}
+
+.contact-form button{
+
+    width:200px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff4d4d;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.contact-form button:hover{
+
+    transform:translateY(-4px);
+
+    background:#ff3131;
+
+    box-shadow:0 15px 30px rgba(255,77,77,.35);
+
+}

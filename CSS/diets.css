@@ -2458,7 +2458,399 @@ font-size:1rem;
 
 }
 
+/*==========================================================
+PROTEIN GUIDE CSS
+PART 4
+Final Responsive + Utilities + Polish
+==========================================================*/
 
+/*=========================
+SECTION SPACING
+=========================*/
+
+.protein-page section:first-of-type{
+padding-top:120px;
+}
+
+.protein-page section:last-of-type{
+padding-bottom:110px;
+}
+
+/*=========================
+CARD HEADINGS
+=========================*/
+
+.food-card h3,
+.recipe-card h3,
+.type-card h3,
+.tip-card h3,
+.timing-card h3,
+.benefit-card h3,
+.myth h3,
+.myth h4{
+letter-spacing:.3px;
+}
+
+/*=========================
+PARAGRAPHS
+=========================*/
+
+.food-card p,
+.recipe-card p,
+.type-card p,
+.tip-card p,
+.timing-card p,
+.benefit-card p,
+.myth p,
+.intro-content p{
+word-break:break-word;
+}
+
+/*=========================
+IMAGE EFFECTS
+=========================*/
+
+.food-card,
+.recipe-card{
+overflow:hidden;
+}
+
+.food-card img,
+.recipe-card img,
+.hero-image img,
+.intro-image img{
+transition:transform .45s ease;
+}
+
+.food-card:hover img,
+.recipe-card:hover img{
+transform:scale(1.08);
+}
+
+.intro-image img:hover{
+transform:scale(1.03);
+}
+
+/*=========================
+CALCULATOR IMPROVEMENTS
+=========================*/
+
+.input-group input::placeholder{
+color:#bfbfbf;
+}
+
+.input-group select{
+appearance:none;
+-webkit-appearance:none;
+-moz-appearance:none;
+cursor:pointer;
+}
+
+.result.success{
+background:#17391d;
+color:#9df4ab;
+border:1px solid #2ecc71;
+}
+
+.result.error{
+background:#401717;
+color:#ffb4b4;
+border:1px solid #ff5b5b;
+}
+
+/*=========================
+TABLE IMPROVEMENTS
+=========================*/
+
+.meal-table{
+border-radius:18px;
+overflow:hidden;
+}
+
+.meal-table table tr:last-child td{
+border-bottom:none;
+}
+
+.meal-table td:first-child{
+font-weight:700;
+color:#fff;
+}
+
+.meal-table th{
+font-weight:700;
+letter-spacing:.5px;
+}
+
+/*=========================
+FOCUS STATES
+=========================*/
+
+.btn:focus,
+button:focus,
+input:focus,
+select:focus{
+outline:2px solid var(--protein-primary);
+outline-offset:3px;
+}
+
+/*=========================
+SMOOTH SCROLL
+=========================*/
+
+html{
+scroll-behavior:smooth;
+}
+
+/*=========================
+UTILITY CLASSES
+=========================*/
+
+.text-center{
+text-align:center;
+}
+
+.mt-20{
+margin-top:20px;
+}
+
+.mt-30{
+margin-top:30px;
+}
+
+.mt-40{
+margin-top:40px;
+}
+
+.mb-20{
+margin-bottom:20px;
+}
+
+.mb-40{
+margin-bottom:40px;
+}
+
+/*=========================
+LOADING ANIMATION
+=========================*/
+
+@keyframes floatImage{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.hero-image img{
+animation:floatImage 5s ease-in-out infinite;
+}
+
+/*=========================
+FADE ANIMATION
+=========================*/
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(35px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.section-title,
+.hero-content,
+.hero-image,
+.food-card,
+.recipe-card,
+.tip-card,
+.type-card,
+.timing-card,
+.benefit-card{
+animation:fadeIn .8s ease both;
+}
+
+/*=========================
+LARGE SCREENS
+=========================*/
+
+@media (min-width:1400px){
+
+.container{
+max-width:1320px;
+}
+
+.hero-content h1{
+font-size:5rem;
+}
+
+.hero-image img{
+width:560px;
+}
+
+}
+
+/*=========================
+TABLETS
+=========================*/
+
+@media (max-width:992px){
+
+.section-title h2{
+font-size:2.4rem;
+}
+
+.hero-wrapper,
+.intro-grid{
+gap:40px;
+}
+
+.hero-content{
+text-align:center;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-image img{
+width:340px;
+}
+
+}
+
+/*=========================
+MOBILE
+=========================*/
+
+@media (max-width:768px){
+
+.container{
+width:94%;
+}
+
+.section-title h2{
+font-size:2rem;
+}
+
+.section-title p{
+font-size:1rem;
+}
+
+.hero-content h1{
+font-size:2.5rem;
+}
+
+.hero-content p{
+font-size:1rem;
+}
+
+.hero-image img{
+width:280px;
+}
+
+.intro-content h2{
+font-size:2rem;
+}
+
+.food-card,
+.recipe-card,
+.tip-card,
+.type-card,
+.timing-card,
+.benefit-card,
+.myth{
+border-radius:16px;
+}
+
+}
+
+/*=========================
+SMALL MOBILE
+=========================*/
+
+@media (max-width:480px){
+
+.protein-page section{
+padding:60px 0;
+}
+
+.hero-content h1{
+font-size:2rem;
+line-height:1.25;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.hero-buttons .btn{
+width:100%;
+}
+
+.section-title{
+margin-bottom:35px;
+}
+
+.section-title h2{
+font-size:1.75rem;
+}
+
+.food-card img,
+.recipe-card img{
+height:180px;
+}
+
+.meal-table{
+font-size:.9rem;
+}
+
+.meal-table th,
+.meal-table td{
+padding:14px;
+}
+
+}
+
+/*=========================
+EXTRA SMALL DEVICES
+=========================*/
+
+@media (max-width:360px){
+
+.hero-content h1{
+font-size:1.8rem;
+}
+
+.section-title h2{
+font-size:1.6rem;
+}
+
+.hero-image img{
+width:230px;
+}
+
+.btn{
+padding:14px 20px;
+font-size:.95rem;
+}
+
+}
+
+/* end  */
 
 
 

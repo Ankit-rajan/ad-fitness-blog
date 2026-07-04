@@ -2158,6 +2158,306 @@ height:190px;
 }
 
 
+/*==========================================================
+PROTEIN GUIDE CSS
+PART 3
+Recipes + Daily Tips + Myths + CTA + Animations
+==========================================================*/
+
+/*=========================
+PROTEIN RECIPES
+=========================*/
+
+.protein-recipes{
+background:#181818;
+}
+
+.recipe-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.recipe-card{
+background:#222;
+border-radius:20px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.08);
+transition:.35s ease;
+box-shadow:0 15px 30px rgba(0,0,0,.20);
+}
+
+.recipe-card:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 45px rgba(0,0,0,.35);
+}
+
+.recipe-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.recipe-card h3{
+padding:22px 22px 10px;
+font-size:1.35rem;
+font-weight:700;
+}
+
+.recipe-card p{
+padding:0 22px;
+color:#d6d6d6;
+line-height:1.7;
+}
+
+.recipe-card span{
+display:inline-block;
+margin:20px 22px 25px;
+padding:8px 18px;
+border-radius:30px;
+background:rgba(255,77,48,.15);
+color:var(--protein-primary);
+font-weight:600;
+font-size:.9rem;
+}
+
+/*=========================
+DAILY PROTEIN TIPS
+=========================*/
+
+.protein-tips{
+background:#111;
+}
+
+.tips-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:28px;
+}
+
+.tip-card{
+background:#1f1f1f;
+padding:35px 28px;
+border-radius:18px;
+transition:.35s;
+border-left:4px solid var(--protein-primary);
+}
+
+.tip-card:hover{
+transform:translateY(-8px);
+background:#242424;
+}
+
+.tip-card h3{
+font-size:1.25rem;
+margin-bottom:18px;
+}
+
+.tip-card p{
+line-height:1.8;
+color:#d5d5d5;
+}
+
+/*=========================
+PROTEIN MYTHS
+=========================*/
+
+.protein-myths{
+background:#181818;
+}
+
+.myths{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.myth{
+background:#212121;
+padding:35px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.08);
+transition:.35s;
+}
+
+.myth:hover{
+transform:translateY(-8px);
+}
+
+.myth h3{
+color:#ff5959;
+margin-bottom:12px;
+font-size:1.2rem;
+}
+
+.myth h4{
+margin:22px 0 12px;
+color:#2ecc71;
+font-size:1.15rem;
+}
+
+.myth p{
+color:#d5d5d5;
+line-height:1.8;
+}
+
+/*=========================
+CALL TO ACTION
+=========================*/
+
+.protein-cta{
+background:linear-gradient(135deg,#ff4d30,#ff7b54);
+text-align:center;
+padding:90px 20px;
+}
+
+.protein-cta h2{
+font-size:clamp(2rem,4vw,3.3rem);
+margin-bottom:20px;
+font-weight:800;
+color:#fff;
+}
+
+.protein-cta p{
+max-width:720px;
+margin:auto auto 35px;
+line-height:1.9;
+font-size:1.08rem;
+color:#fff;
+}
+
+.protein-cta .btn{
+background:#fff;
+color:#ff4d30;
+}
+
+.protein-cta .btn:hover{
+background:#111;
+color:#fff;
+}
+
+/*=========================
+HOVER EFFECTS
+=========================*/
+
+.food-card,
+.recipe-card,
+.tip-card,
+.type-card,
+.benefit-card,
+.timing-card,
+.myth{
+transition:all .35s ease;
+}
+
+.food-card:hover,
+.recipe-card:hover,
+.tip-card:hover,
+.type-card:hover,
+.benefit-card:hover,
+.timing-card:hover,
+.myth:hover{
+box-shadow:0 25px 45px rgba(0,0,0,.30);
+}
+
+/*=========================
+SCROLL ANIMATION
+=========================*/
+
+.fade-up{
+opacity:0;
+transform:translateY(60px);
+transition:1s ease;
+}
+
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/*=========================
+CUSTOM SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+background:var(--protein-primary);
+border-radius:30px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:var(--protein-secondary);
+}
+
+/*=========================
+TEXT SELECTION
+=========================*/
+
+::selection{
+background:var(--protein-primary);
+color:#fff;
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+.recipe-grid,
+.tips-grid,
+.myths{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.recipe-grid,
+.tips-grid,
+.myths{
+grid-template-columns:1fr;
+}
+
+.recipe-card img{
+height:210px;
+}
+
+.protein-cta{
+padding:70px 20px;
+}
+
+}
+
+@media(max-width:480px){
+
+.recipe-card img{
+height:190px;
+}
+
+.tip-card,
+.myth{
+padding:25px;
+}
+
+.protein-cta h2{
+font-size:2rem;
+}
+
+.protein-cta p{
+font-size:1rem;
+}
+
+}
+
 
 
 

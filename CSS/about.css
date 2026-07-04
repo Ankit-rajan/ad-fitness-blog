@@ -359,3 +359,334 @@ ul{
     background:var(--secondary);
 
 }
+
+/* ==========================================
+   AD FITNESS - ABOUT PAGE
+   about.css (Part 2)
+   About Section • Mission • Stats
+==========================================*/
+
+/* =====================================
+            ABOUT SECTION
+=====================================*/
+
+.about-section{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+    background:var(--dark2);
+}
+
+.about-image{
+    position:relative;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:var(--radius);
+    object-fit:cover;
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+.about-image:hover img{
+    transform:scale(1.03);
+}
+
+.about-image::before{
+    content:"";
+    position:absolute;
+    top:-20px;
+    left:-20px;
+    width:120px;
+    height:120px;
+    border:6px solid var(--primary);
+    border-right:none;
+    border-bottom:none;
+    border-radius:20px;
+}
+
+.about-image::after{
+    content:"";
+    position:absolute;
+    right:-20px;
+    bottom:-20px;
+    width:120px;
+    height:120px;
+    border:6px solid var(--secondary);
+    border-left:none;
+    border-top:none;
+    border-radius:20px;
+}
+
+.about-content h2{
+    margin-bottom:25px;
+    font-size:2.8rem;
+    color:var(--white);
+}
+
+.about-content p{
+    margin-bottom:20px;
+    color:var(--light);
+}
+
+.about-content .btn{
+    margin-top:15px;
+}
+
+/* =====================================
+            MISSION SECTION
+=====================================*/
+
+.mission{
+    background:linear-gradient(
+        135deg,
+        #181818,
+        #111111
+    );
+    text-align:center;
+}
+
+.mission h2{
+    margin-bottom:25px;
+    color:var(--white);
+}
+
+.mission p{
+    max-width:900px;
+    margin:auto;
+    font-size:18px;
+    color:var(--light);
+    line-height:1.9;
+}
+
+/* =====================================
+            STATS SECTION
+=====================================*/
+
+.stats{
+    background:#0d0d0d;
+
+    display:grid;
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:30px;
+}
+
+.stat-box{
+
+    background:var(--dark3);
+
+    padding:45px 25px;
+
+    border-radius:var(--radius);
+
+    text-align:center;
+
+    transition:var(--transition);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    box-shadow:var(--shadow);
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+.stat-box h2{
+
+    font-size:3rem;
+
+    margin-bottom:10px;
+
+    color:var(--primary);
+
+}
+
+.stat-box p{
+
+    color:var(--light);
+
+    font-size:17px;
+
+    font-weight:500;
+
+}
+
+/* =====================================
+        HOVER GLOW EFFECT
+=====================================*/
+
+.stat-box{
+    position:relative;
+    overflow:hidden;
+}
+
+.stat-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    background:
+    rgba(255,77,0,.12);
+
+    border-radius:50%;
+
+    top:-90px;
+    right:-90px;
+
+    transition:.5s;
+
+}
+
+.stat-box:hover::before{
+
+    transform:scale(1.4);
+
+}
+
+/* =====================================
+      ABOUT CONTENT HIGHLIGHT
+=====================================*/
+
+.about-content strong{
+    color:var(--primary);
+}
+
+.about-content span{
+    color:var(--secondary);
+}
+
+/* =====================================
+      SECTION SPACING FIX
+=====================================*/
+
+.about-section,
+.mission,
+.stats{
+    position:relative;
+    overflow:hidden;
+}
+
+/* Decorative Blur */
+
+.mission::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,77,0,.08);
+
+    filter:blur(100px);
+
+    left:-100px;
+    top:-80px;
+
+}
+
+.stats::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,123,0,.08);
+
+    filter:blur(120px);
+
+    right:-150px;
+    bottom:-150px;
+
+}
+
+/* =====================================
+        RESPONSIVE
+=====================================*/
+
+@media(max-width:992px){
+
+.about-section{
+
+    grid-template-columns:1fr;
+
+}
+
+.about-image{
+
+    order:-1;
+
+}
+
+.about-content{
+
+    text-align:center;
+
+}
+
+.stats{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:576px){
+
+.about-content h2{
+
+    font-size:2.2rem;
+
+}
+
+.mission h2{
+
+    font-size:2.2rem;
+
+}
+
+.mission p{
+
+    font-size:16px;
+
+}
+
+.stats{
+
+    grid-template-columns:1fr;
+
+}
+
+.stat-box h2{
+
+    font-size:2.5rem;
+
+}
+
+}

@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initBackToTop();
   initNewsletterForm();
   markActiveNavLink();
-});
 
+  initCountUp();   // 👈 Add this
+});
 // ------------------------------------------------------------
 // Mobile menu toggle
 // ------------------------------------------------------------

@@ -1,0 +1,719 @@
+/* =========================================
+   AD FITNESS - COMMON CSS
+   Reset • Variables • Global Styles
+========================================= */
+
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:#0b0b0b;
+    color:#ffffff;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+/* Variables */
+
+:root{
+
+    --primary:#ff4d00;
+    --secondary:#ff7b00;
+
+    --dark:#0b0b0b;
+    --dark2:#141414;
+    --dark3:#1d1d1d;
+
+    --white:#ffffff;
+    --light:#d8d8d8;
+    --gray:#9b9b9b;
+
+    --shadow:0 15px 40px rgba(0,0,0,.35);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+}
+
+/* Global */
+
+section{
+    width:100%;
+    padding:90px 9%;
+}
+
+.container{
+    width:min(1200px,100%);
+    margin:auto;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+ul{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight:700;
+    line-height:1.2;
+}
+
+p{
+    color:var(--light);
+}
+
+/* Buttons */
+
+.btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    box-shadow:0 10px 25px rgba(255,77,0,.30);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(255,77,0,.45);
+
+}
+
+.btn-outline{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    border:2px solid var(--primary);
+
+    color:#fff;
+
+    transition:var(--transition);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+}
+
+/* Section Title */
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    margin-bottom:15px;
+
+}
+
+.section-title p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:var(--gray);
+
+}
+
+/* =========================================
+   AD FITNESS - COMMON CSS
+   Navbar • Footer • Scrollbar • Animations
+========================================= */
+
+/* ===========================
+   HEADER / NAVBAR
+=========================== */
+
+header{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    background:rgba(11,11,11,.88);
+
+    backdrop-filter:blur(15px);
+
+    transition:var(--transition);
+
+}
+
+header.scrolled{
+
+    background:#111;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.45);
+
+}
+
+.navbar{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    height:80px;
+
+    padding:0 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:#fff;
+
+}
+
+.logo span{
+
+    color:var(--primary);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+.nav-links li{
+
+    position:relative;
+
+}
+
+.nav-links a{
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:var(--transition);
+
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+
+    color:var(--primary);
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:var(--primary);
+
+    transition:var(--transition);
+
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+.nav-btns{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.login-btn{
+
+    padding:11px 24px;
+
+    border:2px solid var(--primary);
+
+    border-radius:50px;
+
+    color:#fff;
+
+    transition:var(--transition);
+
+}
+
+.login-btn:hover{
+
+    background:var(--primary);
+
+}
+
+.signup-btn{
+
+    padding:12px 26px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    transition:var(--transition);
+
+}
+
+.signup-btn:hover{
+
+    background:var(--secondary);
+
+}
+
+/* Mobile Menu Button */
+
+.menu-btn{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:#fff;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    background:#080808;
+
+    padding:90px 9% 30px;
+
+}
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:40px;
+
+    margin-bottom:40px;
+
+}
+
+.footer-col h3{
+
+    color:#fff;
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+}
+
+.footer-col p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+.footer-col ul li{
+
+    margin:12px 0;
+
+}
+
+.footer-col ul li a{
+
+    color:var(--light);
+
+    transition:var(--transition);
+
+}
+
+.footer-col ul li a:hover{
+
+    color:var(--primary);
+
+    padding-left:8px;
+
+}
+
+.social-icons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.social-icons a{
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#1b1b1b;
+
+    color:#fff;
+
+    transition:var(--transition);
+
+}
+
+.social-icons a:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-5px);
+
+}
+
+.copyright{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:25px;
+
+    text-align:center;
+
+    color:var(--gray);
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--secondary);
+
+}
+
+/* ===========================
+   BACK TO TOP
+=========================== */
+
+.back-to-top{
+
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:var(--transition);
+
+    z-index:999;
+
+}
+
+.back-to-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.back-to-top:hover{
+
+    transform:translateY(-6px);
+
+    background:var(--secondary);
+
+}
+
+/* ===========================
+   COMMON ANIMATIONS
+=========================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:.8s ease;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.menu-btn{
+
+    display:block;
+
+}
+
+.nav-links{
+
+    position:fixed;
+
+    top:80px;
+
+    right:-100%;
+
+    width:280px;
+
+    height:calc(100vh - 80px);
+
+    background:#111;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    padding:40px 30px;
+
+    gap:25px;
+
+    transition:.4s;
+
+}
+
+.nav-links.active{
+
+    right:0;
+
+}
+
+.nav-btns{
+
+    display:none;
+
+}
+
+}
+
+@media(max-width:768px){
+
+section{
+
+    padding:70px 6%;
+
+}
+
+.footer-container{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.social-icons{
+
+    justify-content:center;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.logo{
+
+    font-size:1.6rem;
+
+}
+
+.navbar{
+
+    padding:0 18px;
+
+}
+
+.section-title h2{
+
+    font-size:2rem;
+
+}
+
+.btn,
+.btn-outline{
+
+    width:100%;
+
+}
+
+}

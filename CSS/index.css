@@ -36,171 +36,194 @@ body{
   -webkit-font-smoothing:antialiased;
   transition: background .3s ease, color .3s ease;
 }
+/* ===========================
+   NAVBAR
+=========================== */
 
-/* Navbar container setup */
-#nav_container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 70px;
-  padding: 0 50px;
-  position: sticky;
-  /* background: #000000; */
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  position: fixed;
-  color: rgb(0, 0, 0);
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  backdrop-filter: blur(10px);
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,.25);
 }
 
-/* Wrapper for nav links */
-.nav_links {
-  display: flex;
-  text-decoration: none;
+.navbar{
+    max-width: 1300px;
+    margin: auto;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Main navigation list */
+/* ===========================
+   LOGO
+=========================== */
 
-.ul1 {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.ul1 a {
-  text-decoration: none;
-  color: #000000;
-  font-size: 18px;
-  font-weight: 500;
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
 }
 
-.ul1 a:hover {
-  color: #ff4d4d;
+.logo img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* Left logo wrapper */
-
-.nav_logo1 {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-left: 20px;
-  margin-right: -23px;
-
+.logo-text h2{
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
 }
 
-.logo1 {
-  width: 52px;
-  height: 52px;
-  object-fit: cover;
-  /* filter: brightness(0) invert(1); */
-  border-radius: 50px;
+.logo-text p{
+    color: #bdbdbd;
+    font-size: 12px;
+    margin-top: 4px;
 }
 
-.brand-text h2 {
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: 4px;
-    font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
+/* ===========================
+   MENU
+=========================== */
 
-  /* font-size:20px;
-    font-weight:700;
-    letter-spacing:4px; */
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
 }
 
-.brand-text p {
-  color: #000000;
-  font-size: 12px;
-  margin: 0;
-  letter-spacing: 1px;
-  
+.nav-links a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .3s;
+    position: relative;
 }
 
-.logo-dot {
-  color: var(--coral);
-  font-size: 30px;
-}
-/* FontAwesome icon styling */
-.icon {
-  color: rgb(255, 255, 255);
-  font-size: 24px;
-}
-
-/* Sidebar checkbox (hidden) */
-#firstcheck {
-  display: none;
+.nav-links a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #ff4d30;
+    transition: .3s;
 }
 
-/* Hamburger (open sidebar) button */
-.open_sidebar_button {
-  padding: 0 20px;
-  display: none;
+.nav-links a:hover{
+    color: #ff4d30;
 }
 
-/* Close sidebar button */
-.close_sidebar_button {
-  display: none;
-}
-.close_sidebar_button svg {
-  fill: black;
-}
-.mobile-view {
-  display: none;
-}
-.mobile-view-vertical-line {
-  display: none;
-}
-.mobile-view-asuslogo {
-  display: none;
+.nav-links a:hover::after{
+    width: 100%;
 }
 
-/* sidebaroverly */
-.sidebar_overly {
-  display: none;
-}
-/* sidebaroverly end  */
+/* ===========================
+   RIGHT SIDE
+=========================== */
 
-.search-icon {
-  height: 35px;
-  width: 26px;
-  margin-left: 12px;
-  margin-top: 6px;
-  margin-right: 5px;
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 18px;
 }
-.menu-label:hover {
-  color: rgba(201, 61, 61, 0.816);
+
+.login-btn{
+    padding: 10px 20px;
+    background: #ff4d30;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: .3s;
+    font-weight: 600;
 }
-.submenu-toggle {
-  display: none;
+
+.login-btn:hover{
+    background: #ff2d00;
 }
-.menu-label {
-  display: flex;
+
+/* ===========================
+   MENU BUTTON
+=========================== */
+
+.menu-btn{
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
 }
-.submenu {
-  display: none;
-  background-color: rgb(255, 254, 254);
-  position: relative;
-  padding: 10px;
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .menu-btn{
+        display: block;
+    }
+
+    .logo-text p{
+        display: none;
+    }
+
+    .nav-links{
+        position: fixed;
+        top: 85px;
+        left: -100%;
+        width: 280px;
+        height: calc(100vh - 85px);
+        background: #1b1b1b;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 35px;
+        gap: 25px;
+        transition: .4s;
+    }
+
+    .nav-links.active{
+        left: 0;
+    }
+
+    .login-btn{
+        display: none;
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        padding: 12px 20px;
+    }
+
+    .logo img{
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-text h2{
+        font-size: 18px;
+    }
 }
 
 #home{
   display: none;
 }
 
-/* ARROW  */
-.arrow {
-  display: none;
-}
+
 
 /* ACCOUNT <!-- Logged In User --> */
 .user-menu {

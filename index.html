@@ -18,201 +18,62 @@
     <link rel="stylesheet" href="/CSS/index.css" />
   </head>
   <body>
-    <!-- Nav container -->
-    <nav id="nav_container">
-      <!-- Sidebar Toggle Button (Mobile) -->
-      <input type="checkbox" id="firstcheck" />
-      <label for="firstcheck" class="open_sidebar_button">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="32px"
-          viewBox="0 -960 960 960"
-          width="32px"
-          fill="#e3e3e3"
-        >
-          <path
-            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
-          />
-        </svg>
-      </label>
 
-      <!-- Left: AD Logo -->
-      <div class="nav_logo1">
-        <img
-          src="images/LOGOS/logoooo2.jpg"
-          alt="AD Fitness Logo"
-          class="logo1"
-        />
+    <header>
 
-        <div class="brand-text">
-          <h2>AD FITNESS<span class="logo-dot">.</span></h2>
-          <p>Train Smart • Eat Better • Live Stronger</p>
-        </div>
-      </div>
+    <nav class="navbar">
 
-      <!-- Center: Navigation Links -->
+        <!-- Logo -->
+        <a href="index.html" class="logo">
 
-      <label for="firstcheck" class="sidebar_overly"></label>
-      <div class="nav_links">
-        <img
-          src="images/LOGOS/A Gym Logo-e.png "
-          alt="headerperson"
-          class="mobile-view"
-        />
-        <label for="firstcheck" class="close_sidebar_button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="32px"
-            viewBox="0 -960 960 960"
-            width="32px"
-            fill="#000000"
-          >
-            <path
-              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-            />
-          </svg>
-        </label>
+            <img src="images/LOGOS/logoooo2.jpg" alt="AD Fitness Logo">
 
-        <ul class="ul1">
-          <!-- <li>
-            <label for="menu-HOME" class="menu-label"
-              >Home <span class="arrow">&gt;</span></label
-            >
-          </li> -->
-          <li>
-            <a href="#home" class="menu-label" id="home">
-              Home <span class="arrow">&gt;</span>
-            </a>
-          </li>
-          <li>
-            <input type="checkbox" id="menu-Training" class="submenu-toggle" />
-            <label for="menu-Training" class="menu-label"
-              >Training <span class="arrow">&gt;</span></label
-            >
-            <!-- <a href="#training" class="menu-label" >
-              Training <span class="arrow">&gt;</span>
-            </a> -->
-
-            <div class="submenu">
-              <label for="menu-Training" class="submenu-header"
-                ><span class="arrow1">&lt;</span>Training
-              </label>
-              <ul class="ul2">
-                <div class="col1">
-                  <li><a href="#training">Beginner Workouts</a></li>
-                  <li><a href="#training">Home Workouts</a></li>
-                  <li><a href="#training">Gym Workouts</a></li>
-                  <li><a href="#training">Chest</a></li>
-                  <li><a href="#training">Back</a></li>
-                </div>
-
-                <div class="col2">
-                  <li><a href="#training">Shoulders</a></li>
-                  <li><a href="#training">Arms</a></li>
-                  <li><a href="#training">Legs</a></li>
-                  <li><a href="#training">Abs</a></li>
-                  <li><a href="#training">Weight Loss</a></li>
-                  <li><a href="#training">Muscle Gain</a></li>
-                </div>
-              </ul>
-              <hr class="bottom-divider" />
-              <div class="adfitness-wrapper">
-                <a class="adfitness" href="training.html">AD FITNESS</a>
-              </div>
+            <div class="logo-text">
+                <h2>AD FITNESS</h2>
+                <p>Train Smart • Eat Better • Live Stronger</p>
             </div>
-          </li>
-          <li>
-            <input type="checkbox" id="menu-Diet" class="submenu-toggle" />
 
-            <label for="menu-Diet" class="menu-label">
-              Diet <span class="arrow">&gt;</span>
-            </label>
+        </a>
 
-            <div class="submenu">
-              <label for="menu-Diet" class="submenu-header">
-                <span class="arrow1">&lt;</span>Diet
-              </label>
+        <!-- Navigation -->
 
-              <ul class="ul3">
-                <li><a href="diet.html#weight-loss">Weight Loss Diet</a></li>
+        <ul class="nav-links">
 
-                <li><a href="diet.html#weight-gain">Muscle Gain Diet</a></li>
+            <!-- <li><a href="index.html">Home</a></li> -->
 
-                <li><a href="diet.html#macros">High Protein Foods</a></li>
+            <li><a href="training.html">Training</a></li>
 
-                <li><a href="diet.html#recipes">Recipes</a></li>
+            <li><a href="diet.html">Diet</a></li>
 
-                <li><a href="diet.html#meal-plans">Meal Plans</a></li>
+            <li><a href="products.html">Products</a></li>
 
-                <li><a href="diet.html#tips">Nutrition Tips</a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <input type="checkbox" id="menu-products" class="submenu-toggle" />
-            <label for="menu-products" class="menu-label"
-              >Products <span class="arrow">&gt;</span></label
-            >
-            <div class="submenu">
-              <label for="menu-products" class="submenu-header"
-                ><span class="arrow1">&lt;</span> Products
-              </label>
-              <ul class="ul4">
-                <li><a href="products.html">Protein Powders</a></li>
-                <li><a href="products.html">Creatine</a></li>
-                <li><a href="products.html">Dumbbells</a></li>
-                <li><a href="products.html">Resistance Bands</a></li>
-                <li><a href="products.html">Reviews</a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="about.html" class="menu-label">
-              About <span class="arrow">&gt;</span>
-            </a>
-          </li>
-          
+            <li><a href="blog.html">Blog</a></li>
 
-           <li>
-            <a href="contact.html" class="menu-label">
-              Contact <span class="arrow">&gt;</span>
-            </a>
-          </li>
+            <li><a href="about.html">About</a></li>
 
-          <li>
-            <input type="checkbox" id="menu-Account " class="submenu-toggle" />
-            <label for="menu-Account " class="menu-label"
-              >Account <span class="arrow">&gt;</span></label
-            >
-            <div class="submenu">
-              <label for="menu-Account " class="submenu-header"
-                ><span class="arrow1">&lt;</span> Account
-              </label>
-              <ul class="ul5">
-                <!-- Guest User -->
-                <li class="guest-menu"><a href="login.html">Login</a></li>
-                <li class="guest-menu"><a href="signup.html">Sign Up</a></li>
+            <li><a href="contact.html">Contact</a></li>
 
-                <!-- Logged In User -->
-                <li class="user-menu"><a href="#">Dashboard</a></li>
-                <li class="user-menu"><a href="#">Profile</a></li>
-                <li class="user-menu"><a href="#">Saved Workouts</a></li>
-                <li class="user-menu"><a href="#">Logout</a></li>
-              </ul>
-            </div>
-          </li>
         </ul>
-        <hr class="mobile-view-vertical-line" />
-        <img
-          src="images/LOGOS/logoooo2.jpg"
-          width="10px"
-          alt="ASUS logo grey"
-          class="mobile-view-asuslogo"
-        />
-      </div>
+
+        <!-- Login + Mobile Menu -->
+
+        <div class="nav-right">
+
+            <a href="login.html" class="login-btn">Login</a>
+
+            <button class="menu-btn">
+
+                ☰
+
+            </button>
+
+        </div>
+
     </nav>
 
-    <!-- nav bar end -->
+</header>
+
+<!-- nav bar end  -->
 
     <!-- hero-section -->
     <div id="hero-section">
@@ -645,5 +506,7 @@
         <p class="copyright">© 2026 AD FITNESS. All Rights Reserved.</p>
       </div>
     </footer>
+
+    <script src="JS/index.js"></script>
   </body>
 </html>

@@ -1,607 +1,923 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AD Fitness | Training</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-background:#111;
-color:#fff;
-line-height:1.6;
-}
-
-/* Hero */
-
-.hero{
-
-height:70vh;
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
-url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=80");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero-content{
-max-width:700px;
-}
-
-.hero h1{
-
-font-size:55px;
-margin-bottom:20px;
-
-}
-
-.hero p{
-
-font-size:18px;
-color:#ddd;
-margin-bottom:30px;
-
-}
-
-.hero button{
-
-padding:15px 35px;
-background:#ff4d00;
-border:none;
-color:white;
-font-size:18px;
-cursor:pointer;
-border-radius:5px;
-transition:.3s;
-
-}
-
-.hero button:hover{
-
-background:#ff7a00;
-
-}
-
-/* Search */
-
-.search{
-
-padding:40px 10%;
-background:#181818;
-
-}
-
-.search input{
-
-width:100%;
-padding:16px;
-border:none;
-border-radius:8px;
-font-size:18px;
-
-}
-
-/* Section */
-
-section{
-
-padding:70px 10%;
-
-}
-
-.section-title{
-
-text-align:center;
-font-size:40px;
-margin-bottom:50px;
-
-}
-
-/* Grid */
-
-.grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-
-}
-
-.card{
-
-background:#1d1d1d;
-padding:30px;
-border-radius:10px;
-transition:.3s;
-cursor:pointer;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-background:#262626;
-
-}
-
-.card h3{
-
-margin-bottom:15px;
-color:#ff6b00;
-
-}
-
-.card p{
-
-color:#bbb;
-
-}
-
-/* Program Cards */
-
-.program{
-
-overflow:hidden;
-border-radius:10px;
-background:#1c1c1c;
-transition:.3s;
-
-}
-
-.program img{
-
-width:100%;
-height:220px;
-object-fit:cover;
-
-}
-
-.program-content{
-
-padding:20px;
-
-}
-
-.program:hover{
-
-transform:scale(1.04);
-
-}
-
-/* Weekly */
-
-table{
-
-width:100%;
-border-collapse:collapse;
-
-}
-
-table th{
-
-background:#ff5a00;
-
-padding:15px;
-
-}
-
-table td{
-
-padding:15px;
-background:#222;
-border:1px solid #333;
-text-align:center;
-
-}
-
-/* Tips */
-
-.tips{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-
-}
-
-.tip{
-
-background:#202020;
-padding:25px;
-border-left:5px solid orange;
-border-radius:8px;
-
-}
-
-/* CTA */
-
-.cta{
-
-background:linear-gradient(135deg,#ff5500,#ff8800);
-
-text-align:center;
-padding:80px 20px;
-
-}
-
-.cta h2{
-
-font-size:42px;
-margin-bottom:20px;
-
-}
-
-.cta button{
-
-padding:15px 35px;
-font-size:18px;
-border:none;
-cursor:pointer;
-border-radius:6px;
-margin-top:20px;
-
-}
-
-/* Footer */
-
-footer{
-
-padding:30px;
-text-align:center;
-background:#0b0b0b;
-color:#888;
-
-}
-
-/* Responsive */
-
-@media(max-width:768px){
-
-.hero h1{
-
-font-size:38px;
-
-}
-
-.section-title{
-
-font-size:30px;
-
-}
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<!-- HERO -->
-
-<header class="hero">
-
-<div class="hero-content">
-
-<h1>Build Strength. Build Confidence.</h1>
-
-<p>
-Discover professional workout plans designed for beginners,
-home training, gym lovers, fat loss and muscle building.
-</p>
-
-<button>Start Training</button>
-
-</div>
-
-</header>
-
-<!-- SEARCH -->
-
-<section class="search">
-
-<input type="text" placeholder="Search workouts...">
-
-</section>
-
-<!-- Categories -->
-
-<section>
-
-<h2 class="section-title">Training Categories</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>🏋 Beginner Workouts</h3>
-<p>Easy full-body exercises to build a strong foundation.</p>
-</div>
-
-<div class="card">
-<h3>🏠 Home Workouts</h3>
-<p>No equipment workouts you can do anywhere.</p>
-</div>
-
-<div class="card">
-<h3>💪 Gym Workouts</h3>
-<p>Professional gym routines for maximum gains.</p>
-</div>
-
-<div class="card">
-<h3>🔥 Weight Loss</h3>
-<p>Burn calories with cardio and HIIT workouts.</p>
-</div>
-
-<div class="card">
-<h3>💥 Muscle Gain</h3>
-<p>Hypertrophy-focused training programs.</p>
-</div>
-
-<div class="card">
-<h3>⚡ Strength Training</h3>
-<p>Increase overall power using compound lifts.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- Muscle Groups -->
-
-<section>
-
-<h2 class="section-title">Train by Muscle Group</h2>
-
-<div class="grid">
-
-<div class="program">
-
-<img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80">
-
-<div class="program-content">
-
-<h3>Chest Workout</h3>
-
-<p>Bench Press, Push Ups, Incline Press, Cable Fly.</p>
-
-</div>
-
-</div>
-
-<div class="program">
-
-<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80">
-
-<div class="program-content">
-
-<h3>Back Workout</h3>
-
-<p>Deadlift, Pull-ups, Rows, Lat Pulldown.</p>
-
-</div>
-
-</div>
-
-<div class="program">
-
-<img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=800&q=80">
-
-<div class="program-content">
-
-<h3>Shoulders</h3>
-
-<p>Military Press, Lateral Raises, Face Pulls.</p>
-
-</div>
-
-</div>
-
-<div class="program">
-
-<img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80">
-
-<div class="program-content">
-
-<h3>Arms</h3>
-
-<p>Biceps Curls, Hammer Curl, Triceps Pushdown.</p>
-
-</div>
-
-</div>
-
-<div class="program">
-
-<img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80">
-
-<div class="program-content">
-
-<h3>Legs</h3>
-
-<p>Squat, Leg Press, Lunges, Romanian Deadlift.</p>
-
-</div>
-
-</div>
-
-<div class="program">
-
-<img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80">
-
-<div class="program-content">
-
-<h3>Abs</h3>
-
-<p>Crunches, Leg Raises, Planks, Russian Twist.</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Weekly Plan -->
-
-<section>
-
-<h2 class="section-title">Weekly Workout Plan</h2>
-
-<table>
-
-<tr>
-
-<th>Day</th>
-
-<th>Workout</th>
-
-</tr>
-
-<tr>
-
-<td>Monday</td>
-
-<td>Chest + Triceps</td>
-
-</tr>
-
-<tr>
-
-<td>Tuesday</td>
-
-<td>Back + Biceps</td>
-
-</tr>
-
-<tr>
-
-<td>Wednesday</td>
-
-<td>Cardio + Abs</td>
-
-</tr>
-
-<tr>
-
-<td>Thursday</td>
-
-<td>Shoulders</td>
-
-</tr>
-
-<tr>
-
-<td>Friday</td>
-
-<td>Legs</td>
-
-</tr>
-
-<tr>
-
-<td>Saturday</td>
-
-<td>HIIT + Core</td>
-
-</tr>
-
-<tr>
-
-<td>Sunday</td>
-
-<td>Recovery & Stretching</td>
-
-</tr>
-
-</table>
-
-</section>
-
-<!-- Tips -->
-
-<section>
-
-<h2 class="section-title">Training Tips</h2>
-
-<div class="tips">
-
-<div class="tip">
-
-<h3>Stay Hydrated</h3>
-
-Drink enough water before and after workouts.
-
-</div>
-
-<div class="tip">
-
-<h3>Proper Form</h3>
-
-Never sacrifice technique for heavier weights.
-
-</div>
-
-<div class="tip">
-
-<h3>Warm-Up</h3>
-
-Always warm up for at least 10 minutes.
-
-</div>
-
-<div class="tip">
-
-<h3>Recovery</h3>
-
-Sleep 7–9 hours for muscle growth.
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA -->
-
-<section class="cta">
-
-<h2>Ready To Transform Your Body?</h2>
-
-<p>
-
-Join AD Fitness and start your fitness journey today.
-
-</p>
-
-<button>Explore Programs</button>
-
-</section>
-
-<footer>
-
-© 2026 AD Fitness • All Rights Reserved
-
-</footer>
-
-
-
-<script src="JS/training.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Training — AD FITNESS</title>
+    <meta name="description" content="Browse AD Fitness training programs and a full exercise library with step-by-step instructions, sets, reps, and form cues for every muscle group." />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/training.css" />
+  </head>
+  <body>
+    <div class="scroll-bar" id="scrollBar"></div>
+
+    <header id="siteHeader">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">AD</span>
+          <div class="logo-text">
+            <h2>AD FITNESS</h2>
+            <p>Train Smart • Eat Better • Live Stronger</p>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="training.html">Training</a></li>
+          <li><a href="diet.html">Diet</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <a href="login.html" class="login-btn">Log In</a>
+          <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section id="training-hero">
+        <div class="container">
+          <div class="reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-dumbbell"></i> Set 01 — Training</span>
+            <h1>Build strength.<br />Build <span>confidence.</span></h1>
+            <p>
+              Professional workout plans and a full exercise library — with
+              step-by-step form cues — for beginners, home training, gym lifters,
+              fat loss, and muscle building.
+            </p>
+            <div class="hero-buttons">
+              <a href="#library" class="btn-primary">Browse Exercises <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#weekly-plan" class="btn-secondary">See Weekly Plan</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SEARCH ============ -->
+      <section id="search-section">
+        <div class="container">
+          <div class="search-box reveal-up">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="exerciseSearch" placeholder="Search exercises — e.g. squat, bench press, plank..." />
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TICKER ============ -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>PROGRESSIVE OVERLOAD</span><span>•</span><span>FORM BEFORE WEIGHT</span><span>•</span>
+          <span>TRAIN THE MOVEMENT</span><span>•</span><span>RECOVER TO GROW</span><span>•</span>
+          <span>PROGRESSIVE OVERLOAD</span><span>•</span><span>FORM BEFORE WEIGHT</span><span>•</span>
+          <span>TRAIN THE MOVEMENT</span><span>•</span><span>RECOVER TO GROW</span><span>•</span>
+        </div>
+      </div>
+
+      <!-- ============ CATEGORIES ============ -->
+      <section id="categories-section">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-layer-group"></i> Set 02 — Categories</span>
+            <h2>Training categories</h2>
+            <p>Every program starts with picking the right lane. Here's what we cover.</p>
+          </div>
+
+          <div class="training-grid">
+            <article class="training-card reveal-up">
+              <div class="icon"><i class="fa-solid fa-seedling"></i></div>
+              <h3>Beginner Workouts</h3>
+              <p>Easy full-body exercises to build a strong foundation.</p>
+              <a href="#library" class="card-link">View exercises <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="training-card reveal-up delay-1">
+              <div class="icon"><i class="fa-solid fa-house"></i></div>
+              <h3>Home Workouts</h3>
+              <p>No-equipment routines you can do anywhere.</p>
+              <a href="#library" class="card-link">View exercises <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="training-card reveal-up delay-2">
+              <div class="icon"><i class="fa-solid fa-dumbbell"></i></div>
+              <h3>Gym Workouts</h3>
+              <p>Structured gym routines for maximum gains.</p>
+              <a href="#library" class="card-link">View exercises <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="training-card reveal-up delay-3">
+              <div class="icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+              <h3>Weight Loss</h3>
+              <p>Burn calories with cardio and HIIT-style training.</p>
+              <a href="#library" class="card-link">View exercises <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="training-card reveal-up">
+              <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+              <h3>Muscle Gain</h3>
+              <p>Hypertrophy-focused programs to add lean size.</p>
+              <a href="#library" class="card-link">View exercises <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="training-card reveal-up delay-1">
+              <div class="icon"><i class="fa-solid fa-gauge-high"></i></div>
+              <h3>Strength Training</h3>
+              <p>Increase overall power using heavy compound lifts.</p>
+              <a href="#library" class="card-link">View exercises <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EXERCISE LIBRARY ============ -->
+      <section id="library">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-book-open"></i> Set 03 — Exercise Library</span>
+            <h2>Learn to train every muscle group</h2>
+            <p>Tap any exercise to see step-by-step form, sets &amp; reps, and the most common mistake to avoid.</p>
+          </div>
+
+          <div class="filter-tabs reveal-up" id="filterTabs">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="chest">Chest</button>
+            <button class="filter-tab" data-filter="back">Back</button>
+            <button class="filter-tab" data-filter="shoulders">Shoulders</button>
+            <button class="filter-tab" data-filter="arms">Arms</button>
+            <button class="filter-tab" data-filter="legs">Legs</button>
+            <button class="filter-tab" data-filter="abs">Abs</button>
+            <button class="filter-tab" data-filter="cardio">Cardio</button>
+          </div>
+
+          <p class="no-results" id="noResults" hidden>No exercises match your search. Try a different term.</p>
+
+          <div class="exercise-grid" id="exerciseGrid">
+            <!-- CHEST -->
+            <article class="exercise-card" data-category="chest" data-name="barbell bench press">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&auto=format&fit=crop&q=80" alt="Barbell bench press" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">CHEST</span>
+                <h3>Barbell Bench Press</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 4 × 8–10</span>
+                  <span><i class="fa-solid fa-signal"></i> Intermediate</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Lie on the bench with eyes under the bar, feet flat on the floor.</li>
+                    <li>Grip slightly wider than shoulder-width and unrack the bar over your chest.</li>
+                    <li>Lower the bar under control to mid-chest, elbows at roughly 45°.</li>
+                    <li>Press back up to full lock-out without bouncing off your chest.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: flaring the elbows to 90° — it stresses the shoulders. Keep them tucked closer to your torso.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="chest" data-name="push up">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500&auto=format&fit=crop&q=80" alt="Push up" />
+                <span class="badge badge-home">Home</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">CHEST</span>
+                <h3>Push-Up</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 3 × 15–20</span>
+                  <span><i class="fa-solid fa-signal"></i> Beginner</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Start in a plank with hands slightly wider than shoulders.</li>
+                    <li>Keep a straight line from head to heels — brace your core.</li>
+                    <li>Lower your chest to just above the floor, elbows at ~45°.</li>
+                    <li>Push through your palms back to the start.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: letting the hips sag. Squeeze your glutes and abs to keep the line straight.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="chest" data-name="incline dumbbell press">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=500&auto=format&fit=crop&q=80" alt="Incline dumbbell press" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">CHEST</span>
+                <h3>Incline Dumbbell Press</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 3 × 10–12</span>
+                  <span><i class="fa-solid fa-signal"></i> Intermediate</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Set the bench to a 30–45° incline and sit with a dumbbell in each hand.</li>
+                    <li>Press the dumbbells up above your upper chest until arms are extended.</li>
+                    <li>Lower slowly until upper arms are roughly parallel to the floor.</li>
+                    <li>Press back up, keeping wrists stacked over elbows.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: setting the incline too steep — above 45° it shifts the work to the shoulders.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- BACK -->
+            <article class="exercise-card" data-category="back" data-name="deadlift">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&auto=format&fit=crop&q=80" alt="Deadlift" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">BACK</span>
+                <h3>Deadlift</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 4 × 5–6</span>
+                  <span><i class="fa-solid fa-signal"></i> Advanced</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Stand with feet hip-width apart, bar over mid-foot.</li>
+                    <li>Hinge at the hips and grip the bar just outside your knees.</li>
+                    <li>Flatten your back, brace your core, and lift by driving through the floor.</li>
+                    <li>Stand tall at the top, then lower the bar back down under control.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: rounding the lower back. If your back rounds, lighten the load until form is solid.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="back" data-name="pull up">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1598266663439-2056e6900339?w=500&auto=format&fit=crop&q=80" alt="Pull up" />
+                <span class="badge badge-home">Home</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">BACK</span>
+                <h3>Pull-Up</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 4 × Max reps</span>
+                  <span><i class="fa-solid fa-signal"></i> Intermediate</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Hang from the bar with an overhand grip, slightly wider than shoulders.</li>
+                    <li>Pull your chest up toward the bar by driving your elbows down.</li>
+                    <li>Get your chin over the bar without swinging.</li>
+                    <li>Lower back to a full dead hang under control.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: using momentum. Slow the descent down — that's where most of the muscle work happens.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="back" data-name="bent over row">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&auto=format&fit=crop&q=80" alt="Bent over row" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">BACK</span>
+                <h3>Bent-Over Row</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 4 × 8–10</span>
+                  <span><i class="fa-solid fa-signal"></i> Intermediate</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Hinge at the hips to about 45°, holding the bar with an overhand grip.</li>
+                    <li>Keep your back flat and core braced throughout.</li>
+                    <li>Pull the bar toward your lower ribs, squeezing your shoulder blades together.</li>
+                    <li>Lower with control back to the start.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: standing too upright, which turns the row into a shrug. Keep the hinge.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- SHOULDERS -->
+            <article class="exercise-card" data-category="shoulders" data-name="overhead press">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=500&auto=format&fit=crop&q=80" alt="Overhead press" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">SHOULDERS</span>
+                <h3>Overhead Press</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 4 × 6–8</span>
+                  <span><i class="fa-solid fa-signal"></i> Intermediate</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Hold the bar at shoulder height, grip just outside shoulder-width.</li>
+                    <li>Brace your core and glutes — don't lean back.</li>
+                    <li>Press the bar straight up, moving your head back slightly to let it pass.</li>
+                    <li>Lock out overhead, then lower back to the shoulders.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: over-arching the lower back. Squeeze your glutes to keep the ribs stacked over the hips.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="shoulders" data-name="lateral raise">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500&auto=format&fit=crop&q=80" alt="Lateral raise" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">SHOULDERS</span>
+                <h3>Lateral Raise</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 3 × 12–15</span>
+                  <span><i class="fa-solid fa-signal"></i> Beginner</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Stand tall holding a light dumbbell in each hand at your sides.</li>
+                    <li>With a soft bend in the elbows, raise the dumbbells out to the sides.</li>
+                    <li>Stop at shoulder height — no higher.</li>
+                    <li>Lower slowly back to the start.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: swinging the weight up with momentum. Go lighter and control the tempo.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="shoulders" data-name="face pull">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&auto=format&fit=crop&q=80" alt="Face pull" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">SHOULDERS</span>
+                <h3>Face Pull</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 3 × 15</span>
+                  <span><i class="fa-solid fa-signal"></i> Beginner</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Set a cable or band at upper-chest height with a rope attachment.</li>
+                    <li>Pull the rope toward your face, splitting your hands apart at the end.</li>
+                    <li>Focus on squeezing your rear shoulders and upper back.</li>
+                    <li>Return slowly to the start.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: using too much weight and turning it into a low row. Keep it light and controlled.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- ARMS -->
+            <article class="exercise-card" data-category="arms" data-name="barbell curl">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1590507621108-433608c97823?w=500&auto=format&fit=crop&q=80" alt="Barbell curl" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">ARMS</span>
+                <h3>Barbell Curl</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 3 × 10–12</span>
+                  <span><i class="fa-solid fa-signal"></i> Beginner</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Stand tall holding the bar with an underhand, shoulder-width grip.</li>
+                    <li>Keep your elbows pinned to your sides.</li>
+                    <li>Curl the bar up toward your shoulders, squeezing the biceps.</li>
+                    <li>Lower slowly back to a full stretch.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: swinging the hips to heave the bar up. Keep the movement strict.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="arms" data-name="hammer curl">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=500&auto=format&fit=crop&q=80" alt="Hammer curl" />
+                <span class="badge badge-home">Home</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">ARMS</span>
+                <h3>Hammer Curl</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 3 × 12</span>
+                  <span><i class="fa-solid fa-signal"></i> Beginner</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Hold a dumbbell in each hand with palms facing your body.</li>
+                    <li>Keep elbows tucked and curl the weights up together or alternating.</li>
+                    <li>Squeeze at the top without rotating your wrists.</li>
+                    <li>Lower under control.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: letting the elbows drift forward, which shifts tension off the arms.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="arms" data-name="triceps pushdown">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1584863231364-2edc166de576?w=500&auto=format&fit=crop&q=80" alt="Triceps pushdown" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">ARMS</span>
+                <h3>Triceps Pushdown</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 3 × 12–15</span>
+                  <span><i class="fa-solid fa-signal"></i> Beginner</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Stand facing a cable stack with a straight or rope attachment set high.</li>
+                    <li>Pin your elbows to your sides throughout.</li>
+                    <li>Push the attachment down until your arms are fully extended.</li>
+                    <li>Let it rise back slowly under control.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: letting the elbows flare out and away from the torso, which recruits the shoulders instead.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- LEGS -->
+            <article class="exercise-card" data-category="legs" data-name="back squat">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500&auto=format&fit=crop&q=80" alt="Back squat" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">LEGS</span>
+                <h3>Back Squat</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 4 × 6–8</span>
+                  <span><i class="fa-solid fa-signal"></i> Advanced</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Rest the bar on your upper back, feet shoulder-width apart.</li>
+                    <li>Brace your core and unrack the bar, taking a couple steps back.</li>
+                    <li>Sit down and back, keeping knees tracking over your toes.</li>
+                    <li>Go to at least parallel, then drive back up through your heels.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: letting the knees cave inward on the way up. Actively push them out.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="legs" data-name="walking lunge">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1434608519344-49d77a699e1d?w=500&auto=format&fit=crop&q=80" alt="Walking lunge" />
+                <span class="badge badge-home">Home</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">LEGS</span>
+                <h3>Walking Lunge</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 3 × 12 per leg</span>
+                  <span><i class="fa-solid fa-signal"></i> Beginner</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Stand tall, take a controlled step forward.</li>
+                    <li>Lower until both knees are bent around 90°, back knee hovering above the floor.</li>
+                    <li>Push through the front heel to step into the next lunge.</li>
+                    <li>Keep your torso upright throughout.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: taking too short a step, which puts extra stress on the front knee.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="legs" data-name="romanian deadlift">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1541534401786-2077eed87a72?w=500&auto=format&fit=crop&q=80" alt="Romanian deadlift" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">LEGS</span>
+                <h3>Romanian Deadlift</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 4 × 8–10</span>
+                  <span><i class="fa-solid fa-signal"></i> Intermediate</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Hold the bar at hip height with a shoulder-width grip.</li>
+                    <li>With a slight knee bend, push your hips back and lower the bar down your thighs.</li>
+                    <li>Keep the bar close and your back flat until you feel a stretch in your hamstrings.</li>
+                    <li>Drive your hips forward to return to standing.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: turning it into a squat by bending the knees too much. This is a hip-hinge, not a knee-bend.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- ABS -->
+            <article class="exercise-card" data-category="abs" data-name="plank">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1566241142248-05a97fc98319?w=500&auto=format&fit=crop&q=80" alt="Plank" />
+                <span class="badge badge-home">Home</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">ABS</span>
+                <h3>Plank</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-stopwatch"></i> 3 × 40–60s</span>
+                  <span><i class="fa-solid fa-signal"></i> Beginner</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Rest on your forearms and toes, elbows under your shoulders.</li>
+                    <li>Form a straight line from head to heels.</li>
+                    <li>Brace your core and squeeze your glutes.</li>
+                    <li>Breathe steadily and hold the position.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: letting the hips rise up or sag down. Check your line in a mirror if you can.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="abs" data-name="hanging leg raise">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1517344368193-41552b6ad3f5?w=500&auto=format&fit=crop&q=80" alt="Hanging leg raise" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">ABS</span>
+                <h3>Hanging Leg Raise</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 3 × 10–12</span>
+                  <span><i class="fa-solid fa-signal"></i> Intermediate</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Hang from a pull-up bar with arms fully extended.</li>
+                    <li>Brace your core and raise your legs until roughly parallel to the floor.</li>
+                    <li>Avoid swinging — control the movement both ways.</li>
+                    <li>Lower slowly back to the start.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: using momentum to swing the legs up. Slow it down and lead with your lower abs.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="abs" data-name="russian twist">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?w=500&auto=format&fit=crop&q=80" alt="Russian twist" />
+                <span class="badge badge-home">Home</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">ABS</span>
+                <h3>Russian Twist</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-repeat"></i> 3 × 20 twists</span>
+                  <span><i class="fa-solid fa-signal"></i> Beginner</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Sit with knees bent, lean back slightly to engage your core.</li>
+                    <li>Lift your feet off the floor if you can, holding a weight or clasped hands.</li>
+                    <li>Rotate your torso to tap the floor on each side.</li>
+                    <li>Keep the movement controlled, not fast and sloppy.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: rotating only the arms instead of the torso. The twist should come from your core.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARDIO -->
+            <article class="exercise-card" data-category="cardio" data-name="hiit sprint intervals">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500&auto=format&fit=crop&q=80" alt="Sprint intervals" />
+                <span class="badge badge-home">Home</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">CARDIO</span>
+                <h3>HIIT Sprint Intervals</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-stopwatch"></i> 8 × 30s on / 60s off</span>
+                  <span><i class="fa-solid fa-signal"></i> Intermediate</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Warm up with 5 minutes of easy jogging.</li>
+                    <li>Sprint at a hard, sustainable effort for 30 seconds.</li>
+                    <li>Walk or jog slowly for 60 seconds to recover.</li>
+                    <li>Repeat, then cool down with light walking.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: skipping the warm-up. Sprinting on cold muscles raises injury risk.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="cardio" data-name="jump rope">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1434682772747-f16d3ea162c3?w=500&auto=format&fit=crop&q=80" alt="Jump rope" />
+                <span class="badge badge-home">Home</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">CARDIO</span>
+                <h3>Jump Rope</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-stopwatch"></i> 5 × 2 min</span>
+                  <span><i class="fa-solid fa-signal"></i> Beginner</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Hold the handles lightly, elbows close to your sides.</li>
+                    <li>Turn the rope mainly with your wrists, not your arms.</li>
+                    <li>Jump just high enough to clear the rope.</li>
+                    <li>Land softly on the balls of your feet.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: jumping too high. Small, quick hops are more efficient and easier on the knees.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="exercise-card" data-category="cardio" data-name="rowing machine">
+              <div class="exercise-media">
+                <img src="https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=500&auto=format&fit=crop&q=80" alt="Rowing machine" />
+                <span class="badge badge-gym">Gym</span>
+              </div>
+              <div class="exercise-body">
+                <span class="exercise-tag mono">CARDIO</span>
+                <h3>Rowing Machine</h3>
+                <div class="exercise-meta">
+                  <span><i class="fa-solid fa-stopwatch"></i> 20 min steady</span>
+                  <span><i class="fa-solid fa-signal"></i> Beginner</span>
+                </div>
+                <button class="exercise-toggle" aria-expanded="false">
+                  How to perform <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="exercise-details">
+                  <ol>
+                    <li>Drive through your legs first, then lean back slightly.</li>
+                    <li>Finish by pulling the handle to your lower ribs.</li>
+                    <li>Reverse the order on the way back: arms, then body, then legs.</li>
+                    <li>Keep a steady, sustainable pace.</li>
+                  </ol>
+                  <p class="coach-tip"><i class="fa-solid fa-circle-exclamation"></i> Common mistake: pulling with the arms first. Legs should always initiate the drive.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WEEKLY PLAN ============ -->
+      <section id="weekly-plan">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-calendar-days"></i> Set 04 — Weekly Plan</span>
+            <h2>A balanced weekly split</h2>
+            <p>A tried-and-tested split that covers every muscle group with a full recovery day.</p>
+          </div>
+
+          <div class="week-table-wrap reveal-up">
+            <table id="weekTable">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Focus</th>
+                  <th>Est. Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-day="Monday">
+                  <td class="mono">MON</td>
+                  <td>Chest + Triceps</td>
+                  <td class="mono">50 min</td>
+                </tr>
+                <tr data-day="Tuesday">
+                  <td class="mono">TUE</td>
+                  <td>Back + Biceps</td>
+                  <td class="mono">55 min</td>
+                </tr>
+                <tr data-day="Wednesday">
+                  <td class="mono">WED</td>
+                  <td>Cardio + Abs</td>
+                  <td class="mono">35 min</td>
+                </tr>
+                <tr data-day="Thursday">
+                  <td class="mono">THU</td>
+                  <td>Shoulders</td>
+                  <td class="mono">45 min</td>
+                </tr>
+                <tr data-day="Friday">
+                  <td class="mono">FRI</td>
+                  <td>Legs</td>
+                  <td class="mono">60 min</td>
+                </tr>
+                <tr data-day="Saturday">
+                  <td class="mono">SAT</td>
+                  <td>HIIT + Core</td>
+                  <td class="mono">30 min</td>
+                </tr>
+                <tr data-day="Sunday">
+                  <td class="mono">SUN</td>
+                  <td>Recovery &amp; Stretching</td>
+                  <td class="mono">20 min</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TIPS ============ -->
+      <section id="tips-section">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-lightbulb"></i> Set 05 — Coaching Notes</span>
+            <h2>Training tips that actually matter</h2>
+            <p>The fundamentals that separate steady progress from spinning your wheels.</p>
+          </div>
+
+          <div class="tips-grid">
+            <div class="tip-card reveal-up">
+              <div class="icon"><i class="fa-solid fa-droplet"></i></div>
+              <h3>Stay Hydrated</h3>
+              <p>Drink water before, during, and after training — even mild dehydration hurts performance.</p>
+            </div>
+
+            <div class="tip-card reveal-up delay-1">
+              <div class="icon"><i class="fa-solid fa-scale-balanced"></i></div>
+              <h3>Proper Form First</h3>
+              <p>Never sacrifice technique for heavier weight. Master the movement, then add load.</p>
+            </div>
+
+            <div class="tip-card reveal-up delay-2">
+              <div class="icon"><i class="fa-solid fa-person-walking"></i></div>
+              <h3>Always Warm Up</h3>
+              <p>Spend at least 10 minutes raising your heart rate and mobilizing the joints you'll train.</p>
+            </div>
+
+            <div class="tip-card reveal-up delay-3">
+              <div class="icon"><i class="fa-solid fa-bed"></i></div>
+              <h3>Prioritize Recovery</h3>
+              <p>Muscle is built during rest. Aim for 7–9 hours of sleep and don't skip rest days.</p>
+            </div>
+
+            <div class="tip-card reveal-up">
+              <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+              <h3>Progressive Overload</h3>
+              <p>Gradually increase weight, reps, or sets over time — your body only adapts to new demands.</p>
+            </div>
+
+            <div class="tip-card reveal-up delay-1">
+              <div class="icon"><i class="fa-solid fa-notes-medical"></i></div>
+              <h3>Listen to Pain</h3>
+              <p>Muscle fatigue is normal; sharp joint pain is not. Stop and reassess if something feels wrong.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CTA ============ -->
+      <section id="cta-section">
+        <div class="container cta-box reveal-up">
+          <div>
+            <span class="eyebrow"><i class="fa-solid fa-flag-checkered"></i> Set 06 — Your Move</span>
+            <h2>Ready to transform your body?</h2>
+            <p>Join AD Fitness and start your training journey today.</p>
+          </div>
+          <a href="signup.html" class="btn-primary">Explore Programs <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer id="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">AD</span>
+            <div class="logo-text">
+              <h2>AD FITNESS</h2>
+            </div>
+          </a>
+          <p class="tagline">Train Smart • Eat Better • Live Stronger</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="diet.html">Diet</a></li>
+            <li><a href="products.html">Products</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Log In</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Stay in the loop</h4>
+          <p class="footer-note">Weekly training and nutrition tips, no spam.</p>
+          <form class="footer-form" id="newsletterForm">
+            <input type="email" placeholder="you@example.com" required />
+            <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+          <p class="footer-form-msg" id="footerFormMsg" hidden>You're on the list.</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p class="copyright">© 2026 AD FITNESS. All Rights Reserved.</p>
+        <button id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+      </div>
+    </footer>
+
+    <script src="JS/common.js"></script>
+    <script src="JS/training.js"></script>
+  </body>
 </html>

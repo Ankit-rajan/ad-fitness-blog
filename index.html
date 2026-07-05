@@ -3,510 +3,546 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AD FITNESS</title>
-    <!-- font awesome link  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
+    <title>AD FITNESS — Train Smart, Eat Better, Live Stronger</title>
+    <meta name="description" content="AD Fitness gives you personalized training programs, nutrition plans, and a BMI toolkit to build strength and burn fat, faster." />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/CSS/index.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/index.css" />
   </head>
   <body>
+    <!-- progress bar tied to scroll -->
+    <div class="scroll-bar" id="scrollBar"></div>
 
-    <header>
-
-    <nav class="navbar">
-
-        <!-- Logo -->
+    <header id="siteHeader">
+      <nav class="navbar">
         <a href="index.html" class="logo">
-
-            <img src="images/LOGOS/logoooo2.jpg" alt="AD Fitness Logo">
-
-            <div class="logo-text">
-                <h2>AD FITNESS</h2>
-                <p>Train Smart • Eat Better • Live Stronger</p>
-            </div>
-
+          <span class="logo-mark">AD</span>
+          <div class="logo-text">
+            <h2>AD FITNESS</h2>
+            <p>Train Smart • Eat Better • Live Stronger</p>
+          </div>
         </a>
 
-        <!-- Navigation -->
-
-        <ul class="nav-links">
-
-            <!-- <li><a href="index.html">Home</a></li> -->
-
-            <li><a href="training.html">Training</a></li>
-
-            <li><a href="diet.html">Diet</a></li>
-
-            <li><a href="products.html">Products</a></li>
-
-            <li><a href="blog.html">Blog</a></li>
-
-            <li><a href="about.html">About</a></li>
-
-            <li><a href="contact.html">Contact</a></li>
-
+        <ul class="nav-links" id="navLinks">
+          <li><a href="training.html">Training</a></li>
+          <li><a href="diet.html">Diet</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-
-        <!-- Login + Mobile Menu -->
 
         <div class="nav-right">
-
-            <a href="login.html" class="login-btn">Login</a>
-
-            <button class="menu-btn">
-
-                ☰
-
-            </button>
-
+          <a href="login.html" class="login-btn">Log In</a>
+          <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
         </div>
+      </nav>
+    </header>
 
-    </nav>
+    <main>
+      <!-- ============ HERO ============ -->
+      <section id="hero-section">
+        <div class="container hero-grid">
+          <div id="hero-content" class="reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-bolt"></i> Set 01 — The Mission</span>
 
-</header>
+            <h1>Build strength.<br />Burn fat.<br /><span>Live stronger.</span></h1>
 
-<!-- nav bar end  -->
+            <p>
+              Personalized workout programs, real nutrition guidance, and the tools
+              to track your progress — built for people who train with intent.
+            </p>
 
-    <!-- hero-section -->
-    <div id="hero-section">
-      <div class="container">
-        <div id="hero-content">
-          <span class="section-tag">Transform Your Body</span>
+            <div class="hero-buttons">
+              <a href="training.html" class="btn-primary">Start Training <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="diet.html" class="btn-secondary">Explore Diet Plans</a>
+            </div>
 
-          <h1>Build Strength, <span>Burn Fat</span> & Live Healthier</h1>
+            <div class="hero-micro-stats">
+              <div>
+                <span class="mono" data-count="10000" data-suffix="+">0</span>
+                <p>Active members</p>
+              </div>
+              <div>
+                <span class="mono" data-count="500" data-suffix="+">0</span>
+                <p>Workout plans</p>
+              </div>
+              <div>
+                <span class="mono" data-count="95" data-suffix="%">0</span>
+                <p>Success rate</p>
+              </div>
+            </div>
+          </div>
 
-          <p>
-            Personalized workout plans, diet guidance, and fitness resources to
-            help you achieve your goals faster.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="training.html" class="btn-primary"> Start Training </a>
-
-            <a href="diet.html" class="btn-secondary"> Explore Diet Plans </a>
+          <div id="hero-image" class="reveal-up delay-1">
+            <div class="hero-frame frame-main">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop&q=80" alt="Athlete lifting a barbell in the gym" />
+            </div>
+            <div class="hero-frame frame-float-1">
+              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&auto=format&fit=crop&q=80" alt="Woman finishing a strength set" />
+            </div>
+            <div class="hero-frame frame-float-2">
+              <img src="https://images.unsplash.com/photo-1584863231364-2edc166de576?w=500&auto=format&fit=crop&q=80" alt="Close up of weight plates" />
+            </div>
+            <div class="hero-tag">
+              <i class="fa-solid fa-stopwatch"></i>
+              <div>
+                <strong>Live now</strong>
+                <span>412 members training</span>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div id="hero-image">
-          <img
-            src="https://images.unsplash.com/photo-1648995361141-30676a75fd27?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fHdvcmtvdXR8ZW58MHx8MHx8fDA%3D"
-            alt="Fitness Training"
-          />
-
-          <img
-            id="hero-image1"
-            src="https://plus.unsplash.com/premium_photo-1665673312770-90df9f77ddfa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fHdvcmtvdXR8ZW58MHx8MHx8fDA%3D"
-            alt="Fitness Training"
-          />
-          <img
-            id="hero-image2"
-            src="https://plus.unsplash.com/premium_photo-1663036880678-62ae2e87c4c1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njl8fHdvcmtvdXR8ZW58MHx8MHx8fDA%3D"
-            alt="Fitness Training"
-          />
+      <!-- ============ TICKER ============ -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>NO EXCUSES</span><span>•</span><span>TRACK EVERY REP</span><span>•</span>
+          <span>EAT WITH PURPOSE</span><span>•</span><span>PROGRESS OVER PERFECTION</span><span>•</span>
+          <span>NO EXCUSES</span><span>•</span><span>TRACK EVERY REP</span><span>•</span>
+          <span>EAT WITH PURPOSE</span><span>•</span><span>PROGRESS OVER PERFECTION</span><span>•</span>
         </div>
       </div>
-    </div>
-    <!-- motivation-section -->
-    <section id="motivation-section">
-      <div class="container">
-        <div class="motivation-image">
-          <img src="images/home/dumble.jpg" alt="Fitness Training" />
-        </div>
 
-        <div class="motivation-content">
-          <h2 class="section-title">Unleash Your Full Potential</h2>
+      <!-- ============ MOTIVATION ============ -->
+      <section id="motivation-section">
+        <div class="container motivation-grid">
+          <div class="motivation-image reveal-up">
+            <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=700&auto=format&fit=crop&q=80" alt="Dumbbells racked in a gym" />
+            <div class="motivation-badge">
+              <span class="mono">03:47:12</span>
+              <p>logged this week</p>
+            </div>
+          </div>
 
-          <p class="section-description">
-            Push beyond your limits with expert training programs, smart
-            nutrition strategies, and fitness guidance designed to help you
-            become stronger every day.
-          </p>
-        </div>
-      </div>
-    </section>
+          <div class="motivation-content reveal-up delay-1">
+            <span class="eyebrow"><i class="fa-solid fa-fire"></i> Set 02 — The Standard</span>
+            <h2 class="section-title">Unleash your full potential</h2>
+            <p class="section-description">
+              Push beyond your limits with expert training programs, smart
+              nutrition strategies, and coaching designed to make you stronger,
+              one honest session at a time.
+            </p>
 
-    <!-- stats-section  -->
-    <div id="stats-section">
-      <div class="container">
-        <div id="stats-grid">
-          <div class="stat-card">
-            <h2>10K+</h2>
-            <p>Active Members</p>
-          </div>
-          <div class="stat-card">
-            <h2>500+</h2>
-            <p>Workout Plans</p>
-          </div>
-          <div class="stat-card">
-            <h2>50+</h2>
-            <p>Trainners</p>
-          </div>
-          <div class="stat-card">
-            <h2>95%</h2>
-            <p>Success Rate</p>
+            <ul class="check-list">
+              <li><i class="fa-solid fa-check"></i> Programs built by certified coaches</li>
+              <li><i class="fa-solid fa-check"></i> Nutrition plans that fit real life</li>
+              <li><i class="fa-solid fa-check"></i> Progress tracking that keeps you honest</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- stats-section End -->
-
-    <!-- training section start  -->
-    <section class="training-preview" id="training">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-tag">TRAINING</span>
-          <h2>Train Smarter. Get Stronger.</h2>
-
-          <p>
-            Whether you're just starting your fitness journey or pushing for the
-            next level, explore expert-designed workout programs for every goal.
-          </p>
-        </div>
-
-        <div class="training-grid">
-          <article class="training-card">
-            <div class="icon">🏠</div>
-            <h3>Home Workouts</h3>
-            <p>Effective routines requiring little or no equipment.</p>
-          </article>
-
-          <article class="training-card">
-            <div class="icon">🏋️</div>
-            <h3>Gym Training</h3>
-            <p>Build strength with structured gym workout programs.</p>
-          </article>
-
-          <article class="training-card">
-            <div class="icon">🔥</div>
-            <h3>Weight Loss</h3>
-            <p>Burn fat with proven cardio and strength workouts.</p>
-          </article>
-
-          <article class="training-card">
-            <div class="icon">💪</div>
-            <h3>Muscle Gain</h3>
-            <p>Progressive plans designed to maximize muscle growth.</p>
-          </article>
-        </div>
-
-        <div class="training-footer">
-          <div class="training-stats">
-            <div>
-              <h3>100+</h3>
+      <!-- ============ SCOREBOARD / STATS ============ -->
+      <section id="stats-section">
+        <div class="container">
+          <div id="stats-grid">
+            <div class="stat-card reveal-up">
+              <h2><span class="mono" data-count="10000" data-suffix="+">0</span></h2>
+              <p>Active Members</p>
+            </div>
+            <div class="stat-card reveal-up delay-1">
+              <h2><span class="mono" data-count="500" data-suffix="+">0</span></h2>
               <p>Workout Plans</p>
             </div>
-
-            <div>
-              <h3>12</h3>
-              <p>Training Categories</p>
+            <div class="stat-card reveal-up delay-2">
+              <h2><span class="mono" data-count="50" data-suffix="+">0</span></h2>
+              <p>Trainers</p>
             </div>
-
-            <div>
-              <h3>All Levels</h3>
-              <p>Beginner to Advanced</p>
+            <div class="stat-card reveal-up delay-3">
+              <h2><span class="mono" data-count="95" data-suffix="%">0</span></h2>
+              <p>Success Rate</p>
             </div>
           </div>
-
-          <a href="training.html" class="btn-training">
-            Explore All Training →
-          </a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- programs-section -->
-    <section id="programs-section">
-      <div class="container">
-        <div class="program-header">
-          <h2>Our Fitness Programs</h2>
-          <p>Choose the perfect program for your fitness goals.</p>
-        </div>
-
-        <div id="programs-grid">
-          <div class="program-card">
-            <h3>Weight Loss</h3>
-            <p>Burn fat and improve fitness.</p>
-          </div>
-
-          <div class="program-card">
-            <h3>Muscle Gain</h3>
-            <p>Build strength and muscle mass.</p>
-          </div>
-
-          <div class="program-card">
-            <h3>Home Workouts</h3>
-            <p>Train anywhere without equipment.</p>
-          </div>
-
-          <div class="program-card">
-            <h3>Gym Workouts</h3>
-            <p>Structured gym training plans.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- workout-section -->
-    <!-- workout-section -->
-    <div id="workout-section">
-      <div class="container">
-        <div id="workout-content">
-          <div class="section-heading">
-            <span>Workout Programs</span>
-            <h2>Train Smarter, Get Stronger</h2>
+      <!-- ============ TRAINING PREVIEW ============ -->
+      <section class="training-preview" id="training">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-dumbbell"></i> Set 03 — Training</span>
+            <h2>Train smarter. Get stronger.</h2>
             <p>
-              Choose the perfect workout plan based on your fitness goals.
-              Whether you want to build muscle, lose fat, or improve endurance,
-              we've got you covered.
+              Whether you're just starting your fitness journey or pushing for the
+              next level, explore expert-designed workout programs for every goal.
             </p>
           </div>
 
-          <div class="workout-cards">
-            <div class="workout-card">
-              <h3>💪 Strength Training</h3>
+          <div class="training-grid">
+            <article class="training-card reveal-up">
+              <div class="icon"><i class="fa-solid fa-house"></i></div>
+              <h3>Home Workouts</h3>
+              <p>Effective routines requiring little or no equipment.</p>
+              <a href="training.html" class="card-link">View plans <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="training-card reveal-up delay-1">
+              <div class="icon"><i class="fa-solid fa-dumbbell"></i></div>
+              <h3>Gym Training</h3>
+              <p>Build strength with structured gym workout programs.</p>
+              <a href="training.html" class="card-link">View plans <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="training-card reveal-up delay-2">
+              <div class="icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+              <h3>Weight Loss</h3>
+              <p>Burn fat with proven cardio and strength workouts.</p>
+              <a href="training.html" class="card-link">View plans <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="training-card reveal-up delay-3">
+              <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+              <h3>Muscle Gain</h3>
+              <p>Progressive plans designed to maximize muscle growth.</p>
+              <a href="training.html" class="card-link">View plans <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+          </div>
+
+          <div class="training-footer">
+            <div class="training-stats">
+              <div>
+                <h3>100+</h3>
+                <p>Workout Plans</p>
+              </div>
+              <div>
+                <h3>12</h3>
+                <p>Training Categories</p>
+              </div>
+              <div>
+                <h3>All Levels</h3>
+                <p>Beginner to Advanced</p>
+              </div>
+            </div>
+
+            <a href="training.html" class="btn-training">Explore All Training <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROGRAMS ============ -->
+      <section id="programs-section">
+        <div class="container">
+          <div class="program-header reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-list-check"></i> Set 04 — Programs</span>
+            <h2>Our fitness programs</h2>
+            <p>Choose the perfect program for your fitness goals.</p>
+          </div>
+
+          <div id="programs-grid">
+            <div class="program-card reveal-up">
+              <span class="program-index mono">01</span>
+              <h3>Weight Loss</h3>
+              <p>Burn fat and improve overall fitness.</p>
+            </div>
+
+            <div class="program-card reveal-up delay-1">
+              <span class="program-index mono">02</span>
+              <h3>Muscle Gain</h3>
+              <p>Build strength and lean muscle mass.</p>
+            </div>
+
+            <div class="program-card reveal-up delay-2">
+              <span class="program-index mono">03</span>
+              <h3>Home Workouts</h3>
+              <p>Train anywhere without equipment.</p>
+            </div>
+
+            <div class="program-card reveal-up delay-3">
+              <span class="program-index mono">04</span>
+              <h3>Gym Workouts</h3>
+              <p>Structured gym training plans.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WORKOUT ============ -->
+      <section id="workout-section">
+        <div class="container">
+          <div id="workout-content">
+            <div class="section-heading reveal-up">
+              <span class="eyebrow"><i class="fa-solid fa-heart-pulse"></i> Set 05 — Focus Areas</span>
+              <h2>Train smarter, get stronger</h2>
               <p>
-                Increase muscle mass and overall strength with progressive
-                resistance workouts.
+                Choose the perfect workout plan based on your fitness goals.
+                Whether you want to build muscle, lose fat, or improve endurance,
+                we've got you covered.
               </p>
-              <a href="#">Learn More →</a>
             </div>
 
-            <div class="workout-card">
-              <h3>🔥 Fat Loss</h3>
+            <div class="workout-cards">
+              <div class="workout-card reveal-up">
+                <div class="icon"><i class="fa-solid fa-dumbbell"></i></div>
+                <h3>Strength Training</h3>
+                <p>Increase muscle mass and overall strength with progressive resistance workouts.</p>
+                <a href="training.html">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+
+              <div class="workout-card reveal-up delay-1">
+                <div class="icon"><i class="fa-solid fa-fire"></i></div>
+                <h3>Fat Loss</h3>
+                <p>Burn calories efficiently with HIIT, cardio, and full-body workouts.</p>
+                <a href="training.html">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+
+              <div class="workout-card reveal-up delay-2">
+                <div class="icon"><i class="fa-solid fa-person-running"></i></div>
+                <h3>Endurance</h3>
+                <p>Improve stamina, cardiovascular health, and athletic performance.</p>
+                <a href="training.html">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BMI CALCULATOR ============ -->
+      <div id="bmi-section">
+        <div class="container">
+          <div class="bmi-content">
+            <div class="bmi-text reveal-up">
+              <span class="eyebrow"><i class="fa-solid fa-ruler"></i> Set 06 — Know Your Numbers</span>
+              <h2>Calculate your BMI</h2>
               <p>
-                Burn calories efficiently with HIIT, cardio, and full-body
-                workouts.
+                Check your Body Mass Index to understand whether your weight is
+                in a healthy range for your height. This is a screening tool,
+                not a diagnosis.
               </p>
-              <a href="#">Learn More →</a>
+
+              <div class="bmi-form">
+                <div class="bmi-input-group">
+                  <label for="height">Height (cm)</label>
+                  <input type="number" id="height" placeholder="e.g. 175" min="0" />
+                </div>
+                <div class="bmi-input-group">
+                  <label for="weight">Weight (kg)</label>
+                  <input type="number" id="weight" placeholder="e.g. 70" min="0" />
+                </div>
+                <button id="calcBmiBtn">Calculate BMI</button>
+              </div>
+
+              <div class="bmi-result" id="bmiResult" hidden>
+                <div class="bmi-result-value">
+                  <span class="mono" id="bmiNumber">0.0</span>
+                  <span class="bmi-category" id="bmiCategory">—</span>
+                </div>
+                <div class="bmi-scale">
+                  <div class="bmi-scale-bar">
+                    <span class="seg under">Underweight</span>
+                    <span class="seg normal">Normal</span>
+                    <span class="seg over">Overweight</span>
+                    <span class="seg obese">Obese</span>
+                    <div class="bmi-marker" id="bmiMarker"></div>
+                  </div>
+                </div>
+                <p class="bmi-note">This is a general guideline. Talk to a healthcare professional for personalized advice.</p>
+              </div>
             </div>
 
-            <div class="workout-card">
-              <h3>🏃 Endurance</h3>
-              <p>
-                Improve stamina, cardiovascular health, and athletic
-                performance.
-              </p>
-              <a href="#">Learn More →</a>
+            <div class="bmi-image reveal-up delay-1">
+              <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=650&auto=format&fit=crop&q=80" alt="Person checking body measurements" />
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- BMI Section -->
-    <div id="bmi-section">
-      <div class="container">
-        <div class="bmi-content">
-          <div class="bmi-text">
-            <span>Body Mass Index</span>
-            <h2>Calculate Your BMI</h2>
-            <p>
-              Check your Body Mass Index to understand whether your weight is
-              healthy according to your height.
-            </p>
 
-            <div class="bmi-form">
-              <input type="number" id="height" placeholder="Height (cm)" />
-              <input type="number" id="weight" placeholder="Weight (kg)" />
-              <button>Calculate BMI</button>
+      <!-- ============ DIET ============ -->
+      <div id="diet-section">
+        <div class="container">
+          <div class="diet-header reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-leaf"></i> Set 07 — Nutrition</span>
+            <h2>Choose your perfect diet plan</h2>
+            <p>
+              Fuel your body with balanced nutrition designed for muscle gain, fat
+              loss, and a healthier lifestyle.
+            </p>
+          </div>
+
+          <div class="diet-cards">
+            <div class="diet-card reveal-up">
+              <div class="icon"><i class="fa-solid fa-carrot"></i></div>
+              <h3>Weight Loss</h3>
+              <p>Low-calorie meals rich in protein and fiber to burn fat effectively.</p>
+              <span class="diet-macro mono">P 40 · C 30 · F 30</span>
+            </div>
+
+            <div class="diet-card reveal-up delay-1">
+              <div class="icon"><i class="fa-solid fa-drumstick-bite"></i></div>
+              <h3>Muscle Gain</h3>
+              <p>High-protein meals with healthy carbs to build lean muscle mass.</p>
+              <span class="diet-macro mono">P 35 · C 45 · F 20</span>
+            </div>
+
+            <div class="diet-card reveal-up delay-2">
+              <div class="icon"><i class="fa-solid fa-seedling"></i></div>
+              <h3>Balanced Diet</h3>
+              <p>Maintain your health with a balanced mix of proteins, carbs, and fats.</p>
+              <span class="diet-macro mono">P 30 · C 40 · F 30</span>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="bmi-image">
-            <img
-              src="https://media.istockphoto.com/id/474923903/photo/measurement-of-bmi.webp?a=1&b=1&s=612x612&w=0&k=20&c=Ov-pd8C9VBge4E2Fju65LEKKxJ7VeJGQ4FRjKFbwTk4="
-              alt="BMI Calculator"
-            />
+      <!-- ============ STORIES ============ -->
+      <div id="stories-section">
+        <div class="container">
+          <div class="stories-header reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-medal"></i> Set 08 — Results</span>
+            <h2>Real people, real transformations</h2>
+            <p>Get inspired by the fitness journeys of our community members.</p>
+          </div>
+
+          <div class="stories-cards">
+            <div class="story-card reveal-up">
+              <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&auto=format&fit=crop&q=80" alt="Rahul Sharma after his transformation" />
+                <span class="story-tag mono">−18 KG</span>
+              </div>
+              <h3>Rahul Sharma</h3>
+              <p>Lost 18kg in just 6 months with consistent workouts and a balanced diet.</p>
+            </div>
+
+            <div class="story-card reveal-up delay-1">
+              <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&auto=format&fit=crop&q=80" alt="Priya Verma training" />
+                <span class="story-tag mono">+CONF.</span>
+              </div>
+              <h3>Priya Verma</h3>
+              <p>Built strength, improved confidence, and transformed her lifestyle.</p>
+            </div>
+
+            <div class="story-card reveal-up delay-2">
+              <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1583468982228-19f19164aee2?w=600&auto=format&fit=crop&q=80" alt="Aman Singh after building muscle" />
+                <span class="story-tag mono">+10 KG</span>
+              </div>
+              <h3>Aman Singh</h3>
+              <p>Gained 10kg of lean muscle with proper nutrition and training.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Diet Section -->
-    <div id="diet-section">
-      <div class="container">
-        <div class="diet-header">
-          <span>Healthy Nutrition</span>
-          <h2>Choose Your Perfect Diet Plan</h2>
-          <p>
-            Fuel your body with balanced nutrition designed for muscle gain, fat
-            loss, and a healthier lifestyle.
-          </p>
-        </div>
-
-        <div class="diet-cards">
-          <div class="diet-card">
-            <h3>🥗 Weight Loss</h3>
-            <p>
-              Low-calorie meals rich in protein and fiber to burn fat
-              effectively.
-            </p>
+      <!-- ============ ARTICLES ============ -->
+      <div id="articles-section">
+        <div class="container">
+          <div class="article-header reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-pen-nib"></i> Set 09 — The Blog</span>
+            <h2>Latest articles</h2>
+            <p>Read expert tips on workouts, nutrition, recovery, and healthy living.</p>
           </div>
 
-          <div class="diet-card">
-            <h3>🍗 Muscle Gain</h3>
-            <p>
-              High-protein meals with healthy carbs to build lean muscle mass.
-            </p>
-          </div>
+          <div class="article-cards">
+            <div class="article-card reveal-up">
+              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&auto=format&fit=crop&q=80" alt="Muscle building foods" />
+              <div class="article-body">
+                <span class="article-tag mono">NUTRITION</span>
+                <h3>Top 10 Muscle Building Foods</h3>
+                <p>Discover the best foods that help increase muscle growth naturally.</p>
+                <a href="blog.html">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
 
-          <div class="diet-card">
-            <h3>🥑 Balanced Diet</h3>
-            <p>
-              Maintain your health with a balanced mix of proteins, carbs, and
-              fats.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+            <div class="article-card reveal-up delay-1">
+              <img src="https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=600&auto=format&fit=crop&q=80" alt="Common gym mistakes" />
+              <div class="article-body">
+                <span class="article-tag mono">TRAINING</span>
+                <h3>5 Common Gym Mistakes</h3>
+                <p>Avoid these beginner mistakes to achieve faster fitness results.</p>
+                <a href="blog.html">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
 
-    <!-- Stories Section -->
-    <div id="stories-section">
-      <div class="container">
-        <div class="stories-header">
-          <span>Success Stories</span>
-          <h2>Real People, Real Transformations</h2>
-          <p>
-            Get inspired by the amazing fitness journeys of our community
-            members.
-          </p>
-        </div>
-
-        <div class="stories-cards">
-          <div class="story-card">
-            <img
-              src="https://images.unsplash.com/photo-1729280860113-82372b7afad6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZpdCUyMG1hbnxlbnwwfHwwfHx8MA%3D%3D"
-              alt="Story 1"
-            />
-
-            <h3>Rahul Sharma</h3>
-
-            <p>
-              Lost 18kg in just 6 months with consistent workouts and a balanced
-              diet.
-            </p>
-          </div>
-
-          <div class="story-card">
-            <img
-              src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zml0JTIwd29tZW58ZW58MHx8MHx8fDA%3D"
-              alt="Story 2"
-            />
-
-            <h3>Priya Verma</h3>
-
-            <p>
-              Built strength, improved confidence, and transformed her
-              lifestyle.
-            </p>
-          </div>
-
-          <div class="story-card">
-            <img
-              src="https://images.unsplash.com/photo-1584952811368-02328c3e7eb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZpdCUyMG1ubnxlbnwwfHwwfHx8MA%3D%3D"
-              alt="Story 3"
-            />
-
-            <h3>Aman Singh</h3>
-
-            <p>
-              Gained 10kg of lean muscle with proper nutrition and training.
-            </p>
+            <div class="article-card reveal-up delay-2">
+              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&auto=format&fit=crop&q=80" alt="Best morning workout routine" />
+              <div class="article-body">
+                <span class="article-tag mono">ROUTINE</span>
+                <h3>Best Morning Workout Routine</h3>
+                <p>Start your day with an effective full-body workout for maximum energy.</p>
+                <a href="blog.html">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Articles Section -->
-    <div id="articles-section">
-      <div class="container">
-        <div class="article-header">
-          <span>Fitness Blog</span>
-          <h2>Latest Articles</h2>
-          <p>
-            Read expert tips on workouts, nutrition, recovery, and healthy
-            living.
-          </p>
+      <!-- ============ FINAL CTA ============ -->
+      <section id="cta-section">
+        <div class="container cta-box reveal-up">
+          <div>
+            <span class="eyebrow"><i class="fa-solid fa-flag-checkered"></i> Set 10 — Your Move</span>
+            <h2>Your next set starts now.</h2>
+            <p>Join thousands of members already training smarter with AD Fitness.</p>
+          </div>
+          <a href="signup.html" class="btn-primary">Create Free Account <i class="fa-solid fa-arrow-right"></i></a>
         </div>
+      </section>
+    </main>
 
-        <div class="article-cards">
-          <div class="article-card">
-            <img src="./images/home/food.jpg" alt="Article 1" />
-
-            <h3>Top 10 Muscle Building Foods</h3>
-
-            <p>
-              Discover the best foods that help increase muscle growth
-              naturally.
-            </p>
-
-            <a href="#">Read More →</a>
-          </div>
-
-          <div class="article-card">
-            <img src="./images/home/mistake in gym.jpg" alt="Article 2" />
-
-            <h3>5 Common Gym Mistakes</h3>
-
-            <p>
-              Avoid these beginner mistakes to achieve faster fitness results.
-            </p>
-
-            <a href="#">Read More →</a>
-          </div>
-
-          <div class="article-card">
-            <img src="./images/home/best workout.jpg" alt="Article 3" />
-
-            <h3>Best Morning Workout Routine</h3>
-
-            <p>
-              Start your day with an effective full-body workout for maximum
-              energy.
-            </p>
-
-            <a href="#">Read More →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- foooooooooooter section  -->
+    <!-- ============ FOOTER ============ -->
     <footer id="footer">
-      <div class="container">
-        <h2>AD FITNESS</h2>
-
-        <p class="tagline">Train Smart • Eat Better • Live Stronger</p>
-
-        <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Training</a></li>
-          <li><a href="#">Diet</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-
-        <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">AD</span>
+            <div class="logo-text">
+              <h2>AD FITNESS</h2>
+            </div>
+          </a>
+          <p class="tagline">Train Smart • Eat Better • Live Stronger</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
         </div>
 
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="diet.html">Diet</a></li>
+            <li><a href="products.html">Products</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Log In</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Stay in the loop</h4>
+          <p class="footer-note">Weekly training and nutrition tips, no spam.</p>
+          <form class="footer-form" id="newsletterForm">
+            <input type="email" placeholder="you@example.com" required />
+            <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+          <p class="footer-form-msg" id="footerFormMsg" hidden>You're on the list.</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
         <p class="copyright">© 2026 AD FITNESS. All Rights Reserved.</p>
+        <button id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
       </div>
     </footer>
 
+    <script src="JS/common.js"></script>
     <script src="JS/index.js"></script>
   </body>
 </html>

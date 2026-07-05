@@ -1,15 +1,16 @@
 // ============================================================
-// AD FITNESS — index.js
+// AD FITNESS — common.js
+// Shared behavior used on every page: nav, scroll bar,
+// reveal-on-scroll, back-to-top, newsletter form.
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initScrollBar();
   initRevealOnScroll();
-  initCountUp();
-  initBmiCalculator();
-  initNewsletterForm();
   initBackToTop();
+  initNewsletterForm();
+  markActiveNavLink();
 });
 
 // ------------------------------------------------------------
@@ -26,13 +27,23 @@ function initMobileMenu() {
     menuBtn.setAttribute("aria-expanded", String(isOpen));
   });
 
-  // close menu when a nav link is tapped
   document.querySelectorAll(".nav-links a").forEach((link) => {
     link.addEventListener("click", () => {
       header.classList.remove("nav-open");
       menuBtn.classList.remove("open");
       menuBtn.setAttribute("aria-expanded", "false");
     });
+  });
+}
+
+// ------------------------------------------------------------
+// Highlight the current page in the nav
+// ------------------------------------------------------------
+function markActiveNavLink() {
+  const current = window.location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (href === current) link.classList.add("active");
   });
 }
 
@@ -83,6 +94,7 @@ function initRevealOnScroll() {
 
 // ------------------------------------------------------------
 // Count-up animation for stats / scoreboard numbers
+// Shared because it's reused on any page with [data-count]
 // ------------------------------------------------------------
 function initCountUp() {
   const counters = document.querySelectorAll("[data-count]");
@@ -96,7 +108,7 @@ function initCountUp() {
 
     const step = (now) => {
       const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
       const value = Math.round(target * eased);
       el.textContent = value.toLocaleString() + suffix;
       if (progress < 1) requestAnimationFrame(step);
@@ -123,64 +135,6 @@ function initCountUp() {
   );
 
   counters.forEach((c) => observer.observe(c));
-}
-
-// ------------------------------------------------------------
-// BMI Calculator
-// ------------------------------------------------------------
-function initBmiCalculator() {
-  const btn = document.getElementById("calcBmiBtn");
-  const heightInput = document.getElementById("height");
-  const weightInput = document.getElementById("weight");
-  const resultBox = document.getElementById("bmiResult");
-  const bmiNumber = document.getElementById("bmiNumber");
-  const bmiCategory = document.getElementById("bmiCategory");
-  const bmiMarker = document.getElementById("bmiMarker");
-
-  if (!btn) return;
-
-  const categorize = (bmi) => {
-    if (bmi < 18.5) return { label: "Underweight", pct: mapRange(bmi, 10, 18.5, 2, 25) };
-    if (bmi < 25) return { label: "Normal", pct: mapRange(bmi, 18.5, 25, 25, 50) };
-    if (bmi < 30) return { label: "Overweight", pct: mapRange(bmi, 25, 30, 50, 75) };
-    return { label: "Obese", pct: mapRange(bmi, 30, 45, 75, 98) };
-  };
-
-  const mapRange = (value, inMin, inMax, outMin, outMax) => {
-    const clamped = Math.min(Math.max(value, inMin), inMax);
-    const pct = ((clamped - inMin) / (inMax - inMin)) * (outMax - outMin) + outMin;
-    return Math.min(Math.max(pct, 0), 100);
-  };
-
-  const calculate = () => {
-    const heightCm = parseFloat(heightInput.value);
-    const weightKg = parseFloat(weightInput.value);
-
-    if (!heightCm || !weightKg || heightCm <= 0 || weightKg <= 0) {
-      heightInput.style.borderColor = heightCm ? "" : "var(--ember)";
-      weightInput.style.borderColor = weightKg ? "" : "var(--ember)";
-      return;
-    }
-
-    heightInput.style.borderColor = "";
-    weightInput.style.borderColor = "";
-
-    const heightM = heightCm / 100;
-    const bmi = weightKg / (heightM * heightM);
-    const { label, pct } = categorize(bmi);
-
-    bmiNumber.textContent = bmi.toFixed(1);
-    bmiCategory.textContent = label;
-    bmiMarker.style.left = pct + "%";
-    resultBox.hidden = false;
-  };
-
-  btn.addEventListener("click", calculate);
-  [heightInput, weightInput].forEach((input) => {
-    input.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") calculate();
-    });
-  });
 }
 
 // ------------------------------------------------------------

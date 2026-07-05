@@ -1,105 +1,36 @@
 // ============================================================
 // AD FITNESS — index.js
+// Home Page Only
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  initMobileMenu();
-  initScrollBar();
-  initRevealOnScroll();
   initCountUp();
   initBmiCalculator();
-  initNewsletterForm();
-  initBackToTop();
 });
 
 // ------------------------------------------------------------
-// Mobile menu toggle
-// ------------------------------------------------------------
-function initMobileMenu() {
-  const menuBtn = document.getElementById("menuBtn");
-  const header = document.getElementById("siteHeader");
-  if (!menuBtn || !header) return;
-
-  menuBtn.addEventListener("click", () => {
-    const isOpen = header.classList.toggle("nav-open");
-    menuBtn.classList.toggle("open", isOpen);
-    menuBtn.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  // close menu when a nav link is tapped
-  document.querySelectorAll(".nav-links a").forEach((link) => {
-    link.addEventListener("click", () => {
-      header.classList.remove("nav-open");
-      menuBtn.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded", "false");
-    });
-  });
-}
-
-// ------------------------------------------------------------
-// Scroll progress bar
-// ------------------------------------------------------------
-function initScrollBar() {
-  const bar = document.getElementById("scrollBar");
-  if (!bar) return;
-
-  const update = () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    bar.style.width = pct + "%";
-  };
-
-  window.addEventListener("scroll", update, { passive: true });
-  update();
-}
-
-// ------------------------------------------------------------
-// Reveal-on-scroll (IntersectionObserver)
-// ------------------------------------------------------------
-function initRevealOnScroll() {
-  const targets = document.querySelectorAll(".reveal-up");
-  if (!targets.length) return;
-
-  if (!("IntersectionObserver" in window)) {
-    targets.forEach((t) => t.classList.add("in-view"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-  );
-
-  targets.forEach((t) => observer.observe(t));
-}
-
-// ------------------------------------------------------------
-// Count-up animation for stats / scoreboard numbers
+// Count-up animation for stats
 // ------------------------------------------------------------
 function initCountUp() {
   const counters = document.querySelectorAll("[data-count]");
   if (!counters.length) return;
 
   const animate = (el) => {
-    const target = parseInt(el.getAttribute("data-count"), 10) || 0;
-    const suffix = el.getAttribute("data-suffix") || "";
+    const target = parseInt(el.dataset.count) || 0;
+    const suffix = el.dataset.suffix || "";
     const duration = 1400;
     const start = performance.now();
 
     const step = (now) => {
       const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
       const value = Math.round(target * eased);
+
       el.textContent = value.toLocaleString() + suffix;
-      if (progress < 1) requestAnimationFrame(step);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
     };
 
     requestAnimationFrame(step);
@@ -119,10 +50,12 @@ function initCountUp() {
         }
       });
     },
-    { threshold: 0.4 }
+    {
+      threshold: 0.4,
+    }
   );
 
-  counters.forEach((c) => observer.observe(c));
+  counters.forEach((counter) => observer.observe(counter));
 }
 
 // ------------------------------------------------------------
@@ -130,82 +63,62 @@ function initCountUp() {
 // ------------------------------------------------------------
 function initBmiCalculator() {
   const btn = document.getElementById("calcBmiBtn");
+
+  if (!btn) return;
+
   const heightInput = document.getElementById("height");
   const weightInput = document.getElementById("weight");
+
   const resultBox = document.getElementById("bmiResult");
   const bmiNumber = document.getElementById("bmiNumber");
   const bmiCategory = document.getElementById("bmiCategory");
   const bmiMarker = document.getElementById("bmiMarker");
 
-  if (!btn) return;
+  btn.addEventListener("click", calculateBMI);
 
-  const categorize = (bmi) => {
-    if (bmi < 18.5) return { label: "Underweight", pct: mapRange(bmi, 10, 18.5, 2, 25) };
-    if (bmi < 25) return { label: "Normal", pct: mapRange(bmi, 18.5, 25, 25, 50) };
-    if (bmi < 30) return { label: "Overweight", pct: mapRange(bmi, 25, 30, 50, 75) };
-    return { label: "Obese", pct: mapRange(bmi, 30, 45, 75, 98) };
-  };
+  [heightInput, weightInput].forEach((input) => {
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        calculateBMI();
+      }
+    });
+  });
 
-  const mapRange = (value, inMin, inMax, outMin, outMax) => {
-    const clamped = Math.min(Math.max(value, inMin), inMax);
-    const pct = ((clamped - inMin) / (inMax - inMin)) * (outMax - outMin) + outMin;
-    return Math.min(Math.max(pct, 0), 100);
-  };
+  function calculateBMI() {
+    const height = parseFloat(heightInput.value);
+    const weight = parseFloat(weightInput.value);
 
-  const calculate = () => {
-    const heightCm = parseFloat(heightInput.value);
-    const weightKg = parseFloat(weightInput.value);
-
-    if (!heightCm || !weightKg || heightCm <= 0 || weightKg <= 0) {
-      heightInput.style.borderColor = heightCm ? "" : "var(--ember)";
-      weightInput.style.borderColor = weightKg ? "" : "var(--ember)";
+    if (!height || !weight || height <= 0 || weight <= 0) {
+      alert("Please enter valid height and weight.");
       return;
     }
 
-    heightInput.style.borderColor = "";
-    weightInput.style.borderColor = "";
+    const bmi = weight / Math.pow(height / 100, 2);
 
-    const heightM = heightCm / 100;
-    const bmi = weightKg / (heightM * heightM);
-    const { label, pct } = categorize(bmi);
+    let category = "";
+    let position = 0;
+
+    if (bmi < 18.5) {
+      category = "Underweight";
+      position = 15;
+    } else if (bmi < 25) {
+      category = "Normal";
+      position = 40;
+    } else if (bmi < 30) {
+      category = "Overweight";
+      position = 65;
+    } else {
+      category = "Obese";
+      position = 90;
+    }
 
     bmiNumber.textContent = bmi.toFixed(1);
-    bmiCategory.textContent = label;
-    bmiMarker.style.left = pct + "%";
+    bmiCategory.textContent = category;
+
+    if (bmiMarker) {
+      bmiMarker.style.left = position + "%";
+    }
+
     resultBox.hidden = false;
-  };
-
-  btn.addEventListener("click", calculate);
-  [heightInput, weightInput].forEach((input) => {
-    input.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") calculate();
-    });
-  });
-}
-
-// ------------------------------------------------------------
-// Newsletter form (footer)
-// ------------------------------------------------------------
-function initNewsletterForm() {
-  const form = document.getElementById("newsletterForm");
-  const msg = document.getElementById("footerFormMsg");
-  if (!form) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    form.reset();
-    if (msg) msg.hidden = false;
-  });
-}
-
-// ------------------------------------------------------------
-// Back to top button
-// ------------------------------------------------------------
-function initBackToTop() {
-  const btn = document.getElementById("toTop");
-  if (!btn) return;
-
-  btn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  }
 }

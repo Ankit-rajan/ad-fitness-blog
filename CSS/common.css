@@ -659,6 +659,9 @@ footer{
     right:0;
 
 }
+#siteHeader.nav-open .nav-links{
+    right:0;
+}
 
 .nav-btns{
 
@@ -725,7 +728,7 @@ section{
 /* ==========================
    Mobile Navbar
 ========================== */
-
+/* 
 @media (max-width: 768px) {
 
   .menu-btn{
@@ -765,4 +768,4 @@ section{
   .login-btn{
     display:none;
   }
-}
+} */

@@ -376,6 +376,395 @@
 .food-tags span { background: var(--bg-alt); border: 1px solid var(--line); color: var(--muted); padding: 8px 16px; border-radius: 999px; font-size: 13px; }
 
 /* ==========================================================================
+   Diet page — goals, basics, energy, rules, protein, myths, schedule, etc.
+   ========================================================================== */
+
+/* Goal cards (Weight Loss / Muscle Gain / Maintenance) */
+.goal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.goal-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 26px; transition: transform 0.25s var(--ease), border-color 0.25s; }
+.goal-card:hover, .goal-card.active { transform: translateY(-6px); border-color: var(--volt); }
+.goal-card > i { width: 48px; height: 48px; display: grid; place-items: center; background: var(--volt-dim); color: var(--volt); border-radius: 50%; font-size: 18px; margin-bottom: 18px; }
+.goal-card h3 { font-size: 19px; margin-bottom: 10px; }
+.goal-card > p { color: var(--muted); font-size: 14.5px; margin-bottom: 16px; }
+.goal-card ul { display: flex; flex-direction: column; gap: 8px; }
+.goal-card ul li { font-size: 13.5px; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+.goal-card ul li i { color: var(--volt); font-size: 11px; }
+
+/* Basic cards (nutrition fundamentals) */
+.basics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.basic-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; }
+.basic-card > i { color: var(--volt); font-size: 26px; margin-bottom: 16px; display: block; }
+.basic-card h3 { font-size: 17px; margin-bottom: 12px; }
+.basic-card p { color: var(--muted); font-size: 14px; }
+.basic-card ul li { color: var(--muted); font-size: 13.5px; padding: 5px 0; }
+
+/* Energy balance */
+.energy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 30px; }
+.energy-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 24px; text-align: center; }
+.energy-card i { font-size: 26px; margin-bottom: 14px; }
+.energy-card.deficit i { color: var(--volt); }
+.energy-card.maintain i { color: var(--muted); }
+.energy-card.surplus i { color: var(--ember); }
+.energy-card h3 { font-size: 17px; margin-bottom: 8px; }
+.energy-card p { color: var(--muted); font-size: 13.5px; margin-bottom: 14px; }
+.energy-card h4 { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+.energy-card span { font-weight: 700; color: var(--ink); font-size: 15px; }
+
+/* Golden rules */
+.rules-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; margin-top: 30px; }
+.rule-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 18px; }
+.rule-card > span { font-family: var(--font-mono); color: var(--volt); font-size: 20px; font-weight: 700; }
+.rule-card h4 { font-size: 15px; margin: 10px 0 8px; }
+.rule-card p { color: var(--muted); font-size: 13px; }
+
+/* Generic icon-card grids reused for benefits / types / tips / timing / facts */
+.benefits-grid, .types-grid, .tips-grid, .timing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.benefit-card, .type-card, .tip-card, .timing-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 22px;
+  transition: transform 0.25s var(--ease), border-color 0.25s;
+}
+.benefit-card:hover, .type-card:hover, .tip-card:hover, .timing-card:hover { transform: translateY(-5px); border-color: var(--volt); }
+.benefit-card > i, .tip-card h3, .timing-card h3 { color: var(--volt); }
+.benefit-card > i { font-size: 22px; margin-bottom: 14px; display: block; }
+.benefit-card .icon { font-size: 26px; margin-bottom: 12px; }
+.type-card .type-number { font-family: var(--font-mono); color: var(--volt); font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.benefit-card h3, .type-card h3, .tip-card h3, .timing-card h3 { font-size: 16px; margin-bottom: 8px; }
+.benefit-card p, .type-card p, .tip-card p, .timing-card p { color: var(--muted); font-size: 13.5px; }
+
+.facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.fact-box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 20px; text-align: center; }
+.fact-box h3 { font-family: var(--font-mono); color: var(--volt); font-size: 24px; margin-bottom: 8px; }
+.fact-box p { color: var(--muted); font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* Protein / recipe food cards with images */
+.pfood-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.pfood-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; text-align: center; transition: transform 0.25s var(--ease); }
+.pfood-card:hover { transform: translateY(-5px); }
+.pfood-card img { width: 100%; height: 130px; object-fit: cover; background: var(--bg-alt); }
+.pfood-card h3 { font-size: 15.5px; margin: 14px 0 4px; }
+.pfood-card p { color: var(--volt); font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.pfood-card > span { display: block; color: var(--muted); font-size: 12px; padding-bottom: 16px; }
+
+.recipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.recipe-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; text-align: center; transition: transform 0.25s var(--ease); }
+.recipe-card:hover { transform: translateY(-5px); }
+.recipe-card img { width: 100%; height: 150px; object-fit: cover; background: var(--bg-alt); }
+.recipe-card h3 { font-size: 16px; margin: 16px 0 4px; }
+.recipe-card p { color: var(--muted); font-size: 13px; margin-bottom: 4px; }
+.recipe-card > span { display: block; color: var(--volt); font-weight: 700; font-size: 12.5px; padding-bottom: 16px; }
+
+/* Myth vs fact cards */
+.myth-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.myth-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 22px; }
+.myth-card h3 { font-size: 15px; margin-bottom: 6px; }
+.myth-card h4 { font-size: 15px; margin: 14px 0 6px; }
+.myth-card p { color: var(--muted); font-size: 13.5px; }
+
+/* Macro cards (with ingredient list) */
+.macro-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; transition: transform 0.25s var(--ease); }
+.macro-card:hover { transform: translateY(-5px); }
+.macro-card > i { color: var(--volt); font-size: 24px; margin-bottom: 14px; display: block; }
+.macro-card h3 { font-size: 18px; margin-bottom: 4px; }
+.macro-card h4 { color: var(--muted); font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 14px; }
+.macro-card ul li { color: var(--ink); font-size: 13.5px; padding: 4px 0; border-top: 1px solid var(--line); }
+.macro-card ul li:first-child { border-top: none; }
+
+/* Daily eating schedule (time-based timeline) */
+.schedule-track { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+.schedule-item { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--volt); border-radius: var(--radius); padding: 22px 18px; }
+.schedule-item > span { font-family: var(--font-mono); color: var(--volt); font-size: 12.5px; font-weight: 700; }
+.schedule-item h3 { font-size: 15.5px; margin: 8px 0; }
+.schedule-item p { color: var(--muted); font-size: 13px; }
+
+/* Nutrition (pre/post workout) cards */
+.nutrition-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.nutrition-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; }
+.nutrition-card > i { color: var(--ember); font-size: 24px; margin-bottom: 14px; display: block; }
+.nutrition-card h3 { font-size: 18px; margin-bottom: 10px; }
+.nutrition-card p { color: var(--muted); font-size: 13.5px; margin-bottom: 16px; }
+.nutrition-card ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.nutrition-card ul li { background: var(--bg-alt); border: 1px solid var(--line); color: var(--ink); font-size: 12.5px; padding: 6px 12px; border-radius: 999px; }
+
+/* Water banner */
+.water-box { max-width: 760px; margin: 0 auto; text-align: center; background: linear-gradient(120deg, var(--surface), var(--bg-alt)); border: 1px solid var(--line); border-radius: 20px; padding: 48px 40px; }
+.water-box i { font-size: 30px; color: var(--volt); margin-bottom: 16px; }
+.water-box h2 { font-family: var(--font-display); font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+.water-box h3 { color: var(--volt); font-size: 16px; margin-bottom: 14px; }
+.water-box > p { color: var(--muted); font-size: 14.5px; margin-bottom: 24px; }
+.water-tips { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.water-tips div { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink); }
+.water-tips i { color: var(--volt); }
+
+/* Foods to eat / avoid */
+.foodchoice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.foodchoice-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; }
+.foodchoice-card h3 { font-size: 17px; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+.foodchoice-card.eat h3 i { color: var(--volt); }
+.foodchoice-card.avoid h3 i { color: var(--ember); }
+.foodchoice-card ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.foodchoice-card ul li { background: var(--bg-alt); border: 1px solid var(--line); color: var(--muted); font-size: 12.5px; padding: 6px 14px; border-radius: 999px; }
+
+/* Veg / Non-veg */
+.foodtype-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.foodtype-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; }
+.foodtype-card > i { color: var(--volt); font-size: 24px; margin-bottom: 14px; display: block; }
+.foodtype-card h3 { font-size: 17px; margin-bottom: 16px; }
+.foodtype-card ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.foodtype-card ul li { background: var(--bg-alt); border: 1px solid var(--line); color: var(--muted); font-size: 12.5px; padding: 6px 14px; border-radius: 999px; }
+
+/* Supplement cards */
+.supplement-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.supplement-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 22px; text-align: center; transition: transform 0.25s var(--ease), border-color 0.25s; }
+.supplement-card:hover { transform: translateY(-5px); border-color: var(--volt); }
+.supplement-card i { width: 46px; height: 46px; display: grid; place-items: center; margin: 0 auto 14px; background: var(--volt-dim); color: var(--volt); border-radius: 50%; font-size: 18px; }
+.supplement-card h3 { font-size: 15.5px; margin-bottom: 8px; }
+.supplement-card p { color: var(--muted); font-size: 13px; }
+
+/* ==========================================================================
+   Diet page — goal cards, basics, energy, rules, types, facts, food,
+   timing, myths, recipes, water, eat/avoid lists
+   ========================================================================== */
+
+/* Goal cards (goal-grid) — icon + text + checklist */
+.goal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+.goal-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  transition: transform 0.25s var(--ease), border-color 0.25s;
+}
+
+.goal-card:hover, .goal-card.active { transform: translateY(-6px); border-color: var(--volt); }
+.goal-card > i { font-size: 26px; color: var(--volt); margin-bottom: 16px; display: block; }
+.goal-card h3 { font-size: 19px; margin-bottom: 10px; }
+.goal-card > p { color: var(--muted); font-size: 14.5px; margin-bottom: 16px; }
+.goal-card ul li { display: flex; align-items: center; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--muted); }
+.goal-card ul li i { color: var(--volt); font-size: 11px; }
+
+/* Basic / info cards (nutrition fundamentals) */
+.basics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+.basic-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+}
+
+.basic-card i { font-size: 24px; color: var(--ember); margin-bottom: 16px; display: block; }
+.basic-card h3 { font-size: 17.5px; margin-bottom: 12px; }
+.basic-card p { color: var(--muted); font-size: 14px; }
+.basic-card ul li { color: var(--muted); font-size: 13.5px; padding: 5px 0; }
+
+/* Energy balance cards */
+.energy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+.energy-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  text-align: center;
+}
+
+.energy-card i { font-size: 26px; margin-bottom: 14px; display: block; }
+.energy-card h3 { font-size: 18px; margin-bottom: 10px; }
+.energy-card p { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+.energy-card h4 { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+.energy-card span { font-weight: 700; font-size: 15px; }
+.energy-card.deficit { border-top-color: var(--volt); } .energy-card.deficit i, .energy-card.deficit span { color: var(--volt); }
+.energy-card.maintain { border-top-color: #4A90D9; } .energy-card.maintain i, .energy-card.maintain span { color: #4A90D9; }
+.energy-card.surplus { border-top-color: var(--ember); } .energy-card.surplus i, .energy-card.surplus span { color: var(--ember); }
+
+/* Numbered rule / type cards */
+.rules-grid, .types-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+
+.rule-card, .type-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  position: relative;
+}
+
+.rule-card span, .type-number {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--volt-dim);
+  -webkit-text-stroke: 1px var(--volt);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.rule-card h4, .type-card h3 { font-size: 15.5px; margin-bottom: 8px; }
+.rule-card p, .type-card p { color: var(--muted); font-size: 13px; }
+
+/* Fact boxes */
+.facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.fact-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.fact-box h3 { font-family: var(--font-mono); font-size: 26px; color: var(--volt); margin-bottom: 8px; }
+.fact-box p { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* Food cards with image (protein sources) */
+.food-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+.food-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.25s var(--ease), border-color 0.25s;
+}
+
+.food-card:hover { transform: translateY(-6px); border-color: var(--volt); }
+.food-card img { width: 100%; height: 130px; object-fit: cover; background: var(--bg-alt); }
+.food-card h3 { font-size: 15.5px; margin: 16px 0 4px; }
+.food-card p { color: var(--volt); font-size: 13px; margin-bottom: 4px; font-family: var(--font-mono); }
+.food-card span { display: block; color: var(--muted); font-size: 11.5px; padding-bottom: 16px; }
+
+/* Recipe cards (same visual language as food cards) */
+.recipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.recipe-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform 0.25s var(--ease); }
+.recipe-card:hover { transform: translateY(-6px); }
+.recipe-card img { width: 100%; height: 160px; object-fit: cover; background: var(--bg-alt); }
+.recipe-card h3 { font-size: 16px; margin: 16px 20px 4px; }
+.recipe-card p { color: var(--muted); font-size: 13.5px; margin: 0 20px 8px; }
+.recipe-card span { display: block; color: var(--volt); font-size: 12px; font-weight: 700; margin: 0 20px 18px; }
+
+/* Simple icon/emoji cards (benefits, tips, timing) */
+.benefits-grid, .tips-grid, .timing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.benefit-card, .tip-card, .timing-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  transition: transform 0.25s var(--ease), border-color 0.25s;
+}
+
+.benefit-card:hover, .tip-card:hover, .timing-card:hover { transform: translateY(-5px); border-color: var(--volt); }
+.benefit-card i, .benefit-card .icon { font-size: 24px; color: var(--volt); margin-bottom: 14px; display: block; }
+.benefit-card h3, .tip-card h3, .timing-card h3 { font-size: 16.5px; margin-bottom: 8px; }
+.benefit-card p, .tip-card p, .timing-card p { color: var(--muted); font-size: 13.5px; }
+
+/* Macro cards with list */
+.macro-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+
+.macro-card i { font-size: 24px; color: var(--volt); margin-bottom: 14px; display: block; }
+.macro-card h3 { font-size: 18px; margin-bottom: 4px; }
+.macro-card h4 { font-size: 12.5px; color: var(--muted); font-weight: 500; margin-bottom: 16px; }
+.macro-card ul li { color: var(--muted); font-size: 13.5px; padding: 6px 0; border-top: 1px solid var(--line); }
+.macro-card ul li:first-child { border-top: none; }
+
+/* Nutrition (pre/post workout) cards with list — reuses macro-card look */
+.nutrition-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.nutrition-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 26px; }
+.nutrition-card i { font-size: 24px; color: var(--ember); margin-bottom: 14px; display: block; }
+.nutrition-card h3 { font-size: 18px; margin-bottom: 8px; }
+.nutrition-card > p { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+.nutrition-card ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.nutrition-card ul li { background: var(--bg-alt); border: 1px solid var(--line); color: var(--muted); padding: 6px 14px; border-radius: 999px; font-size: 12.5px; }
+
+/* Myth vs fact cards */
+.myths-grid, .myths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.myth { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; }
+.myth h3 { font-size: 14px; color: var(--ember); margin-bottom: 6px; }
+.myth h4 { font-size: 14px; color: var(--volt); margin: 14px 0 6px; }
+.myth p { color: var(--muted); font-size: 13.5px; }
+
+/* Water intake feature box */
+.water-box {
+  background: linear-gradient(120deg, var(--surface), var(--bg-alt));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.water-box i { font-size: 30px; color: var(--volt); margin-bottom: 14px; display: block; }
+.water-box h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 3vw, 36px); margin-bottom: 8px; }
+.water-box h3 { font-size: 16px; color: var(--volt); margin-bottom: 14px; font-weight: 600; }
+.water-box > p { color: var(--muted); font-size: 15px; max-width: 560px; margin: 0 auto 26px; }
+.water-tips { display: flex; justify-content: center; gap: 26px; flex-wrap: wrap; }
+.water-tips div { display: flex; align-items: center; gap: 8px; color: var(--ink); font-size: 14px; font-weight: 600; }
+.water-tips i { color: var(--volt); font-size: 13px; margin: 0; display: inline; }
+
+/* Foods to eat / avoid split lists */
+.foods-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+.food-list-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px 28px;
+}
+
+.food-list-card h3 { display: flex; align-items: center; gap: 10px; font-size: 18px; margin-bottom: 20px; }
+.food-list-card.eat h3 i { color: var(--volt); }
+.food-list-card.avoid h3 i { color: var(--ember); }
+.food-list-card ul { display: flex; flex-wrap: wrap; gap: 10px; }
+.food-list-card ul li { background: var(--bg-alt); border: 1px solid var(--line); color: var(--muted); padding: 8px 16px; border-radius: 999px; font-size: 13px; }
+
+/* Generic table wrapper (weight loss / gain plans use .table-wrapper) */
+.table-wrapper { overflow-x: auto; }
+.table-wrapper table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.table-wrapper th, .table-wrapper td { padding: 16px 20px; text-align: left; font-size: 14.5px; border-bottom: 1px solid var(--line); }
+.table-wrapper th { background: var(--bg-alt); color: var(--volt); font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.05em; }
+.table-wrapper td { color: var(--muted); }
+.table-wrapper tr:last-child td { border-bottom: none; }
+
+/* Diet type cards (vegetarian / non-veg) reuse macro-card list style */
+.diet-type-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.diet-type-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px; }
+.diet-type-card i { font-size: 26px; color: var(--volt); margin-bottom: 14px; display: block; }
+.diet-type-card h3 { font-size: 18px; margin-bottom: 16px; }
+.diet-type-card ul { display: flex; flex-wrap: wrap; gap: 10px; }
+.diet-type-card ul li { background: var(--bg-alt); border: 1px solid var(--line); color: var(--muted); padding: 8px 16px; border-radius: 999px; font-size: 13px; }
+
+/* Supplement cards */
+.supplement-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.supplement-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 22px; text-align: center; transition: transform 0.25s var(--ease), border-color 0.25s; }
+.supplement-card:hover { transform: translateY(-6px); border-color: var(--volt); }
+.supplement-card i { font-size: 26px; color: var(--volt); margin-bottom: 14px; display: block; }
+.supplement-card h3 { font-size: 16.5px; margin-bottom: 8px; }
+.supplement-card p { color: var(--muted); font-size: 13.5px; }
+
+/* ==========================================================================
+   Diet page responsive
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .goal-grid, .basics-grid, .energy-grid, .food-grid, .recipe-grid,
+  .benefits-grid, .tips-grid, .timing-grid, .facts-grid, .supplement-grid { grid-template-columns: repeat(2, 1fr); }
+  .rules-grid, .types-grid { grid-template-columns: repeat(3, 1fr); }
+  .foods-grid, .diet-type-grid, .nutrition-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 780px) {
+  .goal-grid, .basics-grid, .energy-grid, .food-grid, .recipe-grid,
+  .benefits-grid, .tips-grid, .timing-grid, .facts-grid, .supplement-grid,
+  .rules-grid, .types-grid { grid-template-columns: 1fr; }
+  .water-tips { flex-direction: column; align-items: center; }
+}
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 @media (max-width: 1024px) {
@@ -384,9 +773,19 @@
   .timeline-grid { grid-template-columns: repeat(2, 1fr); }
   .calc-grid { grid-template-columns: 1fr; }
   .faq-grid { grid-template-columns: 1fr; }
+  .goal-grid, .basics-grid, .energy-grid, .benefits-grid, .types-grid, .tips-grid,
+  .timing-grid, .pfood-grid, .recipe-grid, .myth-grid, .macro-grid,
+  .nutrition-grid-2, .foodchoice-grid, .foodtype-grid, .supplement-grid { grid-template-columns: repeat(2, 1fr); }
+  .rules-grid { grid-template-columns: repeat(3, 1fr); }
+  .facts-grid { grid-template-columns: repeat(2, 1fr); }
+  .schedule-track { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 780px) {
   .team-grid, .product-grid, .blog-grid, .timeline-grid, .macro-grid { grid-template-columns: 1fr; }
   .page-hero .hero-buttons { flex-direction: column; }
+  .goal-grid, .basics-grid, .energy-grid, .benefits-grid, .types-grid, .tips-grid,
+  .timing-grid, .pfood-grid, .recipe-grid, .myth-grid,
+  .nutrition-grid-2, .foodchoice-grid, .foodtype-grid, .supplement-grid,
+  .rules-grid, .facts-grid, .schedule-track { grid-template-columns: 1fr; }
 }

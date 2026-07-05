@@ -619,116 +619,10 @@ footer{
 /* ===========================
    RESPONSIVE
 =========================== */
-
-@media(max-width:992px){
-
-.menu-btn{
-
-    display:block;
-
-}
-
-.nav-links{
-
-    position:fixed;
-
-    top:80px;
-
-    right:-100%;
-
-    width:280px;
-
-    height:calc(100vh - 80px);
-
-    background:#111;
-
-    flex-direction:column;
-
-    justify-content:flex-start;
-
-    padding:40px 30px;
-
-    gap:25px;
-
-    transition:.4s;
-
-}
-
-.nav-links.active{
-
-    right:0;
-
-}
-#siteHeader.nav-open .nav-links{
-    right:0;
-}
-
-.nav-btns{
-
-    display:none;
-
-}
-
-}
-
-@media(max-width:768px){
-
-section{
-
-    padding:70px 6%;
-
-}
-
-.footer-container{
-
-    grid-template-columns:1fr;
-
-    text-align:center;
-
-}
-
-.social-icons{
-
-    justify-content:center;
-
-}
-
-}
-
-@media(max-width:480px){
-
-.logo{
-
-    font-size:1.6rem;
-
-}
-
-.navbar{
-
-    padding:0 18px;
-
-}
-
-.section-title h2{
-
-    font-size:2rem;
-
-}
-
-.btn,
-.btn-outline{
-
-    width:100%;
-
-}
-
-}
-
-
 /* ==========================
    Mobile Navbar
 ========================== */
-/* 
+
 @media (max-width: 768px) {
 
   .menu-btn{
@@ -736,36 +630,40 @@ section{
     flex-direction:column;
     justify-content:center;
     gap:5px;
-  }
-
-  .nav-links{
-    position:absolute;
-    top:100%;
-    left:0;
-    width:100%;
-    background:#111;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:25px;
-
-    padding:25px 0;
-
-    transform:translateY(-20px);
-    opacity:0;
-    visibility:hidden;
-
-    transition:.3s ease;
-  }
-
-  #siteHeader.nav-open .nav-links{
-    transform:translateY(0);
-    opacity:1;
-    visibility:visible;
+    z-index:1001;
   }
 
   .login-btn{
     display:none;
   }
-} */
+
+  .nav-links{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:280px;
+    height:100vh;
+
+    background:#111;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+
+    padding:90px 30px;
+    gap:25px;
+
+    transition:.35s ease;
+    z-index:1000;
+  }
+
+  #siteHeader.nav-open .nav-links{
+    right:0;
+  }
+
+  .nav-links a{
+    font-size:18px;
+    width:100%;
+  }
+
+}

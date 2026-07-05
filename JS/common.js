@@ -92,50 +92,50 @@ function initRevealOnScroll() {
   targets.forEach((t) => observer.observe(t));
 }
 
-// ------------------------------------------------------------
-// Count-up animation for stats / scoreboard numbers
-// Shared because it's reused on any page with [data-count]
-// ------------------------------------------------------------
-function initCountUp() {
-  const counters = document.querySelectorAll("[data-count]");
-  if (!counters.length) return;
+// // ------------------------------------------------------------
+// // Count-up animation for stats / scoreboard numbers
+// // Shared because it's reused on any page with [data-count]
+// // ------------------------------------------------------------
+// function initCountUp() {
+//   const counters = document.querySelectorAll("[data-count]");
+//   if (!counters.length) return;
 
-  const animate = (el) => {
-    const target = parseInt(el.getAttribute("data-count"), 10) || 0;
-    const suffix = el.getAttribute("data-suffix") || "";
-    const duration = 1400;
-    const start = performance.now();
+//   const animate = (el) => {
+//     const target = parseInt(el.getAttribute("data-count"), 10) || 0;
+//     const suffix = el.getAttribute("data-suffix") || "";
+//     const duration = 1400;
+//     const start = performance.now();
 
-    const step = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const value = Math.round(target * eased);
-      el.textContent = value.toLocaleString() + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-    };
+//     const step = (now) => {
+//       const progress = Math.min((now - start) / duration, 1);
+//       const eased = 1 - Math.pow(1 - progress, 3);
+//       const value = Math.round(target * eased);
+//       el.textContent = value.toLocaleString() + suffix;
+//       if (progress < 1) requestAnimationFrame(step);
+//     };
 
-    requestAnimationFrame(step);
-  };
+//     requestAnimationFrame(step);
+//   };
 
-  if (!("IntersectionObserver" in window)) {
-    counters.forEach(animate);
-    return;
-  }
+//   if (!("IntersectionObserver" in window)) {
+//     counters.forEach(animate);
+//     return;
+//   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animate(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           animate(entry.target);
+//           observer.unobserve(entry.target);
+//         }
+//       });
+//     },
+//     { threshold: 0.4 }
+//   );
 
-  counters.forEach((c) => observer.observe(c));
-}
+//   counters.forEach((c) => observer.observe(c));
+// }
 
 // ------------------------------------------------------------
 // Newsletter form (footer)

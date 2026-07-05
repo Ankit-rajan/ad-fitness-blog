@@ -1525,6 +1525,40 @@ background:var(--protein-primary);
 
 }
 
+
+
+
+/* 
+
+
+#stats-section {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 60px 0;
+}
+
+#stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.stat-card h2 {
+  font-size: clamp(30px, 3.4vw, 44px);
+  color: var(--volt);
+  font-weight: 700;
+}
+
+.stat-card p {
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 6px;
+} */
+
 /*========================
 HERO
 ========================*/

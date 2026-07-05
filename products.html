@@ -1,802 +1,408 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AD Fitness | Products</title>
-<link rel="stylesheet" href="CSS/common.css">
-<link rel="stylesheet" href="CSS/product.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-</head>
-
-<body>
-
-<!-- ================= NAVBAR ================= -->
-
-<header>
-
-<nav class="navbar">
-
-<a href="index.html" class="logo">
-AD <span>Fitness</span>
-</a>
-
-<ul class="nav-links">
-
-<li><a href="index.html">Home</a></li>
-<li><a href="training.html">Training</a></li>
-<li><a href="diet.html">Diet</a></li>
-<li><a href="products.html" class="active">Products</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-
-</ul>
-
-<div class="nav-btns">
-
-<a href="login.html" class="login-btn">
-Login
-</a>
-
-<a href="signup.html" class="signup-btn">
-Sign Up
-</a>
-
-</div>
-
-</nav>
-
-</header>
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>
-
-Premium Fitness Products
-For Every Goal
-
-</h1>
-
-<p>
-
-Discover the best supplements, gym equipment,
-nutrition products and fitness accessories carefully
-selected to help you build muscle, lose fat and
-improve overall health.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#products" class="btn">
-Shop Products
-</a>
-
-<a href="training.html" class="btn-outline">
-Training Plans
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= SEARCH ================= -->
-
-<section class="search-section">
-
-<input
-
-type="text"
-
-id="search"
-
-placeholder="Search fitness products..."
-
->
-
-</section>
-
-<!-- ================= FILTERS ================= -->
-
-<section class="filters">
-
-<button class="filter-btn active" data-category="all">
-All
-</button>
-
-<button class="filter-btn" data-category="supplement">
-Supplements
-</button>
-
-<button class="filter-btn" data-category="equipment">
-Equipment
-</button>
-
-<button class="filter-btn" data-category="nutrition">
-Nutrition
-</button>
-
-<button class="filter-btn" data-category="accessory">
-Accessories
-</button>
-
-</section>
-
-<!-- ================= PRODUCTS ================= -->
-
-<section
-class="products"
-id="products">
-
-<div class="section-title">
-
-<h2>
-
-Featured Products
-
-</h2>
-
-<p>
-
-Top fitness products recommended for every athlete.
-
-</p>
-
-</div>
-
-<div class="product-grid">
-
-<!-- CARD 1 -->
-
-<div class="product-card supplement">
-
-<img
-src="images/whey-protein.jpg"
-alt="Whey Protein">
-
-<h3>Whey Protein</h3>
-
-<p>
-
-Premium whey protein for muscle recovery
-and lean muscle growth.
-
-</p>
-
-<div class="price">
-
-₹2,999
-
-</div>
-
-<div class="rating">
-
-★★★★★
-
-</div>
-
-<div class="buttons">
-
-<a href="#" class="details">
-
-View Details
-
-</a>
-
-<a href="#" class="buy">
-
-Buy Now
-
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 2 -->
-
-<div class="product-card supplement">
-
-<img
-src="images/creatine.jpg"
-alt="Creatine">
-
-<h3>Creatine</h3>
-
-<p>
-
-Increase strength, power and workout
-performance.
-
-</p>
-
-<div class="price">
-
-₹999
-
-</div>
-
-<div class="rating">
-
-★★★★★
-
-</div>
-
-<div class="buttons">
-
-<a href="#" class="details">
-
-View Details
-
-</a>
-
-<a href="#" class="buy">
-
-Buy Now
-
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 3 -->
-
-<div class="product-card equipment">
-
-<img
-src="images/dumbbell.jpg"
-alt="Dumbbell">
-
-<h3>Adjustable Dumbbells</h3>
-
-<p>
-
-Perfect for full body strength
-training at home.
-
-</p>
-
-<div class="price">
-
-₹4,499
-
-</div>
-
-<div class="rating">
-
-★★★★★
-
-</div>
-
-<div class="buttons">
-
-<a href="#" class="details">
-
-View Details
-
-</a>
-
-<a href="#" class="buy">
-
-Buy Now
-
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 4 -->
-
-<div class="product-card equipment">
-
-<img
-src="images/resistance-band.jpg"
-alt="Resistance Band">
-
-<h3>Resistance Bands</h3>
-
-<p>
-
-Ideal for stretching,
-strength and rehabilitation.
-
-</p>
-
-<div class="price">
-
-₹699
-
-</div>
-
-<div class="rating">
-
-★★★★☆
-
-</div>
-
-<div class="buttons">
-
-<a href="#" class="details">
-
-View Details
-
-</a>
-
-<a href="#" class="buy">
-
-Buy Now
-
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 5 -->
-
-<div class="product-card nutrition">
-
-<img
-src="images/oats.jpg"
-alt="Oats">
-
-<h3>Rolled Oats</h3>
-
-<p>
-
-Healthy breakfast rich in fiber
-and slow carbs.
-
-</p>
-
-<div class="price">
-
-₹399
-
-</div>
-
-<div class="rating">
-
-★★★★★
-
-</div>
-
-<div class="buttons">
-
-<a href="#" class="details">
-
-View Details
-
-</a>
-
-<a href="#" class="buy">
-
-Buy Now
-
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 6 -->
-
-<div class="product-card nutrition">
-
-<img
-src="images/peanut-butter.jpg"
-alt="Peanut Butter">
-
-<h3>Peanut Butter</h3>
-
-<p>
-
-Protein rich spread
-for healthy calories.
-
-</p>
-
-<div class="price">
-
-₹349
-
-</div>
-
-<div class="rating">
-
-★★★★★
-
-</div>
-
-<div class="buttons">
-
-<a href="#" class="details">
-
-View Details
-
-</a>
-
-<a href="#" class="buy">
-
-Buy Now
-
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 7 -->
-
-<div class="product-card accessory">
-
-<img
-src="images/shaker.jpg"
-alt="Shaker">
-
-<h3>Protein Shaker</h3>
-
-<p>
-
-Leak-proof shaker bottle
-with mixing ball.
-
-</p>
-
-<div class="price">
-
-₹299
-
-</div>
-
-<div class="rating">
-
-★★★★☆
-
-</div>
-
-<div class="buttons">
-
-<a href="#" class="details">
-
-View Details
-
-</a>
-
-<a href="#" class="buy">
-
-Buy Now
-
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 8 -->
-
-<div class="product-card accessory">
-
-<img
-src="images/gym-gloves.jpg"
-alt="Gym Gloves">
-
-<h3>Gym Gloves</h3>
-
-<p>
-
-Comfortable grip for
-heavy lifting workouts.
-
-</p>
-
-<div class="price">
-
-₹599
-
-</div>
-
-<div class="rating">
-
-★★★★★
-
-</div>
-
-<div class="buttons">
-
-<a href="#" class="details">
-
-View Details
-
-</a>
-
-<a href="#" class="buy">
-
-Buy Now
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= MORE PRODUCTS ================= -->
-
-<section class="products more-products">
-
-<div class="section-title">
-    <h2>More Fitness Essentials</h2>
-    <p>Everything you need for your fitness journey.</p>
-</div>
-
-<div class="product-grid">
-
-    <!-- CARD 9 -->
-    <div class="product-card supplement">
-        <img src="images/pre-workout.jpg" alt="Pre Workout">
-        <h3>Pre Workout</h3>
-        <p>Boost your energy and focus before every workout.</p>
-        <div class="price">₹1,499</div>
-        <div class="rating">★★★★★</div>
-        <div class="buttons">
-            <a href="#" class="details">View Details</a>
-            <a href="#" class="buy">Buy Now</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products — AD FITNESS</title>
+    <meta name="description" content="Shop premium supplements, gym equipment, nutrition products, and fitness accessories from AD Fitness." />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/common.css">
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/pages.css" />
+  </head>
+  <body>
+    <div class="scroll-bar" id="scrollBar"></div>
+
+    <header id="siteHeader">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">AD</span>
+          <div class="logo-text">
+            <h2>AD FITNESS</h2>
+            <p>Train Smart • Eat Better • Live Stronger</p>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="training.html">Training</a></li>
+          <li><a href="diet.html">Diet</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <a href="login.html" class="login-btn">Log In</a>
+          <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-    </div>
+      </nav>
+    </header>
 
-    <!-- CARD 10 -->
-    <div class="product-card supplement">
-        <img src="images/multivitamin.jpg" alt="Multivitamin">
-        <h3>Multivitamin</h3>
-        <p>Essential vitamins and minerals for overall health.</p>
-        <div class="price">₹799</div>
-        <div class="rating">★★★★★</div>
-        <div class="buttons">
-            <a href="#" class="details">View Details</a>
-            <a href="#" class="buy">Buy Now</a>
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="page-hero">
+        <div class="container reveal-up">
+          <span class="eyebrow"><i class="fa-solid fa-bag-shopping"></i> Shop</span>
+          <h1>Premium fitness products<br />for <span>every goal.</span></h1>
+          <p>
+            Supplements, gym equipment, nutrition, and accessories — carefully
+            selected to help you build muscle, lose fat, and improve overall health.
+          </p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn-primary">Shop Products <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="training.html" class="btn-secondary">Training Plans</a>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- CARD 11 -->
-    <div class="product-card equipment">
-        <img src="images/jump-rope.jpg" alt="Jump Rope">
-        <h3>Jump Rope</h3>
-        <p>Perfect cardio equipment for home and gym workouts.</p>
-        <div class="price">₹499</div>
-        <div class="rating">★★★★☆</div>
-        <div class="buttons">
-            <a href="#" class="details">View Details</a>
-            <a href="#" class="buy">Buy Now</a>
+      <!-- ============ SEARCH + FILTERS ============ -->
+      <section class="page-section" style="padding-bottom: 40px;">
+        <div class="container">
+          <div class="search-bar reveal-up">
+            <input type="text" id="search" placeholder="Search fitness products..." />
+          </div>
+
+          <div class="filter-bar reveal-up">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="supplement">Supplements</button>
+            <button class="filter-btn" data-category="equipment">Equipment</button>
+            <button class="filter-btn" data-category="nutrition">Nutrition</button>
+            <button class="filter-btn" data-category="accessory">Accessories</button>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- CARD 12 -->
-    <div class="product-card equipment">
-        <img src="images/yoga-mat.jpg" alt="Yoga Mat">
-        <h3>Yoga Mat</h3>
-        <p>Anti-slip yoga mat for stretching, yoga and workouts.</p>
-        <div class="price">₹899</div>
-        <div class="rating">★★★★★</div>
-        <div class="buttons">
-            <a href="#" class="details">View Details</a>
-            <a href="#" class="buy">Buy Now</a>
+      <!-- ============ PRODUCTS ============ -->
+      <section class="page-section" id="products" style="padding-top: 0;">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-star"></i> Featured</span>
+            <h2>Featured products</h2>
+            <p>Top fitness products recommended for every athlete.</p>
+          </div>
+
+          <div class="product-grid">
+            <div class="product-card supplement reveal-up">
+              <img src="https://images.unsplash.com/photo-1579722820308-d74e571900a9?w=400&auto=format&fit=crop&q=80" alt="Whey Protein" />
+              <h3>Whey Protein</h3>
+              <p>Premium whey protein for muscle recovery and lean muscle growth.</p>
+              <div class="price">₹2,999</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card supplement reveal-up delay-1">
+              <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&auto=format&fit=crop&q=80" alt="Creatine" />
+              <h3>Creatine</h3>
+              <p>Increase strength, power and workout performance.</p>
+              <div class="price">₹999</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card equipment reveal-up delay-2">
+              <img src="https://images.unsplash.com/photo-1638536532686-d610adfc8e5c?w=400&auto=format&fit=crop&q=80" alt="Adjustable Dumbbells" />
+              <h3>Adjustable Dumbbells</h3>
+              <p>Perfect for full body strength training at home.</p>
+              <div class="price">₹4,499</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card equipment reveal-up delay-3">
+              <img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400&auto=format&fit=crop&q=80" alt="Resistance Bands" />
+              <h3>Resistance Bands</h3>
+              <p>Ideal for stretching, strength and rehabilitation.</p>
+              <div class="price">₹699</div>
+              <div class="rating">★★★★☆</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card nutrition reveal-up">
+              <img src="https://images.unsplash.com/photo-1614961233913-a5113a4a34ed?w=400&auto=format&fit=crop&q=80" alt="Rolled Oats" />
+              <h3>Rolled Oats</h3>
+              <p>Healthy breakfast rich in fiber and slow carbs.</p>
+              <div class="price">₹399</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card nutrition reveal-up delay-1">
+              <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&auto=format&fit=crop&q=80" alt="Peanut Butter" />
+              <h3>Peanut Butter</h3>
+              <p>Protein rich spread for healthy calories.</p>
+              <div class="price">₹349</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card accessory reveal-up delay-2">
+              <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&auto=format&fit=crop&q=80" alt="Protein Shaker" />
+              <h3>Protein Shaker</h3>
+              <p>Leak-proof shaker bottle with mixing ball.</p>
+              <div class="price">₹299</div>
+              <div class="rating">★★★★☆</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card accessory reveal-up delay-3">
+              <img src="https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?w=400&auto=format&fit=crop&q=80" alt="Gym Gloves" />
+              <h3>Gym Gloves</h3>
+              <p>Comfortable grip for heavy lifting workouts.</p>
+              <div class="price">₹599</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- CARD 13 -->
-    <div class="product-card nutrition">
-        <img src="images/chia-seeds.jpg" alt="Chia Seeds">
-        <h3>Chia Seeds</h3>
-        <p>Rich in omega-3, protein and dietary fiber.</p>
-        <div class="price">₹350</div>
-        <div class="rating">★★★★★</div>
-        <div class="buttons">
-            <a href="#" class="details">View Details</a>
-            <a href="#" class="buy">Buy Now</a>
+      <!-- ============ MORE PRODUCTS ============ -->
+      <section class="page-section alt">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-boxes-stacked"></i> More</span>
+            <h2>More fitness essentials</h2>
+            <p>Everything you need for your fitness journey.</p>
+          </div>
+
+          <div class="product-grid">
+            <div class="product-card supplement reveal-up">
+              <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&auto=format&fit=crop&q=80" alt="Pre Workout" />
+              <h3>Pre Workout</h3>
+              <p>Boost your energy and focus before every workout.</p>
+              <div class="price">₹1,499</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card supplement reveal-up delay-1">
+              <img src="https://images.unsplash.com/photo-1616671276441-2f2c277b8bf6?w=400&auto=format&fit=crop&q=80" alt="Multivitamin" />
+              <h3>Multivitamin</h3>
+              <p>Essential vitamins and minerals for overall health.</p>
+              <div class="price">₹799</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card equipment reveal-up delay-2">
+              <img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=400&auto=format&fit=crop&q=80" alt="Jump Rope" />
+              <h3>Jump Rope</h3>
+              <p>Perfect cardio equipment for home and gym workouts.</p>
+              <div class="price">₹499</div>
+              <div class="rating">★★★★☆</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card equipment reveal-up delay-3">
+              <img src="https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=400&auto=format&fit=crop&q=80" alt="Yoga Mat" />
+              <h3>Yoga Mat</h3>
+              <p>Anti-slip yoga mat for stretching, yoga and workouts.</p>
+              <div class="price">₹899</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card nutrition reveal-up">
+              <img src="https://images.unsplash.com/photo-1541599468348-e96984315921?w=400&auto=format&fit=crop&q=80" alt="Chia Seeds" />
+              <h3>Chia Seeds</h3>
+              <p>Rich in omega-3, protein and dietary fiber.</p>
+              <div class="price">₹350</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card nutrition reveal-up delay-1">
+              <img src="https://images.unsplash.com/photo-1622484212850-eb596d769edc?w=400&auto=format&fit=crop&q=80" alt="Protein Bars" />
+              <h3>Protein Bars</h3>
+              <p>Healthy high-protein snack for busy lifestyles.</p>
+              <div class="price">₹699</div>
+              <div class="rating">★★★★☆</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card accessory reveal-up delay-2">
+              <img src="https://images.unsplash.com/photo-1547949003-9792a18a2645?w=400&auto=format&fit=crop&q=80" alt="Gym Bag" />
+              <h3>Gym Bag</h3>
+              <p>Spacious, durable and stylish gym duffle bag.</p>
+              <div class="price">₹1,299</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="product-card accessory reveal-up delay-3">
+              <img src="https://images.unsplash.com/photo-1591940742878-14a4a99a780d?w=400&auto=format&fit=crop&q=80" alt="Lifting Belt" />
+              <h3>Lifting Belt</h3>
+              <p>Provides support during heavy squats and deadlifts.</p>
+              <div class="price">₹1,499</div>
+              <div class="rating">★★★★★</div>
+              <div class="buttons">
+                <a href="#" class="details">View Details</a>
+                <a href="#" class="buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- CARD 14 -->
-    <div class="product-card nutrition">
-        <img src="images/protein-bar.jpg" alt="Protein Bar">
-        <h3>Protein Bars</h3>
-        <p>Healthy high-protein snack for busy lifestyles.</p>
-        <div class="price">₹699</div>
-        <div class="rating">★★★★☆</div>
-        <div class="buttons">
-            <a href="#" class="details">View Details</a>
-            <a href="#" class="buy">Buy Now</a>
+      <!-- ============ WHY CHOOSE US ============ -->
+      <section class="page-section">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="eyebrow"><i class="fa-solid fa-shield-heart"></i> Why AD Fitness</span>
+            <h2>Why shop with AD Fitness?</h2>
+          </div>
+
+          <div class="training-grid">
+            <article class="training-card reveal-up">
+              <div class="icon"><i class="fa-solid fa-dumbbell"></i></div>
+              <h3>Premium Quality</h3>
+              <p>Only trusted and high-quality fitness products.</p>
+            </article>
+
+            <article class="training-card reveal-up delay-1">
+              <div class="icon"><i class="fa-solid fa-truck-fast"></i></div>
+              <h3>Fast Delivery</h3>
+              <p>Quick and reliable delivery to your doorstep.</p>
+            </article>
+
+            <article class="training-card reveal-up delay-2">
+              <div class="icon"><i class="fa-solid fa-medal"></i></div>
+              <h3>Expert Recommended</h3>
+              <p>Products selected by fitness professionals.</p>
+            </article>
+
+            <article class="training-card reveal-up delay-3">
+              <div class="icon"><i class="fa-solid fa-headset"></i></div>
+              <h3>Customer Support</h3>
+              <p>We're here to help with all your fitness needs.</p>
+            </article>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- CARD 15 -->
-    <div class="product-card accessory">
-        <img src="images/gym-bag.jpg" alt="Gym Bag">
-        <h3>Gym Bag</h3>
-        <p>Spacious, durable and stylish gym duffle bag.</p>
-        <div class="price">₹1,299</div>
-        <div class="rating">★★★★★</div>
-        <div class="buttons">
-            <a href="#" class="details">View Details</a>
-            <a href="#" class="buy">Buy Now</a>
+      <!-- ============ FINAL CTA ============ -->
+      <section id="cta-section">
+        <div class="container cta-box reveal-up">
+          <div>
+            <span class="eyebrow"><i class="fa-solid fa-flag-checkered"></i> Your Move</span>
+            <h2>Stay updated on new drops.</h2>
+            <p>Subscribe below to get fitness tips, workout plans and exclusive product updates.</p>
+          </div>
+          <a href="#products" class="btn-primary">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-    </div>
+      </section>
+    </main>
 
-    <!-- CARD 16 -->
-    <div class="product-card accessory">
-        <img src="images/lifting-belt.jpg" alt="Lifting Belt">
-        <h3>Lifting Belt</h3>
-        <p>Provides support during heavy squats and deadlifts.</p>
-        <div class="price">₹1,499</div>
-        <div class="rating">★★★★★</div>
-        <div class="buttons">
-            <a href="#" class="details">View Details</a>
-            <a href="#" class="buy">Buy Now</a>
+    <!-- ============ FOOTER ============ -->
+    <footer id="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">AD</span>
+            <div class="logo-text">
+              <h2>AD FITNESS</h2>
+            </div>
+          </a>
+          <p class="tagline">Train Smart • Eat Better • Live Stronger</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
         </div>
-    </div>
 
-</div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="diet.html">Diet</a></li>
+            <li><a href="products.html">Products</a></li>
+          </ul>
+        </div>
 
-</section>
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul class="footer-links">
+            <li><a href="#">Supplements</a></li>
+            <li><a href="#">Equipment</a></li>
+            <li><a href="#">Nutrition</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
 
-<!-- ================= WHY CHOOSE US ================= -->
+        <div class="footer-col">
+          <h4>Stay in the loop</h4>
+          <p class="footer-note">Weekly training and nutrition tips, no spam.</p>
+          <form class="footer-form" id="newsletterForm">
+            <input type="email" placeholder="you@example.com" required />
+            <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+          <p class="footer-form-msg" id="footerFormMsg" hidden>You're on the list.</p>
+        </div>
+      </div>
 
-<section class="why-us">
+      <div class="container footer-bottom">
+        <p class="copyright">© 2026 AD FITNESS. All Rights Reserved.</p>
+        <button id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+      </div>
+    </footer>
 
-<div class="section-title">
-    <h2>Why Choose AD Fitness?</h2>
-</div>
-
-<div class="features">
-
-    <div class="feature-box">
-        <i class="fas fa-dumbbell"></i>
-        <h3>Premium Quality</h3>
-        <p>Only trusted and high-quality fitness products.</p>
-    </div>
-
-    <div class="feature-box">
-        <i class="fas fa-shipping-fast"></i>
-        <h3>Fast Delivery</h3>
-        <p>Quick and reliable delivery to your doorstep.</p>
-    </div>
-
-    <div class="feature-box">
-        <i class="fas fa-medal"></i>
-        <h3>Expert Recommended</h3>
-        <p>Products selected by fitness professionals.</p>
-    </div>
-
-    <div class="feature-box">
-        <i class="fas fa-headset"></i>
-        <h3>Customer Support</h3>
-        <p>We're here to help with all your fitness needs.</p>
-    </div>
-
-</div>
-
-</section>
-
-<!-- ================= NEWSLETTER ================= -->
-
-<section class="newsletter">
-
-<h2>Stay Updated</h2>
-
-<p>
-Subscribe to receive fitness tips, workout plans and exclusive product updates.
-</p>
-
-<form>
-
-<input
-type="email"
-placeholder="Enter your email"
-required>
-
-<button type="submit">
-Subscribe
-</button>
-
-</form>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="footer-container">
-
-<div class="footer-col">
-
-<h3>AD Fitness</h3>
-
-<p>
-Helping you achieve your fitness goals through quality workouts,
-nutrition guides and recommended fitness products.
-</p>
-
-</div>
-
-<div class="footer-col">
-
-<h3>Quick Links</h3>
-
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="training.html">Training</a></li>
-<li><a href="diet.html">Diet</a></li>
-<li><a href="products.html">Products</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-
-</div>
-
-<div class="footer-col">
-
-<h3>Categories</h3>
-
-<ul>
-<li><a href="#">Supplements</a></li>
-<li><a href="#">Equipment</a></li>
-<li><a href="#">Nutrition</a></li>
-<li><a href="#">Accessories</a></li>
-</ul>
-
-</div>
-
-<div class="footer-col">
-
-<h3>Follow Us</h3>
-
-<div class="social-icons">
-
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-youtube"></i></a>
-<a href="#"><i class="fab fa-x-twitter"></i></a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="copyright">
-
-<p>
-© 2026 AD Fitness. All Rights Reserved.
-</p>
-
-</div>
-
-</footer>
-<script src="JS/common.js"></script>
-<script src="JS/product.js"></script>
-
-</body>
+    <script src="JS/common.js"></script>
+    <script src="JS/product.js"></script>
+  </body>
 </html>

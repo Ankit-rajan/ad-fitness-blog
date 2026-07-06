@@ -701,7 +701,7 @@
 .nutrition-card ul li { background: var(--bg-alt); border: 1px solid var(--line); color: var(--muted); padding: 6px 14px; border-radius: 999px; font-size: 12.5px; }
 
 /* Myth vs fact cards */
-.myths-grid, .myths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.myths-grid, .myths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; grid-template-columns: 1fr;}
 .myth { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; }
 .myth h3 { font-size: 14px; color: var(--ember); margin-bottom: 6px; }
 .myth h4 { font-size: 14px; color: var(--volt); margin: 14px 0 6px; }

@@ -3084,6 +3084,10 @@ tbody tr:last-child td{
  .energy-card.surplus { border-top-color: var(--ember); } .energy-card.surplus i, .energy-card.surplus span { color: var(--ember); } */ 
 
 
+
+ *{
+    outline:1px solid red !important;
+}
 /* ==========================================================================
    END OF FILE
 ========================================================================== */

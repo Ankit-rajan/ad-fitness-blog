@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Dashboard — AD FITNESS</title>
+    <meta name="description" content="Track your workouts, progress, and training plan on your AD Fitness dashboard." />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/dashboard.css" />
+  </head>
+  <body class="dash-body">
+    <div class="sidebar-scrim" id="sidebarScrim"></div>
+
+    <div class="dash-shell">
+      <!-- ============ SIDEBAR ============ -->
+      <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">AD</span>
+          <div class="logo-text">
+            <h2>AD FITNESS</h2>
+            <p>Member Dashboard</p>
+          </div>
+        </a>
+
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <span class="nav-group-label">Menu</span>
+            <a href="#overview" class="sidebar-link active" data-section="overview"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+            <a href="#profile" class="sidebar-link" data-section="profile"><i class="fa-solid fa-user"></i> Profile Details</a>
+            <a href="#workouts" class="sidebar-link" data-section="workouts"><i class="fa-solid fa-dumbbell"></i> Workout History</a>
+            <a href="#progress" class="sidebar-link" data-section="progress"><i class="fa-solid fa-chart-line"></i> Progress</a>
+            <a href="#schedule" class="sidebar-link" data-section="schedule"><i class="fa-solid fa-calendar-days"></i> Schedule</a>
+            <a href="#achievements" class="sidebar-link" data-section="achievements"><i class="fa-solid fa-trophy"></i> Achievements</a>
+          </div>
+          <div class="nav-group">
+            <span class="nav-group-label">Account</span>
+            <a href="#settings" class="sidebar-link" data-section="settings"><i class="fa-solid fa-gear"></i> Settings</a>
+            <a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i> Back to Site</a>
+          </div>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="sidebar-user">
+            <div class="avatar sm" id="sidebarAvatar">RS</div>
+            <div class="sidebar-user-info">
+              <h4 id="sidebarName">Rahul Sharma</h4>
+              <p id="sidebarPlan">Pro Member</p>
+            </div>
+          </div>
+          <a href="login.html" class="sidebar-link" style="margin-top: 10px; color: var(--ember);">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out
+          </a>
+        </div>
+      </aside>
+
+      <!-- ============ MAIN ============ -->
+      <main>
+        <header class="dash-topbar">
+          <div class="topbar-left">
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            <div class="topbar-title">
+              <h1 id="topbarTitle">Overview</h1>
+              <p class="mono" id="topbarDate"></p>
+            </div>
+          </div>
+          <div class="topbar-actions">
+            <div class="topbar-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search workouts, articles..." />
+            </div>
+            <button class="icon-btn" aria-label="Notifications" id="notifBtn">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notif-dot"></span>
+            </button>
+            <div class="user-menu-wrap">
+              <button class="user-menu-trigger" id="userMenuTrigger">
+                <div class="avatar xs">RS</div>
+                <span id="topbarName">Rahul</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="dropdown-panel" id="userDropdown">
+                <a href="#profile" class="dropdown-item"><i class="fa-solid fa-user"></i> View Profile</a>
+                <a href="#settings" class="dropdown-item"><i class="fa-solid fa-gear"></i> Settings</a>
+                <div class="dropdown-divider"></div>
+                <a href="login.html" class="dropdown-item danger"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="dash-content">
+
+          <!-- ============ OVERVIEW ============ -->
+          <section class="dash-section" id="overview">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-bolt"></i> Welcome Back</span>
+                <h2 class="section-title-sm" id="greetingText">Let's crush today's session, Rahul 💪</h2>
+                <p class="section-sub">Here's what's happening with your training right now.</p>
+              </div>
+            </div>
+
+            <div class="stat-grid" id="overviewStats">
+              <!-- stat cards injected by JS -->
+            </div>
+
+            <div class="grid-main-side" style="margin-top: 22px;">
+              <div class="card">
+                <div class="card-header">
+                  <span class="card-title"><i class="fa-solid fa-chart-simple"></i> This Week's Activity</span>
+                  <span class="badge badge-success" id="weekTotalBadge">0 min</span>
+                </div>
+                <div class="bar-chart" id="weekBarChart"></div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <span class="card-title"><i class="fa-solid fa-list-check"></i> Up Next</span>
+                </div>
+                <div id="upNextList"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ PROFILE DETAILS ============ -->
+          <section class="dash-section" id="profile">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-id-card"></i> Your Details</span>
+                <h2 class="section-title-sm">Profile Details</h2>
+                <p class="section-sub">Your personal and membership information.</p>
+              </div>
+              <button class="btn-secondary" id="editProfileBtn"><i class="fa-solid fa-pen"></i> Edit Profile</button>
+            </div>
+
+            <div class="grid-main-side">
+              <div class="card">
+                <div class="card-header" style="margin-bottom: 22px;">
+                  <div style="display:flex; align-items:center; gap:16px;">
+                    <div class="avatar md" id="profileAvatarBig">RS</div>
+                    <div>
+                      <h3 style="font-size:19px;" id="profileFullName">Rahul Sharma</h3>
+                      <p style="color:var(--muted); font-size:13.5px;" id="profileEmail">rahul.sharma@email.com</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="field-grid" id="profileFieldsGrid">
+                  <!-- injected -->
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><span class="card-title"><i class="fa-solid fa-star"></i> Membership</span></div>
+                <div style="display:flex; flex-direction:column; gap:16px;">
+                  <div>
+                    <p class="section-sub" style="margin:0 0 6px;">Current Plan</p>
+                    <p style="font-size:17px; font-weight:700; color: var(--volt);" id="membershipPlan">Pro — Annual</p>
+                  </div>
+                  <div>
+                    <p class="section-sub" style="margin:0 0 6px;">Member Since</p>
+                    <p style="font-size:14.5px;" id="memberSince">Feb 12, 2024</p>
+                  </div>
+                  <div>
+                    <p class="section-sub" style="margin:0 0 6px;">Renews On</p>
+                    <p style="font-size:14.5px;" id="renewsOn">Feb 12, 2027</p>
+                  </div>
+                  <div>
+                    <p class="section-sub" style="margin:0 0 6px;">Assigned Trainer</p>
+                    <div style="display:flex; align-items:center; gap:10px; margin-top:4px;">
+                      <div class="avatar xs orange">AK</div>
+                      <span style="font-size:14px; font-weight:600;" id="trainerName">Aman Khanna</span>
+                    </div>
+                  </div>
+                  <button class="btn-training" style="width:100%; justify-content:center; margin-top:6px;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Manage Subscription</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ WORKOUT HISTORY ============ -->
+          <section class="dash-section" id="workouts">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-clock-rotate-left"></i> Training Log</span>
+                <h2 class="section-title-sm">Workout History</h2>
+                <p class="section-sub">Every session you've logged, most recent first.</p>
+              </div>
+              <button class="btn-primary" id="logWorkoutBtn"><i class="fa-solid fa-plus"></i> Log Workout</button>
+            </div>
+
+            <div class="card">
+              <div class="table-toolbar">
+                <div class="table-filters">
+                  <select class="select-field" id="filterType">
+                    <option value="all">All Types</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Cardio">Cardio</option>
+                    <option value="HIIT">HIIT</option>
+                    <option value="Mobility">Mobility</option>
+                  </select>
+                  <select class="select-field" id="filterStatus">
+                    <option value="all">All Status</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Missed">Missed</option>
+                  </select>
+                </div>
+                <span class="section-sub" id="workoutCountLabel">0 sessions</span>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Workout</th>
+                      <th>Type</th>
+                      <th>Duration</th>
+                      <th>Calories</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="workoutTableBody"></tbody>
+                </table>
+              </div>
+              <div class="empty-state" id="workoutEmptyState" hidden>
+                <i class="fa-solid fa-dumbbell"></i>
+                <p>No sessions match these filters yet.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ PROGRESS ============ -->
+          <section class="dash-section" id="progress">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-arrow-trend-up"></i> Body & Goals</span>
+                <h2 class="section-title-sm">Progress</h2>
+                <p class="section-sub">Track how your body and goals are trending.</p>
+              </div>
+            </div>
+
+            <div class="grid-main-side">
+              <div class="card">
+                <div class="card-header"><span class="card-title"><i class="fa-solid fa-weight-scale"></i> Weight Trend (12 weeks)</span></div>
+                <div class="line-chart-wrap" id="weightChartWrap"></div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><span class="card-title"><i class="fa-solid fa-ruler"></i> Current BMI</span></div>
+                <div class="bmi-result-value" style="margin-bottom:14px;">
+                  <span id="bmiValue" style="font-size:32px;">23.4</span>
+                  <span class="bmi-category" id="bmiCategory">Normal</span>
+                </div>
+                <div class="bmi-scale-bar">
+                  <div class="seg under"></div><div class="seg normal"></div><div class="seg over"></div><div class="seg obese"></div>
+                  <div class="bmi-marker" id="bmiMarker"></div>
+                </div>
+                <p class="bmi-note">Based on height 178cm &amp; weight 74kg, last updated this week.</p>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top: 22px;">
+              <div class="card-header"><span class="card-title"><i class="fa-solid fa-bullseye"></i> Goal Progress</span></div>
+              <div id="goalProgressList"></div>
+            </div>
+          </section>
+
+          <!-- ============ SCHEDULE ============ -->
+          <section class="dash-section" id="schedule">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-calendar-check"></i> Bookings</span>
+                <h2 class="section-title-sm">Upcoming Sessions</h2>
+                <p class="section-sub">Your booked classes and trainer sessions.</p>
+              </div>
+              <button class="btn-secondary" id="bookSessionBtn"><i class="fa-solid fa-plus"></i> Book a Session</button>
+            </div>
+
+            <div class="card">
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Session</th>
+                      <th>Trainer</th>
+                      <th>Date &amp; Time</th>
+                      <th>Location</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="scheduleTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ ACHIEVEMENTS ============ -->
+          <section class="dash-section" id="achievements">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-medal"></i> Milestones</span>
+                <h2 class="section-title-sm">Achievements</h2>
+                <p class="section-sub">Badges you've earned on your journey so far.</p>
+              </div>
+            </div>
+            <div class="achv-grid" id="achvGrid"></div>
+          </section>
+
+          <!-- ============ SETTINGS ============ -->
+          <section class="dash-section" id="settings">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-sliders"></i> Preferences</span>
+                <h2 class="section-title-sm">Settings</h2>
+                <p class="section-sub">Manage your account and notification preferences.</p>
+              </div>
+            </div>
+
+            <div class="tabs">
+              <button class="tab-btn active" data-tab="account">Account</button>
+              <button class="tab-btn" data-tab="password">Password</button>
+              <button class="tab-btn" data-tab="notifications">Notifications</button>
+              <button class="tab-btn" data-tab="danger">Danger Zone</button>
+            </div>
+
+            <div class="tab-panel active" data-tab-panel="account">
+              <div class="card">
+                <form id="accountForm">
+                  <div class="field-grid">
+                    <div class="form-group">
+                      <label for="accName">Full name</label>
+                      <input type="text" id="accName" />
+                    </div>
+                    <div class="form-group">
+                      <label for="accEmail">Email address</label>
+                      <input type="email" id="accEmail" />
+                    </div>
+                    <div class="form-group">
+                      <label for="accPhone">Phone</label>
+                      <input type="text" id="accPhone" />
+                    </div>
+                    <div class="form-group">
+                      <label for="accGoal">Fitness goal</label>
+                      <select class="select-field" id="accGoal" style="width:100%; padding:14px 16px;">
+                        <option>Build Muscle</option>
+                        <option>Lose Fat</option>
+                        <option>Improve Endurance</option>
+                        <option>General Fitness</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-actions">
+                    <button type="button" class="btn-ghost">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-tab-panel="password">
+              <div class="card">
+                <form id="passwordForm">
+                  <div class="form-group">
+                    <label for="curPass">Current password</label>
+                    <input type="password" id="curPass" />
+                  </div>
+                  <div class="form-group">
+                    <label for="newPass">New password</label>
+                    <input type="password" id="newPass" />
+                  </div>
+                  <div class="form-group">
+                    <label for="confirmNewPass">Confirm new password</label>
+                    <input type="password" id="confirmNewPass" />
+                  </div>
+                  <div class="form-actions">
+                    <button type="button" class="btn-ghost">Cancel</button>
+                    <button type="submit" class="btn-primary">Update Password</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-tab-panel="notifications">
+              <div class="card">
+                <div class="toggle-row">
+                  <div><h4>Workout reminders</h4><p>Get a reminder before scheduled sessions.</p></div>
+                  <label class="switch"><input type="checkbox" checked data-pref="reminders" /><span class="switch-track"></span></label>
+                </div>
+                <div class="toggle-row">
+                  <div><h4>Progress reports</h4><p>Weekly summary of your training and progress.</p></div>
+                  <label class="switch"><input type="checkbox" checked data-pref="reports" /><span class="switch-track"></span></label>
+                </div>
+                <div class="toggle-row">
+                  <div><h4>Promotions &amp; offers</h4><p>Occasional emails about plans and offers.</p></div>
+                  <label class="switch"><input type="checkbox" data-pref="promos" /><span class="switch-track"></span></label>
+                </div>
+                <div class="toggle-row">
+                  <div><h4>New articles</h4><p>Notify me when new training articles publish.</p></div>
+                  <label class="switch"><input type="checkbox" checked data-pref="articles" /><span class="switch-track"></span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-tab-panel="danger">
+              <div class="card">
+                <h4 style="margin-bottom:6px;">Pause membership</h4>
+                <p class="section-sub" style="margin-bottom:16px;">Temporarily pause billing without losing your history.</p>
+                <button class="btn-secondary" style="margin-bottom: 26px;">Pause Membership</button>
+                <h4 style="margin-bottom:6px; color:#E4574A;">Delete account</h4>
+                <p class="section-sub" style="margin-bottom:16px;">This permanently deletes your profile, workout history, and progress data.</p>
+                <button class="btn-danger-outline" id="deleteAccountBtn">Delete My Account</button>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
+
+    <!-- ============ MODAL: Edit Profile ============ -->
+    <div class="modal-overlay" id="editProfileModal">
+      <div class="modal">
+        <div class="modal-head">
+          <h3>Edit Profile</h3>
+          <button class="modal-close" data-close-modal><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <form id="editProfileForm">
+          <div class="field-grid">
+            <div class="form-group"><label>Full name</label><input type="text" id="epName" /></div>
+            <div class="form-group"><label>Email</label><input type="email" id="epEmail" /></div>
+            <div class="form-group"><label>Age</label><input type="number" id="epAge" /></div>
+            <div class="form-group"><label>Gender</label>
+              <select class="select-field" id="epGender" style="width:100%; padding:14px 16px;">
+                <option>Male</option><option>Female</option><option>Other</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Height (cm)</label><input type="number" id="epHeight" /></div>
+            <div class="form-group"><label>Weight (kg)</label><input type="number" id="epWeight" /></div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-ghost" data-close-modal>Cancel</button>
+            <button type="submit" class="btn-primary">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============ MODAL: Log Workout ============ -->
+    <div class="modal-overlay" id="logWorkoutModal">
+      <div class="modal">
+        <div class="modal-head">
+          <h3>Log a Workout</h3>
+          <button class="modal-close" data-close-modal><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <form id="logWorkoutForm">
+          <div class="field-grid">
+            <div class="form-group full"><label>Workout name</label><input type="text" id="lwName" placeholder="e.g. Upper Body Strength" required /></div>
+            <div class="form-group"><label>Type</label>
+              <select class="select-field" id="lwType" style="width:100%; padding:14px 16px;">
+                <option>Strength</option><option>Cardio</option><option>HIIT</option><option>Mobility</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Date</label><input type="date" id="lwDate" required /></div>
+            <div class="form-group"><label>Duration (min)</label><input type="number" id="lwDuration" placeholder="45" required /></div>
+            <div class="form-group"><label>Calories burned</label><input type="number" id="lwCalories" placeholder="320" required /></div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-ghost" data-close-modal>Cancel</button>
+            <button type="submit" class="btn-primary">Save Workout</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============ MODAL: Book Session ============ -->
+    <div class="modal-overlay" id="bookSessionModal">
+      <div class="modal">
+        <div class="modal-head">
+          <h3>Book a Session</h3>
+          <button class="modal-close" data-close-modal><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <form id="bookSessionForm">
+          <div class="field-grid">
+            <div class="form-group full"><label>Session</label>
+              <select class="select-field" id="bsSession" style="width:100%; padding:14px 16px;">
+                <option>1:1 Personal Training</option><option>HIIT Group Class</option><option>Yoga & Mobility</option><option>Nutrition Consult</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Trainer</label>
+              <select class="select-field" id="bsTrainer" style="width:100%; padding:14px 16px;">
+                <option>Aman Khanna</option><option>Priya Verma</option><option>Sana Iyer</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Date</label><input type="date" id="bsDate" required /></div>
+            <div class="form-group"><label>Time</label><input type="time" id="bsTime" required /></div>
+            <div class="form-group"><label>Location</label>
+              <select class="select-field" id="bsLocation" style="width:100%; padding:14px 16px;">
+                <option>AD Fitness — Downtown</option><option>AD Fitness — Riverside</option><option>Virtual</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-ghost" data-close-modal>Cancel</button>
+            <button type="submit" class="btn-primary">Confirm Booking</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast-stack" id="toastStack"></div>
+
+    <script src="JS/profile.js"></script>
+  </body>
+</html>

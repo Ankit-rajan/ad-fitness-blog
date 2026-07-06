@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel — AD FITNESS</title>
+    <meta name="description" content="AD Fitness admin panel — manage members, trainers, programs, payments, and content." />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/dashboard.css" />
+  </head>
+  <body class="dash-body">
+    <div class="sidebar-scrim" id="sidebarScrim"></div>
+
+    <div class="dash-shell">
+      <!-- ============ SIDEBAR ============ -->
+      <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">AD</span>
+          <div class="logo-text">
+            <h2>AD FITNESS</h2>
+            <p>Admin Panel</p>
+          </div>
+        </a>
+
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <span class="nav-group-label">Overview</span>
+            <a href="#dashboard" class="sidebar-link active" data-section="dashboard"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+            <a href="#analytics" class="sidebar-link" data-section="analytics"><i class="fa-solid fa-chart-pie"></i> Analytics</a>
+          </div>
+          <div class="nav-group">
+            <span class="nav-group-label">Manage</span>
+            <a href="#members" class="sidebar-link" data-section="members"><i class="fa-solid fa-users"></i> Members <span class="link-badge" id="memberCountBadge">0</span></a>
+            <a href="#trainers" class="sidebar-link" data-section="trainers"><i class="fa-solid fa-person-chalkboard"></i> Trainers</a>
+            <a href="#programs" class="sidebar-link" data-section="programs"><i class="fa-solid fa-dumbbell"></i> Programs</a>
+            <a href="#payments" class="sidebar-link" data-section="payments"><i class="fa-solid fa-credit-card"></i> Payments</a>
+            <a href="#content" class="sidebar-link" data-section="content"><i class="fa-solid fa-newspaper"></i> Content</a>
+          </div>
+          <div class="nav-group">
+            <span class="nav-group-label">Account</span>
+            <a href="#settings" class="sidebar-link" data-section="settings"><i class="fa-solid fa-gear"></i> Settings</a>
+            <a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i> Back to Site</a>
+          </div>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="sidebar-user">
+            <div class="avatar sm orange">SK</div>
+            <div class="sidebar-user-info">
+              <h4>Sara Khan</h4>
+              <p>Super Admin</p>
+            </div>
+          </div>
+          <a href="login.html" class="sidebar-link" style="margin-top: 10px; color: var(--ember);">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out
+          </a>
+        </div>
+      </aside>
+
+      <!-- ============ MAIN ============ -->
+      <main>
+        <header class="dash-topbar">
+          <div class="topbar-left">
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            <div class="topbar-title">
+              <h1 id="topbarTitle">Dashboard</h1>
+              <p class="mono" id="topbarDate"></p>
+            </div>
+          </div>
+          <div class="topbar-actions">
+            <div class="topbar-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search members, programs..." />
+            </div>
+            <button class="icon-btn" aria-label="Notifications" id="notifBtn">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notif-dot"></span>
+            </button>
+            <div class="user-menu-wrap">
+              <button class="user-menu-trigger" id="userMenuTrigger">
+                <div class="avatar xs orange">SK</div>
+                <span>Sara</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="dropdown-panel" id="userDropdown">
+                <a href="#settings" class="dropdown-item"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="profile.html" class="dropdown-item"><i class="fa-solid fa-user"></i> My Profile</a>
+                <div class="dropdown-divider"></div>
+                <a href="login.html" class="dropdown-item danger"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="dash-content">
+
+          <!-- ============ DASHBOARD OVERVIEW ============ -->
+          <section class="dash-section" id="dashboard">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-chart-simple"></i> Gym Overview</span>
+                <h2 class="section-title-sm">Dashboard</h2>
+                <p class="section-sub">A snapshot of how AD Fitness is performing today.</p>
+              </div>
+              <button class="btn-secondary"><i class="fa-solid fa-arrow-down-to-line"></i> Export Report</button>
+            </div>
+
+            <div class="stat-grid" id="adminStats"></div>
+
+            <div class="grid-main-side" style="margin-top: 22px;">
+              <div class="card">
+                <div class="card-header">
+                  <span class="card-title"><i class="fa-solid fa-arrow-trend-up"></i> Member Growth (6 months)</span>
+                  <span class="badge badge-success" id="growthBadge">+0%</span>
+                </div>
+                <div class="bar-chart" id="growthBarChart"></div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><span class="card-title"><i class="fa-solid fa-clock"></i> Recent Activity</span></div>
+                <div id="activityFeed"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ ANALYTICS ============ -->
+          <section class="dash-section" id="analytics">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-magnifying-glass-chart"></i> Deeper Insights</span>
+                <h2 class="section-title-sm">Analytics</h2>
+                <p class="section-sub">Where members spend their time and money.</p>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="card">
+                <div class="card-header"><span class="card-title"><i class="fa-solid fa-chart-pie"></i> Popular Workout Types</span></div>
+                <div class="donut-wrap">
+                  <div class="donut" id="workoutDonut">
+                    <div class="donut-center"><strong id="donutTotal">0</strong><span>Sessions</span></div>
+                  </div>
+                  <ul class="donut-legend" id="donutLegend"></ul>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><span class="card-title"><i class="fa-solid fa-clock"></i> Peak Hours</span></div>
+                <div class="bar-chart" id="peakHoursChart" style="height:160px;"></div>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top:22px;">
+              <div class="card-header"><span class="card-title"><i class="fa-solid fa-users-viewfinder"></i> Retention Snapshot</span></div>
+              <div id="retentionList"></div>
+            </div>
+          </section>
+
+          <!-- ============ MEMBERS ============ -->
+          <section class="dash-section" id="members">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-users"></i> Community</span>
+                <h2 class="section-title-sm">Members</h2>
+                <p class="section-sub">Every registered member of AD Fitness.</p>
+              </div>
+              <button class="btn-primary" id="addMemberBtn"><i class="fa-solid fa-plus"></i> Add Member</button>
+            </div>
+
+            <div class="card">
+              <div class="table-toolbar">
+                <div class="table-filters">
+                  <input type="text" class="input-field" id="memberSearch" placeholder="Search members..." style="min-width:220px;" />
+                  <select class="select-field" id="memberStatusFilter">
+                    <option value="all">All Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Trial">Trial</option>
+                    <option value="Inactive">Inactive</option>
+                  </select>
+                  <select class="select-field" id="memberPlanFilter">
+                    <option value="all">All Plans</option>
+                    <option value="Basic">Basic</option>
+                    <option value="Pro">Pro</option>
+                    <option value="Elite">Elite</option>
+                  </select>
+                </div>
+                <span class="section-sub" id="memberCountLabel">0 members</span>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead>
+                    <tr><th>Member</th><th>Plan</th><th>Status</th><th>Joined</th><th>Last Active</th><th></th></tr>
+                  </thead>
+                  <tbody id="memberTableBody"></tbody>
+                </table>
+              </div>
+              <div class="empty-state" id="memberEmptyState" hidden><i class="fa-solid fa-users"></i><p>No members match these filters.</p></div>
+            </div>
+          </section>
+
+          <!-- ============ TRAINERS ============ -->
+          <section class="dash-section" id="trainers">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-person-chalkboard"></i> Coaching Staff</span>
+                <h2 class="section-title-sm">Trainers</h2>
+                <p class="section-sub">Manage your trainer roster and assignments.</p>
+              </div>
+              <button class="btn-secondary" id="addTrainerBtn"><i class="fa-solid fa-plus"></i> Add Trainer</button>
+            </div>
+            <div class="grid-3" id="trainerGrid"></div>
+          </section>
+
+          <!-- ============ PROGRAMS ============ -->
+          <section class="dash-section" id="programs">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-dumbbell"></i> Training Content</span>
+                <h2 class="section-title-sm">Workouts &amp; Programs</h2>
+                <p class="section-sub">The programs available to members.</p>
+              </div>
+              <button class="btn-primary" id="addProgramBtn"><i class="fa-solid fa-plus"></i> Add Program</button>
+            </div>
+
+            <div class="card">
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>Program</th><th>Category</th><th>Difficulty</th><th>Duration</th><th>Enrolled</th><th></th></tr></thead>
+                  <tbody id="programTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ PAYMENTS ============ -->
+          <section class="dash-section" id="payments">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-credit-card"></i> Billing</span>
+                <h2 class="section-title-sm">Payments</h2>
+                <p class="section-sub">Recent transactions across all members.</p>
+              </div>
+              <button class="btn-secondary"><i class="fa-solid fa-arrow-down-to-line"></i> Export CSV</button>
+            </div>
+
+            <div class="grid-3" style="margin-bottom:22px;">
+              <div class="stat-card compact"><div class="stat-icon"><i class="fa-solid fa-sack-dollar"></i></div><h2 id="revenueMonth">₹0</h2><p>Revenue This Month</p></div>
+              <div class="stat-card compact"><div class="stat-icon"><i class="fa-solid fa-rotate"></i></div><h2 id="mrr">₹0</h2><p>Monthly Recurring Revenue</p></div>
+              <div class="stat-card compact"><div class="stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></div><h2 id="failedPayments">0</h2><p>Failed Payments</p></div>
+            </div>
+
+            <div class="card">
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>Member</th><th>Plan</th><th>Amount</th><th>Date</th><th>Status</th></tr></thead>
+                  <tbody id="paymentTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ CONTENT ============ -->
+          <section class="dash-section" id="content">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-newspaper"></i> Articles &amp; Stories</span>
+                <h2 class="section-title-sm">Content</h2>
+                <p class="section-sub">Manage articles and success stories shown on the site.</p>
+              </div>
+              <button class="btn-primary" id="addArticleBtn"><i class="fa-solid fa-plus"></i> New Article</button>
+            </div>
+
+            <div class="card">
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>Title</th><th>Category</th><th>Author</th><th>Published</th><th>Status</th><th></th></tr></thead>
+                  <tbody id="articleTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ SETTINGS ============ -->
+          <section class="dash-section" id="settings">
+            <div class="dash-section-head">
+              <div>
+                <span class="eyebrow"><i class="fa-solid fa-sliders"></i> Configuration</span>
+                <h2 class="section-title-sm">Settings</h2>
+                <p class="section-sub">Site-wide and admin account settings.</p>
+              </div>
+            </div>
+
+            <div class="tabs">
+              <button class="tab-btn active" data-tab="site">Site</button>
+              <button class="tab-btn" data-tab="admin-account">Admin Account</button>
+              <button class="tab-btn" data-tab="roles">Roles &amp; Permissions</button>
+            </div>
+
+            <div class="tab-panel active" data-tab-panel="site">
+              <div class="card">
+                <form id="siteForm">
+                  <div class="field-grid">
+                    <div class="form-group"><label>Site name</label><input type="text" id="siteName" value="AD FITNESS" /></div>
+                    <div class="form-group"><label>Support email</label><input type="email" id="siteEmail" value="support@adfitness.com" /></div>
+                    <div class="form-group full"><label>Maintenance mode</label>
+                      <div class="toggle-row" style="border:none; padding-top:6px;">
+                        <p style="margin:0; font-size:13px; color:var(--muted);">Temporarily take the public site offline.</p>
+                        <label class="switch"><input type="checkbox" /><span class="switch-track"></span></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-actions">
+                    <button type="button" class="btn-ghost">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-tab-panel="admin-account">
+              <div class="card">
+                <form id="adminAccountForm">
+                  <div class="field-grid">
+                    <div class="form-group"><label>Name</label><input type="text" value="Sara Khan" /></div>
+                    <div class="form-group"><label>Email</label><input type="email" value="sara.khan@adfitness.com" /></div>
+                  </div>
+                  <div class="form-actions">
+                    <button type="button" class="btn-ghost">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-tab-panel="roles">
+              <div class="card">
+                <div class="toggle-row"><div><h4>Manage Members</h4><p>Add, edit, and remove members.</p></div><label class="switch"><input type="checkbox" checked /><span class="switch-track"></span></label></div>
+                <div class="toggle-row"><div><h4>Manage Payments</h4><p>View and export payment records.</p></div><label class="switch"><input type="checkbox" checked /><span class="switch-track"></span></label></div>
+                <div class="toggle-row"><div><h4>Publish Content</h4><p>Create and publish articles.</p></div><label class="switch"><input type="checkbox" checked /><span class="switch-track"></span></label></div>
+                <div class="toggle-row"><div><h4>Manage Admins</h4><p>Add or remove other admin accounts.</p></div><label class="switch"><input type="checkbox" /><span class="switch-track"></span></label></div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
+
+    <!-- ============ MODAL: Member (Add/Edit/View) ============ -->
+    <div class="modal-overlay" id="memberModal">
+      <div class="modal">
+        <div class="modal-head">
+          <h3 id="memberModalTitle">Add Member</h3>
+          <button class="modal-close" data-close-modal><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <form id="memberForm">
+          <input type="hidden" id="memberIndex" />
+          <div class="field-grid">
+            <div class="form-group full"><label>Full name</label><input type="text" id="mName" required /></div>
+            <div class="form-group"><label>Email</label><input type="email" id="mEmail" required /></div>
+            <div class="form-group"><label>Plan</label>
+              <select class="select-field" id="mPlan" style="width:100%; padding:14px 16px;">
+                <option>Basic</option><option>Pro</option><option>Elite</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Status</label>
+              <select class="select-field" id="mStatus" style="width:100%; padding:14px 16px;">
+                <option>Active</option><option>Trial</option><option>Inactive</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Joined date</label><input type="date" id="mJoined" required /></div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-ghost" data-close-modal>Cancel</button>
+            <button type="submit" class="btn-primary" id="memberSubmitBtn">Add Member</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============ MODAL: Trainer ============ -->
+    <div class="modal-overlay" id="trainerModal">
+      <div class="modal">
+        <div class="modal-head"><h3>Add Trainer</h3><button class="modal-close" data-close-modal><i class="fa-solid fa-xmark"></i></button></div>
+        <form id="trainerForm">
+          <div class="field-grid">
+            <div class="form-group full"><label>Full name</label><input type="text" id="tName" required /></div>
+            <div class="form-group"><label>Specialty</label><input type="text" id="tSpecialty" placeholder="e.g. Strength & Conditioning" required /></div>
+            <div class="form-group"><label>Rating (1-5)</label><input type="number" id="tRating" min="1" max="5" step="0.1" value="4.8" /></div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-ghost" data-close-modal>Cancel</button>
+            <button type="submit" class="btn-primary">Add Trainer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============ MODAL: Program ============ -->
+    <div class="modal-overlay" id="programModal">
+      <div class="modal">
+        <div class="modal-head"><h3 id="programModalTitle">Add Program</h3><button class="modal-close" data-close-modal><i class="fa-solid fa-xmark"></i></button></div>
+        <form id="programForm">
+          <input type="hidden" id="programIndex" />
+          <div class="field-grid">
+            <div class="form-group full"><label>Program name</label><input type="text" id="pName" required /></div>
+            <div class="form-group"><label>Category</label>
+              <select class="select-field" id="pCategory" style="width:100%; padding:14px 16px;">
+                <option>Strength</option><option>Cardio</option><option>HIIT</option><option>Mobility</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Difficulty</label>
+              <select class="select-field" id="pDifficulty" style="width:100%; padding:14px 16px;">
+                <option>Beginner</option><option>Intermediate</option><option>Advanced</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Duration (weeks)</label><input type="number" id="pDuration" value="8" required /></div>
+            <div class="form-group"><label>Enrolled members</label><input type="number" id="pEnrolled" value="0" /></div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-ghost" data-close-modal>Cancel</button>
+            <button type="submit" class="btn-primary" id="programSubmitBtn">Add Program</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============ MODAL: Article ============ -->
+    <div class="modal-overlay" id="articleModal">
+      <div class="modal">
+        <div class="modal-head"><h3>New Article</h3><button class="modal-close" data-close-modal><i class="fa-solid fa-xmark"></i></button></div>
+        <form id="articleForm">
+          <div class="field-grid">
+            <div class="form-group full"><label>Title</label><input type="text" id="aTitle" required /></div>
+            <div class="form-group"><label>Category</label>
+              <select class="select-field" id="aCategory" style="width:100%; padding:14px 16px;">
+                <option>Training</option><option>Nutrition</option><option>Success Story</option><option>Recovery</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Author</label><input type="text" id="aAuthor" value="Sara Khan" required /></div>
+            <div class="form-group full"><label>Status</label>
+              <select class="select-field" id="aStatus" style="width:100%; padding:14px 16px;">
+                <option>Draft</option><option>Published</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-ghost" data-close-modal>Cancel</button>
+            <button type="submit" class="btn-primary">Save Article</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============ MODAL: Confirm delete ============ -->
+    <div class="modal-overlay" id="confirmModal">
+      <div class="modal" style="max-width:420px;">
+        <div class="modal-head"><h3>Are you sure?</h3><button class="modal-close" data-close-modal><i class="fa-solid fa-xmark"></i></button></div>
+        <p style="color:var(--muted); font-size:14px; margin-bottom:4px;" id="confirmText">This action can't be undone.</p>
+        <div class="form-actions">
+          <button type="button" class="btn-ghost" data-close-modal>Cancel</button>
+          <button type="button" class="btn-danger-outline" id="confirmActionBtn">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-stack" id="toastStack"></div>
+
+    <script src="JS/admin.js"></script>
+  </body>
+</html>

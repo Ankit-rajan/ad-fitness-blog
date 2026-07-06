@@ -118,35 +118,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // ADD TO CART
     // ===============================
 
-    const cartBtn = document.querySelector(".cart-btn");
+   cartBtn.addEventListener("click", () => {
 
-    cartBtn.addEventListener("click", () => {
+    alert("Product added to cart.");
 
-        const productName =
-            document.getElementById("productName").textContent;
+    window.location.href = "cart.html";
 
-        alert(
-            `${quantity} × ${productName} added to cart!`
-        );
-
-    });
+});
 
     // ===============================
     // BUY NOW
     // ===============================
+buyBtn.addEventListener("click", () => {
 
-    const buyBtn = document.querySelector(".buy-btn");
+    window.location.href = "cart.html";
 
-    buyBtn.addEventListener("click", () => {
-
-        const productName =
-            document.getElementById("productName").textContent;
-
-        alert(
-            `Proceeding to checkout for ${quantity} × ${productName}`
-        );
-
-    });
+});
 
     // ===============================
     // IMAGE ZOOM (HOVER)

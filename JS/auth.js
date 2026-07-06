@@ -28,7 +28,10 @@ function initPasswordToggles() {
       btn.innerHTML = isPassword
         ? '<i class="fa-solid fa-eye-slash"></i>'
         : '<i class="fa-solid fa-eye"></i>';
-      btn.setAttribute("aria-label", isPassword ? "Hide password" : "Show password");
+      btn.setAttribute(
+        "aria-label",
+        isPassword ? "Hide password" : "Show password",
+      );
     });
   });
 }
@@ -128,7 +131,7 @@ function initLoginForm() {
   const submitBtn = document.getElementById("loginSubmit");
   const success = document.getElementById("loginSuccess");
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     let valid = true;
 
@@ -152,12 +155,45 @@ function initLoginForm() {
     submitBtn.disabled = true;
 
     // Simulated request — replace with a real fetch() to your auth API.
-    setTimeout(() => {
-      submitBtn.classList.remove("loading");
-      submitBtn.disabled = false;
-      success.hidden = false;
-      form.reset();
-    }, 900);
+          try {
+        const response = await fetch("http://localhost:5000/api/auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email.value.trim(),
+            password: password.value,
+          }),
+        });
+
+        const data = await response.json();
+
+        submitBtn.classList.remove("loading");
+        submitBtn.disabled = false;
+
+        if (response.ok) {
+          success.hidden = false;
+
+          // Save JWT Token
+          localStorage.setItem("token", data.token);
+
+          // Save User
+          localStorage.setItem("user", JSON.stringify(data.user));
+
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 1000);
+
+        } else {
+          alert(data.message);
+        }
+
+      } catch (error) {
+        submitBtn.classList.remove("loading");
+        submitBtn.disabled = false;
+        alert("Server Error");
+      }
   });
 }
 
@@ -177,8 +213,9 @@ function initSignupForm() {
   const success = document.getElementById("signupSuccess");
   const termsError = document.querySelector('[data-error-for="terms"]');
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
     let valid = true;
 
     if (!name.value.trim()) {
@@ -209,28 +246,55 @@ function initSignupForm() {
       setFieldValid(confirmPassword);
     }
 
-    if (!terms.checked) {
-      if (termsError) termsError.style.display = "block";
-      valid = false;
-    } else {
-      if (termsError) termsError.style.display = "none";
-    }
+      if (!terms.checked) {
+    if (termsError) termsError.style.display = "block";
+    valid = false;
+  } else {
+    if (termsError) termsError.style.display = "none";
+  }
 
-    if (!valid) return;
+  // ⬇️ Ye line missing hai
+  if (!valid) return;
 
-    submitBtn.classList.add("loading");
-    submitBtn.disabled = true;
+  submitBtn.classList.add("loading");
+  submitBtn.disabled = true;
 
-    // Simulated request — replace with a real fetch() to your signup API.
-    setTimeout(() => {
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name.value.trim(),
+          email: email.value.trim(),
+          password: password.value,
+        }),
+      });
+
+      const data = await response.json();
+      console.log("Status:", response.status);
+      console.log("Data:", data);
+
       submitBtn.classList.remove("loading");
       submitBtn.disabled = false;
-      success.hidden = false;
-      form.reset();
-      const meter = document.getElementById("strengthMeter");
-      const label = document.getElementById("strengthLabel");
-      if (meter) meter.classList.remove("weak", "fair", "good", "strong");
-      if (label) label.textContent = "—";
-    }, 900);
+
+      if (response.ok) {
+        success.hidden = false;
+        form.reset();
+
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1500);
+        console.log("Signup successful");
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      submitBtn.classList.remove("loading");
+      submitBtn.disabled = false;
+      alert("Server Error");
+    }
   });
 }

@@ -145,3 +145,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+
+
+document.querySelectorAll("*").forEach(el => {
+  if (el.scrollWidth > document.documentElement.clientWidth) {
+    console.log(el, el.scrollWidth);
+  }
+});

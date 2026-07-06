@@ -3,14 +3,12 @@
    diet.css (Part 1)
 =================================== */
 
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 /* ==========================
    CSS Variables
 ========================== */
 
-:root{
+/* :root{
 
     --primary:#ff6b00;
     --secondary:#ff8c42;
@@ -32,56 +30,17 @@
 
     --radius:18px;
 
-}
+} */
 
 /* ==========================
    Reset
 ========================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Poppins',sans-serif;
-    overflow-x:hidden;
-    line-height:1.7;
-
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-ul{
-    list-style:none;
-}
-
-section{
-
-    padding:90px 8%;
-
-}
 
 /* ==========================
    Scrollbar
 ========================== */
-
+/* 
 ::-webkit-scrollbar{
     width:10px;
 }
@@ -97,13 +56,13 @@ section{
     background:var(--primary);
     border-radius:50px;
 
-}
+} */
 
-::-webkit-scrollbar-thumb:hover{
+/* ::-webkit-scrollbar-thumb:hover{
 
     background:var(--secondary);
 
-}
+} */
 
 /* ==========================
    Progress Bar
@@ -176,55 +135,12 @@ section{
    Common Section Title
 ========================== */
 
-.section-title{
-
-    text-align:center;
-
-    max-width:760px;
-
-    margin:auto auto 60px;
-
-}
-
-.section-title span{
-
-    color:var(--primary);
-
-    font-size:15px;
-
-    font-weight:600;
-
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-
-}
-
-.section-title h2{
-
-    margin:18px 0;
-
-    font-size:46px;
-
-    font-weight:800;
-
-    line-height:1.2;
-
-}
-
-.section-title p{
-
-    color:var(--text2);
-
-    font-size:17px;
-
-}
 
 /* ==========================
    Buttons
 ========================== */
 
-.btn{
+/* .btn{
 
     display:inline-flex;
 
@@ -244,7 +160,7 @@ section{
 
     border:2px solid transparent;
 
-}
+} */
 
 .primary{
 
@@ -303,6 +219,7 @@ section{
     background-position:center;
 
 }
+
 
 .overlay{
 
@@ -377,7 +294,7 @@ section{
 
 }
 
-.hero-buttons{
+/* .hero-buttons{
 
     display:flex;
 
@@ -385,12 +302,12 @@ section{
 
     flex-wrap:wrap;
 
-}
+} */
 
 /* ==========================
    Stats Section
 ========================== */
-
+/* 
 .stats{
 
     display:grid;
@@ -405,7 +322,7 @@ section{
 
     z-index:20;
 
-}
+} */
 
 .stat-card{
 
@@ -460,7 +377,7 @@ section{
 /* ==========================
    Goals Section
 ========================== */
-
+/* 
 .goals{
 
     background:var(--bg2);
@@ -558,7 +475,7 @@ section{
 
 
 
-
+ */
 
 
 
@@ -624,7 +541,7 @@ section{
 /* ===========================
    BASIC GRID
 =========================== */
-
+/* 
 .basics-grid{
 
     display:grid;
@@ -762,7 +679,7 @@ section{
 
     transform:translateX(8px);
 
-}
+} */
 
 /* ===========================
    ENERGY SECTION
@@ -798,7 +715,7 @@ section{
 
 }
 
-.energy-grid{
+/* .energy-grid{
 
     display:grid;
 
@@ -878,7 +795,7 @@ section{
 
     font-size:15px;
 
-}
+} */
 
 /* Deficit */
 
@@ -978,7 +895,7 @@ section{
 
 }
 
-.rules-grid{
+/* .rules-grid{
 
     display:grid;
 
@@ -1055,7 +972,7 @@ section{
 
     line-height:1.8;
 
-}
+} */
 
 
 /* ==========================================
@@ -1390,7 +1307,7 @@ section{
 ROOT
 ========================*/
 
-:root{
+/* :root{
 
 --protein-primary:#ff4d30;
 --protein-secondary:#ff7b54;
@@ -1407,7 +1324,7 @@ ROOT
 
 --transition:.35s ease;
 
-}
+} */
 
 /*========================
 PAGE
@@ -1433,18 +1350,18 @@ max-width:100%;
 display:block;
 
 }
-
+/* 
 .container{
 
 width:min(1180px,92%);
 margin:auto;
 
-}
+} */
 
 /*========================
 SECTION TITLE
 ========================*/
-
+/* 
 .section-title{
 
 text-align:center;
@@ -1483,12 +1400,12 @@ font-size:1.05rem;
 line-height:1.8;
 color:var(--protein-text);
 
-}
+} */
 
 /*========================
 BUTTONS
 ========================*/
-
+/* 
 .btn{
 
 display:inline-flex;
@@ -1525,7 +1442,7 @@ background:var(--protein-primary);
 
 }
 
-
+ */
 
 
 /* 
@@ -1606,13 +1523,13 @@ margin-bottom:35px;
 
 }
 
-.hero-buttons{
+/* .hero-buttons{
 
 display:flex;
 gap:18px;
 flex-wrap:wrap;
 
-}
+} */
 
 .hero-image{
 
@@ -1793,7 +1710,7 @@ box-shadow:0 10px 20px rgba(255,77,48,.3);
 }
 
 }
-.protein-facts .section-title{
+.protein-facts {
     text-align:center;
     margin-bottom:60px;
 }
@@ -1991,11 +1908,11 @@ text-align:center;
 
 }
 
-.hero-buttons{
+/* .hero-buttons{
 
 justify-content:center;
 
-}
+} */
 
 .hero-image img{
 
@@ -2009,11 +1926,7 @@ grid-template-columns:1fr;
 
 }
 
-.section-title{
 
-margin-bottom:45px;
-
-}
 
 }
 
@@ -2031,17 +1944,13 @@ font-size:2rem;
 
 }
 
-.btn{
 
-width:100%;
 
-}
-
-.hero-buttons{
+/* .hero-buttons{
 
 flex-direction:column;
 
-}
+} */
 
 }
 
@@ -2065,7 +1974,7 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 }
-
+/* 
 .food-card{
 background:#202020;
 border-radius:18px;
@@ -2106,7 +2015,7 @@ color:var(--protein-primary);
 border-radius:30px;
 font-size:.9rem;
 font-weight:600;
-}
+} */
 
 /*=========================
 PROTEIN CALCULATOR
@@ -2126,7 +2035,7 @@ border:1px solid rgba(255,255,255,.08);
 box-shadow:0 15px 35px rgba(0,0,0,.25);
 }
 
-.input-group{
+/* .input-group{
 margin-bottom:28px;
 }
 
@@ -2153,7 +2062,7 @@ transition:.3s;
 .input-group input:focus,
 .input-group select:focus{
 border:1px solid var(--protein-primary);
-}
+} */
 
 #proteinBtn{
 width:100%;
@@ -2275,9 +2184,9 @@ RESPONSIVE
 padding:35px;
 }
 
-.food-card img{
+/* .food-card img{
 height:200px;
-}
+} */
 
 }
 
@@ -2317,9 +2226,9 @@ padding:15px;
 font-size:1rem;
 }
 
-.food-card img{
+/* .food-card img{
 height:190px;
-}
+} */
 
 }
 
@@ -2431,7 +2340,7 @@ PROTEIN MYTHS
 .protein-myths{
 background:#181818;
 }
-
+/* 
 .myths{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -2465,7 +2374,7 @@ font-size:1.15rem;
 .myth p{
 color:#d5d5d5;
 line-height:1.8;
-}
+} */
 
 /*=========================
 CALL TO ACTION
@@ -2492,21 +2401,21 @@ font-size:1.08rem;
 color:#fff;
 }
 
-.protein-cta .btn{
+/* .protein-cta {
 background:#fff;
 color:#ff4d30;
 }
 
-.protein-cta .btn:hover{
+.protein-cta {
 background:#111;
 color:#fff;
-}
+} */
 
 /*=========================
 HOVER EFFECTS
 =========================*/
 
-.food-card,
+
 .recipe-card,
 .tip-card,
 .type-card,
@@ -2516,7 +2425,7 @@ HOVER EFFECTS
 transition:all .35s ease;
 }
 
-.food-card:hover,
+
 .recipe-card:hover,
 .tip-card:hover,
 .type-card:hover,
@@ -2529,7 +2438,7 @@ box-shadow:0 25px 45px rgba(0,0,0,.30);
 /*=========================
 SCROLL ANIMATION
 =========================*/
-
+/* 
 .fade-up{
 opacity:0;
 transform:translateY(60px);
@@ -2539,13 +2448,13 @@ transition:1s ease;
 .fade-up.show{
 opacity:1;
 transform:translateY(0);
-}
+} */
 
 /*=========================
 CUSTOM SCROLLBAR
 =========================*/
 
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
 width:10px;
 }
 
@@ -2560,7 +2469,7 @@ border-radius:30px;
 
 ::-webkit-scrollbar-thumb:hover{
 background:var(--protein-secondary);
-}
+} */
 
 /*=========================
 TEXT SELECTION
@@ -2646,7 +2555,7 @@ padding-bottom:110px;
 CARD HEADINGS
 =========================*/
 
-.food-card h3,
+
 .recipe-card h3,
 .type-card h3,
 .tip-card h3,
@@ -2661,7 +2570,7 @@ letter-spacing:.3px;
 PARAGRAPHS
 =========================*/
 
-.food-card p,
+
 .recipe-card p,
 .type-card p,
 .tip-card p,
@@ -2676,19 +2585,17 @@ word-break:break-word;
 IMAGE EFFECTS
 =========================*/
 
-.food-card,
+
 .recipe-card{
 overflow:hidden;
 }
 
-.food-card img,
 .recipe-card img,
 .hero-image img,
 .intro-image img{
 transition:transform .45s ease;
 }
 
-.food-card:hover img,
 .recipe-card:hover img{
 transform:scale(1.08);
 }
@@ -2751,21 +2658,21 @@ letter-spacing:.5px;
 FOCUS STATES
 =========================*/
 
-.btn:focus,
+/* .btn:focus,
 button:focus,
 input:focus,
 select:focus{
 outline:2px solid var(--protein-primary);
 outline-offset:3px;
-}
+} */
 
 /*=========================
 SMOOTH SCROLL
 =========================*/
 
-html{
+/* html{
 scroll-behavior:smooth;
-}
+} */
 
 /*=========================
 UTILITY CLASSES
@@ -2837,10 +2744,10 @@ transform:translateY(0);
 
 }
 
-.section-title,
+
 .hero-content,
 .hero-image,
-.food-card,
+
 .recipe-card,
 .tip-card,
 .type-card,
@@ -2855,9 +2762,9 @@ LARGE SCREENS
 
 @media (min-width:1400px){
 
-.container{
+/* .container{
 max-width:1320px;
-}
+} */
 
 .hero-content h1{
 font-size:5rem;
@@ -2875,9 +2782,6 @@ TABLETS
 
 @media (max-width:992px){
 
-.section-title h2{
-font-size:2.4rem;
-}
 
 .hero-wrapper,
 .intro-grid{
@@ -2888,9 +2792,9 @@ gap:40px;
 text-align:center;
 }
 
-.hero-buttons{
+/* .hero-buttons{
 justify-content:center;
-}
+} */
 
 .hero-image img{
 width:340px;
@@ -2904,17 +2808,11 @@ MOBILE
 
 @media (max-width:768px){
 
-.container{
+/* .container{
 width:94%;
-}
+} */
 
-.section-title h2{
-font-size:2rem;
-}
 
-.section-title p{
-font-size:1rem;
-}
 
 .hero-content h1{
 font-size:2.5rem;
@@ -2932,7 +2830,7 @@ width:280px;
 font-size:2rem;
 }
 
-.food-card,
+
 .recipe-card,
 .tip-card,
 .type-card,
@@ -2958,24 +2856,13 @@ padding:60px 0;
 font-size:2rem;
 line-height:1.25;
 }
-
+/* 
 .hero-buttons{
 flex-direction:column;
-}
+} */
 
-.hero-buttons .btn{
-width:100%;
-}
 
-.section-title{
-margin-bottom:35px;
-}
 
-.section-title h2{
-font-size:1.75rem;
-}
-
-.food-card img,
 .recipe-card img{
 height:180px;
 }
@@ -3001,22 +2888,16 @@ EXTRA SMALL DEVICES
 font-size:1.8rem;
 }
 
-.section-title h2{
-font-size:1.6rem;
-}
 
 .hero-image img{
 width:230px;
 }
 
-.btn{
-padding:14px 20px;
-font-size:.95rem;
-}
+
 
 }
 
-.btn,
+
 #proteinBtn{
 position:relative;
 overflow:hidden;
@@ -3597,7 +3478,7 @@ opacity:0;
     gap:35px;
 
 }
-
+/* 
 .food-card{
 
     background:var(--card);
@@ -3654,19 +3535,19 @@ opacity:0;
 
     break-inside:avoid;
 
-}
+} */
 
 /* =========================================
    WEIGHT LOSS & WEIGHT GAIN MEAL PLANS
 ========================================= */
 
-.meal-plan{
+/* .meal-plan{
     background:var(--bg);
 }
 
 .meal-plan.gain{
     background:var(--bg2);
-}
+} */
 
 .table-wrapper{
 
@@ -3894,19 +3775,19 @@ tbody tr:last-child td{
    DIET MYTHS ACCORDION
 ========================================= */
 
-.myths{
+/* .myths{
 
     background:var(--bg);
 
-}
+} */
 
-.faq-container{
+/* .faq-container{
 
     max-width:900px;
 
     margin:auto;
 
-}
+} */
 
 .faq{
 
@@ -4203,9 +4084,7 @@ tbody tr:last-child td{
         font-size:60px;
     }
 
-    .section-title h2{
-        font-size:42px;
-    }
+   
 
     .supplement-grid{
         grid-template-columns:repeat(2,1fr);
@@ -4269,12 +4148,12 @@ tbody tr:last-child td{
         margin-right:auto;
 
     }
-
+/* 
     .hero-buttons{
 
         justify-content:center;
 
-    }
+    } */
 
     .timeline::before{
 
@@ -4282,13 +4161,12 @@ tbody tr:last-child td{
 
     }
 
-    .timeline-item{
-
-        width:100%;
-        margin-left:45px !important;
-        margin-right:0 !important;
-
-    }
+  .timeline-item{
+    width:calc(100% - 45px);
+    margin-left:20px;
+    margin-right:0;
+    box-sizing:border-box;
+}
 
     .timeline-item::before{
 
@@ -4333,17 +4211,7 @@ tbody tr:last-child td{
 
     }
 
-    .section-title h2{
-
-        font-size:34px;
-
-    }
-
-    .section-title p{
-
-        font-size:15px;
-
-    }
+   
 
     .stats,
     .goal-grid,
@@ -4365,12 +4233,12 @@ tbody tr:last-child td{
         padding:30px;
 
     }
-
+/* 
     .food-card ul{
 
         columns:1;
 
-    }
+    } */
 
     .water-box{
 
@@ -4421,30 +4289,15 @@ tbody tr:last-child td{
 
     }
 
-    .btn{
+    
 
-        width:100%;
-        justify-content:center;
-
-    }
-
-    .hero-buttons{
+    /* .hero-buttons{
 
         flex-direction:column;
 
-    }
+    } */
 
-    .section-title h2{
-
-        font-size:28px;
-
-    }
-
-    .section-title p{
-
-        font-size:14px;
-
-    }
+    
 
     .stat-card h2{
 
@@ -4547,17 +4400,7 @@ tbody tr:last-child td{
 
     }
 
-    .section-title span{
-
-        font-size:12px;
-
-    }
-
-    .section-title h2{
-
-        font-size:24px;
-
-    }
+    
 
     .goal-card,
     .macro-card,
@@ -4629,18 +4472,8 @@ tbody tr:last-child td{
 
     }
 
-    .section-title h2{
 
-        font-size:20px;
-
-    }
-
-    .btn{
-
-        padding:12px 18px;
-        font-size:14px;
-
-    }
+   
 
     .timeline-item{
 
@@ -4662,6 +4495,10 @@ tbody tr:last-child td{
 
 }
 
+/* 
+*{
+    outline:1px solid red !important;
+} */
 /* =========================================
    END OF FILE
 ========================================= */

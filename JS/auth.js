@@ -156,7 +156,7 @@ function initLoginForm() {
 
     // Simulated request — replace with a real fetch() to your auth API.
           try {
-        const response = await fetch("http://localhost:5000/api/auth/login", {
+        const response = await fetch("https://ad-fitness-blog.onrender.com/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -261,7 +261,7 @@ function initSignupForm() {
 
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/register", {
+      const response = await fetch("https://ad-fitness-blog.onrender.com/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

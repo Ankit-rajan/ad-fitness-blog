@@ -49,7 +49,7 @@ async function loadProfile() {
       return false;
     }
 
-    const response = await fetch("http://localhost:5000/api/auth/profile", {
+    const response = await fetch("https://ad-fitness-blog.onrender.com/api/auth/profile", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -953,7 +953,7 @@ function initForms() {
       };
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/profile",
+        "https://ad-fitness-blog.onrender.com/api/auth/profile",
         {
           method: "PUT",
           headers: {

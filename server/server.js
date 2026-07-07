@@ -9,9 +9,12 @@ const app = express();
 connectDB();
 
 app.use(logger);
-app.use(cors(
-    {origin: "http://localhost:5501",}
-));
+app.use(cors({
+  origin: [
+    "http://localhost:5501",
+    "https://glittery-maamoul-bd779e.netlify.app"
+  ]
+}));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);

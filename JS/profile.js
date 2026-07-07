@@ -13,8 +13,11 @@ const STORE_KEYS = {
   prefs: "adf_prefs",
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  seedData();
+document.addEventListener("DOMContentLoaded", async () => {
+  const authenticated = await loadProfile();
+
+  if (!authenticated) return;
+
   renderUserChrome();
   renderOverview();
   renderProfileFields();
@@ -37,113 +40,305 @@ document.addEventListener("DOMContentLoaded", () => {
 // ------------------------------------------------------------
 // Seed demo data (first load only)
 // ------------------------------------------------------------
-function seedData() {
-  if (!localStorage.getItem(STORE_KEYS.user)) {
-    localStorage.setItem(
-      STORE_KEYS.user,
-      JSON.stringify({
-        name: "Rahul Sharma",
-        email: "rahul.sharma@email.com",
-        phone: "+91 98765 43210",
-        age: 29,
-        gender: "Male",
-        height: 178,
-        weight: 74,
-        goal: "Build Muscle",
-        plan: "Pro — Annual",
-        memberSince: "2024-02-12",
-        renewsOn: "2027-02-12",
-        trainer: "Aman Khanna",
-      })
-    );
-  }
+async function loadProfile() {
+  try {
+    const token = localStorage.getItem("token");
 
-  if (!localStorage.getItem(STORE_KEYS.workouts)) {
-    const today = new Date();
-    const d = (offset) => {
-      const dt = new Date(today);
-      dt.setDate(dt.getDate() - offset);
-      return dt.toISOString().slice(0, 10);
-    };
-    localStorage.setItem(
-      STORE_KEYS.workouts,
-      JSON.stringify([
-        { date: d(0), name: "Upper Body Strength", type: "Strength", duration: 55, calories: 410, status: "Completed" },
-        { date: d(1), name: "HIIT Sprint Intervals", type: "HIIT", duration: 30, calories: 380, status: "Completed" },
-        { date: d(2), name: "Mobility & Stretch", type: "Mobility", duration: 25, calories: 90, status: "Completed" },
-        { date: d(3), name: "Leg Day", type: "Strength", duration: 60, calories: 460, status: "Completed" },
-        { date: d(4), name: "Morning Run", type: "Cardio", duration: 40, calories: 340, status: "Missed" },
-        { date: d(5), name: "Full Body Circuit", type: "HIIT", duration: 45, calories: 420, status: "Completed" },
-        { date: d(6), name: "Rest & Recovery Yoga", type: "Mobility", duration: 20, calories: 70, status: "Completed" },
-        { date: d(8), name: "Push Day", type: "Strength", duration: 50, calories: 395, status: "Completed" },
-        { date: d(10), name: "Row & Bike Cardio", type: "Cardio", duration: 35, calories: 310, status: "Completed" },
-        { date: d(13), name: "Pull Day", type: "Strength", duration: 52, calories: 405, status: "Completed" },
-      ])
-    );
-  }
-
-  if (!localStorage.getItem(STORE_KEYS.weightLog)) {
-    const base = 79;
-    const log = [];
-    for (let i = 11; i >= 0; i--) {
-      log.push({ week: `W${12 - i}`, weight: +(base - (11 - i) * 0.45 + (Math.random() * 0.6 - 0.3)).toFixed(1) });
+    if (!token) {
+      window.location.replace("login.html");
+      return false;
     }
-    localStorage.setItem(STORE_KEYS.weightLog, JSON.stringify(log));
-  }
 
-  if (!localStorage.getItem(STORE_KEYS.schedule)) {
-    const today = new Date();
-    const d = (offset) => {
-      const dt = new Date(today);
-      dt.setDate(dt.getDate() + offset);
-      return dt.toISOString().slice(0, 10);
-    };
-    localStorage.setItem(
-      STORE_KEYS.schedule,
-      JSON.stringify([
-        { session: "1:1 Personal Training", trainer: "Aman Khanna", date: d(1), time: "07:00", location: "AD Fitness — Downtown" },
-        { session: "HIIT Group Class", trainer: "Priya Verma", date: d(3), time: "18:30", location: "AD Fitness — Riverside" },
-        { session: "Nutrition Consult", trainer: "Sana Iyer", date: d(6), time: "12:00", location: "Virtual" },
-      ])
-    );
-  }
+    const response = await fetch("http://localhost:5000/api/auth/profile", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
-  if (!localStorage.getItem(STORE_KEYS.achievements)) {
-    localStorage.setItem(
-      STORE_KEYS.achievements,
-      JSON.stringify([
-        { title: "First Workout", desc: "Logged your first session", icon: "fa-flag-checkered", earned: true },
-        { title: "7-Day Streak", desc: "Trained 7 days in a row", icon: "fa-fire", earned: true },
-        { title: "50 Workouts", desc: "Completed 50 total sessions", icon: "fa-dumbbell", earned: true },
-        { title: "Early Bird", desc: "5 sessions before 7am", icon: "fa-sun", earned: true },
-        { title: "30-Day Streak", desc: "Trained 30 days in a row", icon: "fa-bolt", earned: false },
-        { title: "100 Workouts", desc: "Completed 100 total sessions", icon: "fa-medal", earned: false },
-        { title: "5K Finisher", desc: "Completed a 5K run", icon: "fa-person-running", earned: false },
-        { title: "Goal Crusher", desc: "Hit your target weight", icon: "fa-bullseye", earned: false },
-      ])
-    );
-  }
+    const data = await response.json();
 
-  if (!localStorage.getItem(STORE_KEYS.prefs)) {
-    localStorage.setItem(STORE_KEYS.prefs, JSON.stringify({ reminders: true, reports: true, promos: false, articles: true }));
+    if (!response.ok) {
+      localStorage.removeItem("token");
+      localStorage.removeItem(STORE_KEYS.user);
+
+      window.location.replace("login.html");
+      return false;
+    }
+
+    localStorage.setItem(STORE_KEYS.user, JSON.stringify(data.user));
+
+    return true;
+  } catch (err) {
+    console.error(err);
+
+    localStorage.removeItem("token");
+    localStorage.removeItem(STORE_KEYS.user);
+
+    window.location.replace("login.html");
+    return false;
   }
 }
 
-function getUser() { return JSON.parse(localStorage.getItem(STORE_KEYS.user)); }
-function setUser(u) { localStorage.setItem(STORE_KEYS.user, JSON.stringify(u)); }
-function getWorkouts() { return JSON.parse(localStorage.getItem(STORE_KEYS.workouts)); }
-function setWorkouts(w) { localStorage.setItem(STORE_KEYS.workouts, JSON.stringify(w)); }
-function getWeightLog() { return JSON.parse(localStorage.getItem(STORE_KEYS.weightLog)); }
-function getSchedule() { return JSON.parse(localStorage.getItem(STORE_KEYS.schedule)); }
-function setSchedule(s) { localStorage.setItem(STORE_KEYS.schedule, JSON.stringify(s)); }
-function getAchievements() { return JSON.parse(localStorage.getItem(STORE_KEYS.achievements)); }
+
+
+// logout code 
+document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem(STORE_KEYS.user);
+    window.location.href = "login.html";
+});
+
+if (!localStorage.getItem(STORE_KEYS.workouts)) {
+  const today = new Date();
+  const d = (offset) => {
+    const dt = new Date(today);
+    dt.setDate(dt.getDate() - offset);
+    return dt.toISOString().slice(0, 10);
+  };
+  localStorage.setItem(
+    STORE_KEYS.workouts,
+    JSON.stringify([
+      {
+        date: d(0),
+        name: "Upper Body Strength",
+        type: "Strength",
+        duration: 55,
+        calories: 410,
+        status: "Completed",
+      },
+      {
+        date: d(1),
+        name: "HIIT Sprint Intervals",
+        type: "HIIT",
+        duration: 30,
+        calories: 380,
+        status: "Completed",
+      },
+      {
+        date: d(2),
+        name: "Mobility & Stretch",
+        type: "Mobility",
+        duration: 25,
+        calories: 90,
+        status: "Completed",
+      },
+      {
+        date: d(3),
+        name: "Leg Day",
+        type: "Strength",
+        duration: 60,
+        calories: 460,
+        status: "Completed",
+      },
+      {
+        date: d(4),
+        name: "Morning Run",
+        type: "Cardio",
+        duration: 40,
+        calories: 340,
+        status: "Missed",
+      },
+      {
+        date: d(5),
+        name: "Full Body Circuit",
+        type: "HIIT",
+        duration: 45,
+        calories: 420,
+        status: "Completed",
+      },
+      {
+        date: d(6),
+        name: "Rest & Recovery Yoga",
+        type: "Mobility",
+        duration: 20,
+        calories: 70,
+        status: "Completed",
+      },
+      {
+        date: d(8),
+        name: "Push Day",
+        type: "Strength",
+        duration: 50,
+        calories: 395,
+        status: "Completed",
+      },
+      {
+        date: d(10),
+        name: "Row & Bike Cardio",
+        type: "Cardio",
+        duration: 35,
+        calories: 310,
+        status: "Completed",
+      },
+      {
+        date: d(13),
+        name: "Pull Day",
+        type: "Strength",
+        duration: 52,
+        calories: 405,
+        status: "Completed",
+      },
+    ]),
+  );
+}
+
+if (!localStorage.getItem(STORE_KEYS.weightLog)) {
+  const base = 79;
+  const log = [];
+  for (let i = 11; i >= 0; i--) {
+    log.push({
+      week: `W${12 - i}`,
+      weight: +(base - (11 - i) * 0.45 + (Math.random() * 0.6 - 0.3)).toFixed(
+        1,
+      ),
+    });
+  }
+  localStorage.setItem(STORE_KEYS.weightLog, JSON.stringify(log));
+}
+
+if (!localStorage.getItem(STORE_KEYS.schedule)) {
+  const today = new Date();
+  const d = (offset) => {
+    const dt = new Date(today);
+    dt.setDate(dt.getDate() + offset);
+    return dt.toISOString().slice(0, 10);
+  };
+  localStorage.setItem(
+    STORE_KEYS.schedule,
+    JSON.stringify([
+      {
+        session: "1:1 Personal Training",
+        trainer: "Aman Khanna",
+        date: d(1),
+        time: "07:00",
+        location: "AD Fitness — Downtown",
+      },
+      {
+        session: "HIIT Group Class",
+        trainer: "Priya Verma",
+        date: d(3),
+        time: "18:30",
+        location: "AD Fitness — Riverside",
+      },
+      {
+        session: "Nutrition Consult",
+        trainer: "Sana Iyer",
+        date: d(6),
+        time: "12:00",
+        location: "Virtual",
+      },
+    ]),
+  );
+}
+
+if (!localStorage.getItem(STORE_KEYS.achievements)) {
+  localStorage.setItem(
+    STORE_KEYS.achievements,
+    JSON.stringify([
+      {
+        title: "First Workout",
+        desc: "Logged your first session",
+        icon: "fa-flag-checkered",
+        earned: true,
+      },
+      {
+        title: "7-Day Streak",
+        desc: "Trained 7 days in a row",
+        icon: "fa-fire",
+        earned: true,
+      },
+      {
+        title: "50 Workouts",
+        desc: "Completed 50 total sessions",
+        icon: "fa-dumbbell",
+        earned: true,
+      },
+      {
+        title: "Early Bird",
+        desc: "5 sessions before 7am",
+        icon: "fa-sun",
+        earned: true,
+      },
+      {
+        title: "30-Day Streak",
+        desc: "Trained 30 days in a row",
+        icon: "fa-bolt",
+        earned: false,
+      },
+      {
+        title: "100 Workouts",
+        desc: "Completed 100 total sessions",
+        icon: "fa-medal",
+        earned: false,
+      },
+      {
+        title: "5K Finisher",
+        desc: "Completed a 5K run",
+        icon: "fa-person-running",
+        earned: false,
+      },
+      {
+        title: "Goal Crusher",
+        desc: "Hit your target weight",
+        icon: "fa-bullseye",
+        earned: false,
+      },
+    ]),
+  );
+}
+
+if (!localStorage.getItem(STORE_KEYS.prefs)) {
+  localStorage.setItem(
+    STORE_KEYS.prefs,
+    JSON.stringify({
+      reminders: true,
+      reports: true,
+      promos: false,
+      articles: true,
+    }),
+  );
+}
+
+function getUser() {
+  return JSON.parse(localStorage.getItem(STORE_KEYS.user));
+}
+function setUser(u) {
+  localStorage.setItem(STORE_KEYS.user, JSON.stringify(u));
+}
+function getWorkouts() {
+  return JSON.parse(localStorage.getItem(STORE_KEYS.workouts));
+}
+function setWorkouts(w) {
+  localStorage.setItem(STORE_KEYS.workouts, JSON.stringify(w));
+}
+function getWeightLog() {
+  return JSON.parse(localStorage.getItem(STORE_KEYS.weightLog));
+}
+function getSchedule() {
+  return JSON.parse(localStorage.getItem(STORE_KEYS.schedule));
+}
+function setSchedule(s) {
+  localStorage.setItem(STORE_KEYS.schedule, JSON.stringify(s));
+}
+function getAchievements() {
+  return JSON.parse(localStorage.getItem(STORE_KEYS.achievements));
+}
 
 function initials(name) {
-  return name.split(" ").map((p) => p[0]).slice(0, 2).join("").toUpperCase();
+  return name
+    .split(" ")
+    .map((p) => p[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
 }
 
 function formatDate(iso) {
-  return new Date(iso + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
 }
 
 // ------------------------------------------------------------
@@ -154,15 +349,22 @@ function renderUserChrome() {
   const ini = initials(u.name);
   document.getElementById("sidebarAvatar").textContent = ini;
   document.getElementById("sidebarName").textContent = u.name;
-  document.getElementById("sidebarPlan").textContent = u.plan.split(" — ")[0] + " Member";
+  document.getElementById("sidebarPlan").textContent = "Member";
   document.getElementById("topbarName").textContent = u.name.split(" ")[0];
-  document.getElementById("greetingText").textContent = `Let's crush today's session, ${u.name.split(" ")[0]} 💪`;
-  document.querySelectorAll(".user-menu-trigger .avatar").forEach((el) => (el.textContent = ini));
+  document.getElementById("greetingText").textContent =
+    `Let's crush today's session, ${u.name.split(" ")[0]} 💪`;
+  document
+    .querySelectorAll(".user-menu-trigger .avatar")
+    .forEach((el) => (el.textContent = ini));
 }
 
 function setTopbarDate() {
   const el = document.getElementById("topbarDate");
-  el.textContent = new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
+  el.textContent = new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 // ------------------------------------------------------------
@@ -179,21 +381,50 @@ function renderOverview() {
     const dt = new Date(today);
     dt.setDate(dt.getDate() - i);
     const iso = dt.toISOString().slice(0, 10);
-    const hit = workouts.find((w) => w.date === iso && w.status === "Completed");
+    const hit = workouts.find(
+      (w) => w.date === iso && w.status === "Completed",
+    );
     if (hit) streak++;
-    else if (i === 0) continue; // allow today to be empty still
+    else if (i === 0)
+      continue; // allow today to be empty still
     else break;
   }
 
-  const thisMonth = completed.filter((w) => new Date(w.date).getMonth() === today.getMonth()).length;
+  const thisMonth = completed.filter(
+    (w) => new Date(w.date).getMonth() === today.getMonth(),
+  ).length;
   const weekCalories = sumLastNDays(workouts, 7, "calories");
   const weekMinutes = sumLastNDays(workouts, 7, "duration");
 
   const stats = [
-    { icon: "fa-fire", label: "Current Streak", value: `${streak} days`, trend: "up", trendText: "Keep it going" },
-    { icon: "fa-dumbbell", label: "Workouts This Month", value: `${thisMonth}`, trend: "up", trendText: "+3 vs last month" },
-    { icon: "fa-bolt", label: "Calories This Week", value: weekCalories.toLocaleString(), trend: "up", trendText: `${weekMinutes} min trained` },
-    { icon: "fa-weight-scale", label: "Weight vs Goal", value: "-5 kg", trend: "down", trendText: "5kg to target" },
+    {
+      icon: "fa-fire",
+      label: "Current Streak",
+      value: `${streak} days`,
+      trend: "up",
+      trendText: "Keep it going",
+    },
+    {
+      icon: "fa-dumbbell",
+      label: "Workouts This Month",
+      value: `${thisMonth}`,
+      trend: "up",
+      trendText: "+3 vs last month",
+    },
+    {
+      icon: "fa-bolt",
+      label: "Calories This Week",
+      value: weekCalories.toLocaleString(),
+      trend: "up",
+      trendText: `${weekMinutes} min trained`,
+    },
+    {
+      icon: "fa-weight-scale",
+      label: "Weight vs Goal",
+      value: "-5 kg",
+      trend: "down",
+      trendText: "5kg to target",
+    },
   ];
 
   document.getElementById("overviewStats").innerHTML = stats
@@ -204,7 +435,7 @@ function renderOverview() {
       <h2>${s.value}</h2>
       <p>${s.label}</p>
       <div class="stat-trend ${s.trend}"><i class="fa-solid fa-arrow-${s.trend === "up" ? "up" : "down"}"></i> ${s.trendText}</div>
-    </div>`
+    </div>`,
     )
     .join("");
 
@@ -215,7 +446,11 @@ function renderOverview() {
     dt.setDate(dt.getDate() - i);
     const iso = dt.toISOString().slice(0, 10);
     const w = workouts.find((x) => x.date === iso);
-    days.push({ label: dt.toLocaleDateString("en-US", { weekday: "short" }).slice(0, 2), minutes: w ? w.duration : 0, isToday: i === 0 });
+    days.push({
+      label: dt.toLocaleDateString("en-US", { weekday: "short" }).slice(0, 2),
+      minutes: w ? w.duration : 0,
+      isToday: i === 0,
+    });
   }
   const maxMin = Math.max(...days.map((d) => d.minutes), 60);
   document.getElementById("weekBarChart").innerHTML = days
@@ -226,7 +461,7 @@ function renderOverview() {
         ${d.minutes > 0 ? `<span class="bar-value">${d.minutes}m</span>` : ""}
       </div>
       <span class="bar-label">${d.label}</span>
-    </div>`
+    </div>`,
     )
     .join("");
   document.getElementById("weekTotalBadge").textContent = `${weekMinutes} min`;
@@ -243,7 +478,7 @@ function renderOverview() {
         <p><strong>${s.session}</strong> with ${s.trainer}</p>
         <span>${formatDate(s.date)} · ${formatTime(s.time)} · ${s.location}</span>
       </div>
-    </div>`
+    </div>`,
         )
         .join("")
     : `<div class="empty-state"><i class="fa-solid fa-calendar"></i><p>Nothing booked yet — book a session below.</p></div>`;
@@ -277,26 +512,64 @@ function renderProfileFields() {
   document.getElementById("profileAvatarBig").textContent = initials(u.name);
   document.getElementById("profileFullName").textContent = u.name;
   document.getElementById("profileEmail").textContent = u.email;
-  document.getElementById("membershipPlan").textContent = u.plan;
-  document.getElementById("memberSince").textContent = formatDate(u.memberSince);
-  document.getElementById("renewsOn").textContent = formatDate(u.renewsOn);
-  document.getElementById("trainerName").textContent = u.trainer;
 
-  const fields = [
-    { label: "Phone", value: u.phone },
-    { label: "Age", value: `${u.age} years` },
-    { label: "Gender", value: u.gender },
-    { label: "Height", value: `${u.height} cm` },
-    { label: "Weight", value: `${u.weight} kg` },
-    { label: "Fitness Goal", value: u.goal },
-  ];
+  document.getElementById("membershipPlan").textContent = "Basic Member";
+  document.getElementById("memberSince").textContent = "Not Available";
+  document.getElementById("renewsOn").textContent = "Not Available";
+  document.getElementById("trainerName").textContent = "Not Assigned";
+
+  document.getElementById("profileFieldsGrid").innerHTML = `
+    <div class="form-group">
+      <label>Phone</label>
+      <p>Not Available</p>
+    </div>
+
+    <div class="form-group">
+      <label>Age</label>
+      <p>Not Available</p>
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <p>Not Available</p>
+    </div>
+
+    <div class="form-group">
+      <label>Height</label>
+      <p>Not Available</p>
+    </div>
+
+    <div class="form-group">
+      <label>Weight</label>
+      <p>Not Available</p>
+    </div>
+
+    <div class="form-group">
+      <label>Fitness Goal</label>
+      <p>Not Available</p>
+    </div>
+  `;
+
+  // document.getElementById("membershipPlan").textContent = u.plan;
+  // document.getElementById("memberSince").textContent = formatDate(u.memberSince);
+  // document.getElementById("renewsOn").textContent = formatDate(u.renewsOn);
+  // document.getElementById("trainerName").textContent = u.trainer;
+
+const fields = [
+  { label: "Phone", value: u.phone || "Not Available" },
+  { label: "Age", value: u.age ? `${u.age} years` : "Not Available" },
+  { label: "Gender", value: u.gender || "Not Available" },
+  { label: "Height", value: u.height ? `${u.height} cm` : "Not Available" },
+  { label: "Weight", value: u.weight ? `${u.weight} kg` : "Not Available" },
+  { label: "Fitness Goal", value: u.goal || "Not Available" },
+];
   document.getElementById("profileFieldsGrid").innerHTML = fields
     .map(
       (f) => `
     <div class="form-group" style="margin-bottom:0;">
       <label>${f.label}</label>
       <p style="font-size:14.5px; padding:14px 0 0;">${f.value}</p>
-    </div>`
+    </div>`,
     )
     .join("");
 }
@@ -305,19 +578,28 @@ function renderProfileFields() {
 // Workout history table
 // ------------------------------------------------------------
 function initWorkoutFilters() {
-  document.getElementById("filterType").addEventListener("change", renderWorkoutTable);
-  document.getElementById("filterStatus").addEventListener("change", renderWorkoutTable);
+  document
+    .getElementById("filterType")
+    .addEventListener("change", renderWorkoutTable);
+  document
+    .getElementById("filterStatus")
+    .addEventListener("change", renderWorkoutTable);
 }
 
 function renderWorkoutTable() {
   const typeFilter = document.getElementById("filterType").value;
   const statusFilter = document.getElementById("filterStatus").value;
-  let workouts = [...getWorkouts()].sort((a, b) => new Date(b.date) - new Date(a.date));
+  let workouts = [...getWorkouts()].sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
 
-  if (typeFilter !== "all") workouts = workouts.filter((w) => w.type === typeFilter);
-  if (statusFilter !== "all") workouts = workouts.filter((w) => w.status === statusFilter);
+  if (typeFilter !== "all")
+    workouts = workouts.filter((w) => w.type === typeFilter);
+  if (statusFilter !== "all")
+    workouts = workouts.filter((w) => w.status === statusFilter);
 
-  document.getElementById("workoutCountLabel").textContent = `${workouts.length} session${workouts.length === 1 ? "" : "s"}`;
+  document.getElementById("workoutCountLabel").textContent =
+    `${workouts.length} session${workouts.length === 1 ? "" : "s"}`;
   document.getElementById("workoutEmptyState").hidden = workouts.length !== 0;
 
   document.getElementById("workoutTableBody").innerHTML = workouts
@@ -330,7 +612,7 @@ function renderWorkoutTable() {
       <td class="mono">${w.duration} min</td>
       <td class="mono">${w.calories} kcal</td>
       <td><span class="badge ${w.status === "Completed" ? "badge-success" : "badge-danger"}">${w.status}</span></td>
-    </tr>`
+    </tr>`,
     )
     .join("");
 }
@@ -343,9 +625,12 @@ function renderProgress() {
   const u = getUser();
 
   // line chart via SVG
-  const w = 520, h = 190, pad = 24;
+  const w = 520,
+    h = 190,
+    pad = 24;
   const values = log.map((l) => l.weight);
-  const min = Math.min(...values) - 1, max = Math.max(...values) + 1;
+  const min = Math.min(...values) - 1,
+    max = Math.max(...values) + 1;
   const stepX = (w - pad * 2) / (log.length - 1);
   const points = log.map((l, i) => {
     const x = pad + i * stepX;
@@ -367,7 +652,9 @@ function renderProgress() {
       ${points
         .map((p, i) => {
           const [x, y] = p.split(",");
-          return i === points.length - 1 ? `<circle cx="${x}" cy="${y}" r="4.5" fill="#C8FF3D" />` : "";
+          return i === points.length - 1
+            ? `<circle cx="${x}" cy="${y}" r="4.5" fill="#C8FF3D" />`
+            : "";
         })
         .join("")}
     </svg>
@@ -380,11 +667,26 @@ function renderProgress() {
   // BMI
   const heightM = u.height / 100;
   const bmi = +(u.weight / (heightM * heightM)).toFixed(1);
-  let category = "Normal", markerPct = 50;
-  if (bmi < 18.5) { category = "Underweight"; markerPct = (bmi / 18.5) * 25; }
-  else if (bmi < 25) { category = "Normal"; markerPct = 25 + ((bmi - 18.5) / 6.5) * 25; }
-  else if (bmi < 30) { category = "Overweight"; markerPct = 50 + ((bmi - 25) / 5) * 25; }
-  else { category = "Obese"; markerPct = Math.min(75 + ((bmi - 30) / 10) * 25, 98); }
+  let category = "Normal",
+    markerPct = 50;
+  if (bmi < 18.5) {
+    category = "Underweight";
+    markerPct = (bmi / 18.5) * 25;
+  } else if (bmi < 25) {
+    category = "Normal";
+    markerPct = 25 + ((bmi - 18.5) / 6.5) * 25;
+  } else if (bmi < 30) {
+    category = "Overweight";
+    markerPct = 50 + ((bmi - 25) / 5) * 25;
+  } else {
+    category = "Obese";
+    markerPct = Math.min(75 + ((bmi - 30) / 10) * 25, 98);
+  }
+  if (!u.height || !u.weight) {
+    document.getElementById("bmiValue").textContent = "--";
+    document.getElementById("bmiCategory").textContent = "Not Available";
+    return;
+}
 
   document.getElementById("bmiValue").textContent = bmi;
   document.getElementById("bmiCategory").textContent = category;
@@ -402,7 +704,7 @@ function renderProgress() {
     <div class="progress-row">
       <div class="progress-label"><span>${g.label}</span><span>${g.pct}%</span></div>
       <div class="progress-track"><div class="progress-fill" style="width:${g.pct}%;"></div></div>
-    </div>`
+    </div>`,
     )
     .join("");
 }
@@ -411,7 +713,9 @@ function renderProgress() {
 // Schedule
 // ------------------------------------------------------------
 function renderSchedule() {
-  const schedule = getSchedule().sort((a, b) => new Date(a.date + "T" + a.time) - new Date(b.date + "T" + b.time));
+  const schedule = getSchedule().sort(
+    (a, b) => new Date(a.date + "T" + a.time) - new Date(b.date + "T" + b.time),
+  );
   const tbody = document.getElementById("scheduleTableBody");
 
   if (!schedule.length) {
@@ -428,7 +732,7 @@ function renderSchedule() {
       <td class="mono">${formatDate(s.date)} · ${formatTime(s.time)}</td>
       <td>${s.location}</td>
       <td><button class="icon-btn sm" data-cancel-session="${idx}" aria-label="Cancel"><i class="fa-solid fa-xmark"></i></button></td>
-    </tr>`
+    </tr>`,
     )
     .join("");
 
@@ -457,7 +761,7 @@ function renderAchievements() {
       <div class="achv-icon"><i class="fa-solid ${a.icon}"></i></div>
       <h4>${a.title}</h4>
       <p>${a.desc}</p>
-    </div>`
+    </div>`,
     )
     .join("");
 }
@@ -514,7 +818,9 @@ function initSidebar() {
 // ------------------------------------------------------------
 function initScrollspy() {
   const links = document.querySelectorAll(".sidebar-link[data-section]");
-  const sections = [...links].map((l) => document.getElementById(l.getAttribute("data-section")));
+  const sections = [...links].map((l) =>
+    document.getElementById(l.getAttribute("data-section")),
+  );
   const titleEl = document.getElementById("topbarTitle");
 
   const observer = new IntersectionObserver(
@@ -522,13 +828,17 @@ function initScrollspy() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const id = entry.target.id;
-          links.forEach((l) => l.classList.toggle("active", l.getAttribute("data-section") === id));
-          const activeLink = [...links].find((l) => l.getAttribute("data-section") === id);
+          links.forEach((l) =>
+            l.classList.toggle("active", l.getAttribute("data-section") === id),
+          );
+          const activeLink = [...links].find(
+            (l) => l.getAttribute("data-section") === id,
+          );
           if (activeLink) titleEl.textContent = activeLink.textContent.trim();
         }
       });
     },
-    { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+    { rootMargin: "-40% 0px -50% 0px", threshold: 0 },
   );
 
   sections.forEach((sec) => sec && observer.observe(sec));
@@ -558,10 +868,16 @@ function initTabs() {
   document.querySelectorAll(".tab-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const tab = btn.getAttribute("data-tab");
-      document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
-      document.querySelectorAll(".tab-panel").forEach((p) => p.classList.remove("active"));
+      document
+        .querySelectorAll(".tab-btn")
+        .forEach((b) => b.classList.remove("active"));
+      document
+        .querySelectorAll(".tab-panel")
+        .forEach((p) => p.classList.remove("active"));
       btn.classList.add("active");
-      document.querySelector(`[data-tab-panel="${tab}"]`).classList.add("active");
+      document
+        .querySelector(`[data-tab-panel="${tab}"]`)
+        .classList.add("active");
     });
   });
 }
@@ -582,7 +898,9 @@ function initModals() {
   });
 
   document.getElementById("logWorkoutBtn").addEventListener("click", () => {
-    document.getElementById("lwDate").value = new Date().toISOString().slice(0, 10);
+    document.getElementById("lwDate").value = new Date()
+      .toISOString()
+      .slice(0, 10);
     openModal("logWorkoutModal");
   });
 
@@ -592,7 +910,9 @@ function initModals() {
 
   document.querySelectorAll("[data-close-modal]").forEach((el) => {
     el.addEventListener("click", () => {
-      document.querySelectorAll(".modal-overlay.open").forEach((m) => m.classList.remove("open"));
+      document
+        .querySelectorAll(".modal-overlay.open")
+        .forEach((m) => m.classList.remove("open"));
     });
   });
 
@@ -614,22 +934,59 @@ function closeModal(id) {
 // Forms
 // ------------------------------------------------------------
 function initForms() {
-  document.getElementById("editProfileForm").addEventListener("submit", (e) => {
+  document
+  .getElementById("editProfileForm")
+  .addEventListener("submit", async (e) => {
     e.preventDefault();
-    const u = getUser();
-    u.name = document.getElementById("epName").value.trim() || u.name;
-    u.email = document.getElementById("epEmail").value.trim() || u.email;
-    u.age = +document.getElementById("epAge").value || u.age;
-    u.gender = document.getElementById("epGender").value;
-    u.height = +document.getElementById("epHeight").value || u.height;
-    u.weight = +document.getElementById("epWeight").value || u.weight;
-    setUser(u);
-    renderUserChrome();
-    renderProfileFields();
-    renderProgress();
-    hydrateSettingsForm();
-    closeModal("editProfileModal");
-    showToast("Profile updated successfully.");
+
+    try {
+      const token = localStorage.getItem("token");
+
+      const profileData = {
+        name: document.getElementById("epName").value.trim(),
+        phone: getUser().phone,
+        age: Number(document.getElementById("epAge").value),
+        gender: document.getElementById("epGender").value,
+        height: Number(document.getElementById("epHeight").value),
+        weight: Number(document.getElementById("epWeight").value),
+        goal: getUser().goal,
+      };
+
+      const response = await fetch(
+        "http://localhost:5000/api/auth/profile",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(profileData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        showToast(data.message || "Profile update failed", true);
+        return;
+      }
+
+      // Backend data localStorage me save
+      localStorage.setItem(STORE_KEYS.user, JSON.stringify(data.user));
+
+      // Dashboard refresh
+      renderUserChrome();
+      renderProfileFields();
+      renderProgress();
+      hydrateSettingsForm();
+
+      closeModal("editProfileModal");
+
+      showToast("Profile updated successfully.");
+    } catch (error) {
+      console.error(error);
+      showToast("Something went wrong.", true);
+    }
   });
 
   document.getElementById("logWorkoutForm").addEventListener("submit", (e) => {

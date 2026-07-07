@@ -182,7 +182,7 @@ function initLoginForm() {
           localStorage.setItem("user", JSON.stringify(data.user));
 
           setTimeout(() => {
-            window.location.href = "index.html";
+            window.location.href = "profile.html";
           }, 1000);
 
         } else {

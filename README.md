@@ -1,40 +1,96 @@
+# 🏋️ AD FITNESS – Full Stack Fitness Platform
 
-# 🏋️ AD Fitness
+A modern **Full Stack Fitness Web Application** built using the **MERN Stack**. AD FITNESS helps users achieve their fitness goals by providing workout programs, diet plans, BMI calculation, authentication, user profiles, and a responsive user experience across all devices.
 
-A modern, responsive fitness website built with **HTML, CSS, and JavaScript**. AD Fitness helps users explore workout programs, diet plans, fitness articles, and calculate their BMI through a clean and interactive interface.
+---
 
-## 🌐 Live Demo
-🔗 [Live Demo](https://ankit-rajan.github.io/ad-fitness-blog/)
-* **Website:** https://ankit-rajan.github.io/ad-fitness-blog/
-* **Short Link:** https://lnk.ink/ADFITNESS
+## 🚀 Live Demo
+
+### 🌐 Frontend
+
+**https://glittery-maamoul-bd779e.netlify.app/**
+
+### ⚡ Backend API
+
+**https://ad-fitness-blog.onrender.com**
+
+---
+
+## 📌 Project Overview
+
+AD FITNESS is a responsive fitness platform designed to provide users with an engaging fitness experience. The application includes secure authentication, profile management, BMI calculator, workout and diet information, fitness blogs, and a clean modern UI.
+
+The project is built with scalability in mind and follows a modular MERN architecture.
 
 ---
 
 ## ✨ Features
 
-* 📱 Fully Responsive Design
-* 🎯 Modern Hero Section
-* 💪 Training Programs
-* 🥗 Diet Plans
-* 🏆 Fitness Programs
-* 📊 Animated Statistics Counter
-* ⚖️ BMI Calculator
-* 📰 Latest Fitness Articles
-* 🌟 Success Stories Section
-* 📧 Newsletter Subscription Form
-* 🔝 Back to Top Button
-* 🎨 Smooth Animations & Scroll Effects
-* 🍔 Mobile Friendly Navigation
+### 🔐 Authentication
+
+* User Registration
+* Secure Login
+* Password Hashing using **bcrypt**
+* JWT Authentication
+* Protected Routes
+* User Logout
+
+### 👤 User Profile
+
+* View Profile
+* Update Profile
+* Store Personal Information
+* Fitness Goal Management
+
+### 💪 Fitness
+
+* Workout Programs
+* Diet Plans
+* BMI Calculator
+* Fitness Articles
+* Success Stories
+* Newsletter Subscription
+
+### 🎨 UI/UX
+
+* Fully Responsive Design
+* Modern User Interface
+* Mobile Friendly Navigation
+* Smooth Animations
+* Scroll Effects
+* Animated Statistics
+* Back To Top Button
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠 Tech Stack
+
+### Frontend
 
 * HTML5
 * CSS3
 * JavaScript (ES6)
-* Font Awesome Icons
-* Google Fonts
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Database
+
+* MongoDB Atlas
+* Mongoose
+
+### Authentication
+
+* JWT (JSON Web Token)
+* bcrypt
+
+### Deployment
+
+* Frontend → Netlify
+* Backend → Render
+* Database → MongoDB Atlas
 
 ---
 
@@ -42,49 +98,64 @@ A modern, responsive fitness website built with **HTML, CSS, and JavaScript**. A
 
 ```text
 AD-FITNESS/
+
+├── client/
+│   ├── HTML Pages
+│   ├── CSS
+│   ├── JavaScript
+│   └── Assets
 │
-├── index.html
-├── training.html
-├── diet.html
-├── products.html
-├── blog.html
-├── about.html
-├── contact.html
-├── login.html
-├── signup.html
+├── server/
+│   ├── Controllers
+│   ├── Routes
+│   ├── Middleware
+│   ├── Models
+│   ├── Config
+│   └── Server
 │
-├── CSS/
-│   ├── common.css
-│   ├── index.css
-│   ├── training.css
-│   ├── diet.css
-│   └── ...
-│
-├── JS/
-│   ├── common.js
-│   ├── index.js
-│   └── ...
-│
-└── images/
+└── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Installation
 
-1. Clone the repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/Ankit-rajan/ad-fitness-blog.git
 ```
 
-2. Open the project folder.
+### Install Backend
 
-3. Run **index.html** in your browser.
+```bash
+cd server
+npm install
+```
+
+### Create .env
+
+```env
+PORT=5000
+
+MONGODB_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
+```
+
+### Start Backend
+
+```bash
+npm run dev
+```
+
+### Open Frontend
+
+Open the frontend in your browser or use the deployed Netlify version.
 
 ---
 
-## 📸 Website Sections
+## 📱 Website Pages
 
 * Home
 * Training
@@ -93,20 +164,48 @@ git clone https://github.com/Ankit-rajan/ad-fitness-blog.git
 * Blog
 * About
 * Contact
-* Login / Signup
-* BMI Calculator
+* Login
+* Signup
+* Dashboard
+* User Profile
 
 ---
 
-## 🎯 Future Improvements
+## 🔒 Authentication Flow
 
-* User Authentication
+* Register User
+* Login User
+* JWT Token Generation
+* Protected APIs
+* Fetch User Profile
+* Update Profile
+* Secure Logout
+
+---
+
+## 🎯 Upcoming Features
+
+* Profile Photo Upload
+* Change Password
+* Forgot Password
 * Workout Tracker
 * Nutrition Planner
-* Dark / Light Theme
-* Backend Integration (MERN Stack)
 * Admin Dashboard
-* User Profiles
+* Dark Mode
+* Email Verification
+* Exercise Progress Tracking
+
+---
+
+## 🌍 Deployment
+
+### Frontend
+
+https://glittery-maamoul-bd779e.netlify.app/
+
+### Backend
+
+https://ad-fitness-blog.onrender.com
 
 ---
 
@@ -114,16 +213,23 @@ git clone https://github.com/Ankit-rajan/ad-fitness-blog.git
 
 **Ankit Rajan**
 
-GitHub: https://github.com/Ankit-rajan
+GitHub:
+https://github.com/Ankit-rajan
 
 ---
 
 ## ⭐ Support
 
-If you like this project, don't forget to **⭐ Star** the repository and share your feedback!
+If you found this project helpful, please consider giving it a **⭐ Star** on GitHub.
+
+Your support motivates me to build more useful open-source projects.
 
 ---
 
 ## 📄 License
 
 This project is licensed under the **MIT License**.
+
+You are free to use, modify, and distribute this software in accordance with the terms of the MIT License.
+
+See the **LICENSE** file for more details.

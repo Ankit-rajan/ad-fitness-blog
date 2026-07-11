@@ -1,21 +1,52 @@
 # 🏋️ AD FITNESS – Full Stack Fitness Platform
 
+
+![Project Preview](/images/screeenshots/preview.png)
+
 A modern **Full Stack Fitness Web Application** built using the **MERN Stack**. AD FITNESS helps users achieve their fitness goals by providing workout programs, diet plans, BMI calculation, authentication, user profiles, and a responsive user experience across all devices.
 
 ---
 
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
+![HTML](https://img.shields.io/badge/HTML-5-orange)
+
+![CSS](https://img.shields.io/badge/CSS-3-blue)
+
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+
+![Node.js](https://img.shields.io/badge/Node.js-Express-green)
+
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)
+
 ## 🚀 Live Demo
 
-### 🌐 Frontend
+🌐 **Frontend:** [Live Website](https://glittery-maamoul-bd779e.netlify.app/)
 
-**https://glittery-maamoul-bd779e.netlify.app/**
+⚡ **Backend:** [API Server](https://ad-fitness-blog.onrender.com)
 
-### ⚡ Backend API
 
-**https://ad-fitness-blog.onrender.com**
+## 📸 Screenshots
 
----
+### 🏠 Home Page
 
+![Home](/images/screeenshots/home.png)
+
+### 👤 Dashboard
+
+![Dashboard](/images/screeenshots/home1.png)
+
+### 📊 BMI Calculator
+
+![BMI](/images/screeenshots/BMI.png)
+
+### 🔐 Login
+
+![Login](/images/screeenshots/login.png)
+
+### 👤 User Profile
+
+![Profile](/images/screeenshots/profile.png)
 ## 📌 Project Overview
 
 AD FITNESS is a responsive fitness platform designed to provide users with an engaging fitness experience. The application includes secure authentication, profile management, BMI calculator, workout and diet information, fitness blogs, and a clean modern UI.
